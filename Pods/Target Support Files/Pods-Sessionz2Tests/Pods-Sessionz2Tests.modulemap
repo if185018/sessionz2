@@ -1,0 +1,6 @@
+framework module Pods_Sessionz2Tests {
+  umbrella header "Pods-Sessionz2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
