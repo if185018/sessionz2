@@ -12,6 +12,10 @@
 		81BD3C4F240F09DB00FC98BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81BD3C4E240F09DB00FC98BF /* Assets.xcassets */; };
 		81BD3C52240F09DB00FC98BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BD3C50240F09DB00FC98BF /* LaunchScreen.storyboard */; };
 		81BD3C5D240F09DC00FC98BF /* Sessionz2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C5C240F09DC00FC98BF /* Sessionz2Tests.swift */; };
+		81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C6B240F110E00FC98BF /* ViewController+Extension.swift */; };
+		81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C6D240F114E00FC98BF /* View+Extension.swift */; };
+		81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0A9241005360082E25C /* UIColor+Extension.swift */; };
+		81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AB24100F1A0082E25C /* LoginVC.swift */; };
 		83410E8B814EEEE23728B7A4 /* Pods_Sessionz2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADF867F0E7FCE3969A5C0B5 /* Pods_Sessionz2.framework */; };
 		DED772B019494CF487300673 /* Pods_Sessionz2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD53F99FC453BECD0779656 /* Pods_Sessionz2Tests.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +44,10 @@
 		81BD3C58240F09DC00FC98BF /* Sessionz2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sessionz2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD3C5C240F09DC00FC98BF /* Sessionz2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessionz2Tests.swift; sourceTree = "<group>"; };
 		81BD3C5E240F09DC00FC98BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81BD3C6B240F110E00FC98BF /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		81BD3C6D240F114E00FC98BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		81CBD0A9241005360082E25C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		81CBD0AB24100F1A0082E25C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8ADF867F0E7FCE3969A5C0B5 /* Pods_Sessionz2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sessionz2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CC9CD1FAECDF94D23BB0AD /* Pods-Sessionz2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2.release.xcconfig"; path = "Target Support Files/Pods-Sessionz2/Pods-Sessionz2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +106,10 @@
 		81BD3C44240F09D700FC98BF /* Sessionz2 */ = {
 			isa = PBXGroup;
 			children = (
+				81BD3C6A240F10EE00FC98BF /* Utils */,
+				81BD3C69240F10CD00FC98BF /* Models */,
+				81BD3C68240F10C700FC98BF /* Views */,
+				81BD3C67240F10BD00FC98BF /* Controller */,
 				81BD3C45240F09D700FC98BF /* AppDelegate.swift */,
 				81BD3C47240F09D700FC98BF /* SceneDelegate.swift */,
 				81BD3C4E240F09DB00FC98BF /* Assets.xcassets */,
@@ -114,6 +126,38 @@
 				81BD3C5E240F09DC00FC98BF /* Info.plist */,
 			);
 			path = Sessionz2Tests;
+			sourceTree = "<group>";
+		};
+		81BD3C67240F10BD00FC98BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81CBD0AB24100F1A0082E25C /* LoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81BD3C68240F10C700FC98BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81BD3C69240F10CD00FC98BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81BD3C6A240F10EE00FC98BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				81BD3C6B240F110E00FC98BF /* ViewController+Extension.swift */,
+				81BD3C6D240F114E00FC98BF /* View+Extension.swift */,
+				81CBD0A9241005360082E25C /* UIColor+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CB9991373B9C7CD81B61DFFE /* Frameworks */ = {
@@ -294,6 +338,10 @@
 			files = (
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
+				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
+				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
+				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
+				81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
