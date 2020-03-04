@@ -12,6 +12,24 @@ class LoginVC: UIViewController {
     
     //MARK: Properties
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "SESSIONZ"
+        label.font = UIFont(name: "Thonburi", size: 36)
+        label.textColor = UIColor(white: 1, alpha: 0.8)
+        return label
+    }()
+    
+    
+    private let emailTextField: UITextField = {
+        return UITextField().textField(withPlaceholder: "Email",
+                                       isSecureTextEntry: false)
+    }()
+    
+    private let passwordTextField: UITextField = {
+        return UITextField().textField(withPlaceholder: "Password",
+                                       isSecureTextEntry: true)
+    }()
     
     
     
