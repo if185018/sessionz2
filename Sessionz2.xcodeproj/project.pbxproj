@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
 		81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C45240F09D700FC98BF /* AppDelegate.swift */; };
 		81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C47240F09D700FC98BF /* SceneDelegate.swift */; };
 		81BD3C4F240F09DB00FC98BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81BD3C4E240F09DB00FC98BF /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		2BD53F99FC453BECD0779656 /* Pods_Sessionz2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sessionz2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502CFD559514E99DA32ADAAA /* Pods-Sessionz2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2.debug.xcconfig"; path = "Target Support Files/Pods-Sessionz2/Pods-Sessionz2.debug.xcconfig"; sourceTree = "<group>"; };
 		68AFD3E815D1B7965313D91D /* Pods-Sessionz2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2Tests.release.xcconfig"; path = "Target Support Files/Pods-Sessionz2Tests/Pods-Sessionz2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		81BD3C42240F09D700FC98BF /* Sessionz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sessionz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD3C45240F09D700FC98BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BD3C47240F09D700FC98BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		81BD3C68240F10C700FC98BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				811342C524114B2F005F6DC8 /* AuthButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
+				811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
