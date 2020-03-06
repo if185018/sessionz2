@@ -59,7 +59,7 @@ class LoginVC: UIViewController {
         
         attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.secondaryBlueTint]))
         
-        //button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
@@ -74,6 +74,14 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         
+    }
+    
+    //MARK: Selector Methods
+    
+    
+     @objc private func handleShowSignUp() {
+        let controller = SignUpVC()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     
