@@ -27,8 +27,8 @@ class SignUpVC: UIViewController {
                                        isSecureTextEntry: false)
     }()
     
-    private let fullnameTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Fullname",
+    private let gamerTagTextField: UITextField = {
+        return UITextField().textField(withPlaceholder: "Gamer Tag",
                                        isSecureTextEntry: false)
     }()
     
@@ -44,8 +44,8 @@ class SignUpVC: UIViewController {
         return view
     }()
     
-    private lazy var fullnameContainerView: UIView = {
-        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_person_outline_white_2x"), textField: fullnameTextField)
+    private lazy var gamerTagContainerView: UIView = {
+        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_person_outline_white_2x"), textField: gamerTagTextField)
         view.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return view
     }()
@@ -126,7 +126,7 @@ class SignUpVC: UIViewController {
     
     private func configureStackView() {
         let stack = UIStackView(arrangedSubviews: [emailContainerView,
-                                                          fullnameContainerView,
+                                                          gamerTagContainerView,
                                                           passwordContainerView,
                                                           consoleContainerView,
                                                           signUpButton])

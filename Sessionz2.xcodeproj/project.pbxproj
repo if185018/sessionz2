@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEA24168EDB00B5DE33 /* AppUser.swift */; };
 		811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811298A9241298A600B3BCC1 /* SignUpVC.swift */; };
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
 		812F09A62414356F004DEF8E /* DatabaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F09A52414356F004DEF8E /* DatabaseRefs.swift */; };
@@ -40,6 +41,7 @@
 		2BD53F99FC453BECD0779656 /* Pods_Sessionz2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sessionz2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502CFD559514E99DA32ADAAA /* Pods-Sessionz2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2.debug.xcconfig"; path = "Target Support Files/Pods-Sessionz2/Pods-Sessionz2.debug.xcconfig"; sourceTree = "<group>"; };
 		68AFD3E815D1B7965313D91D /* Pods-Sessionz2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2Tests.release.xcconfig"; path = "Target Support Files/Pods-Sessionz2Tests/Pods-Sessionz2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		81003CEA24168EDB00B5DE33 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		812F09A52414356F004DEF8E /* DatabaseRefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRefs.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		81BD3C69240F10CD00FC98BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81003CEA24168EDB00B5DE33 /* AppUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */,
 				811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */,
+				81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
 				812F09A62414356F004DEF8E /* DatabaseRefs.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
