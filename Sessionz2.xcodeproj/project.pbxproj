@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEA24168EDB00B5DE33 /* AppUser.swift */; };
+		81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */; };
+		81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */; };
 		811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811298A9241298A600B3BCC1 /* SignUpVC.swift */; };
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
-		812F09A62414356F004DEF8E /* DatabaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F09A52414356F004DEF8E /* DatabaseRefs.swift */; };
 		812F09A824143714004DEF8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812F09A724143714004DEF8E /* GoogleService-Info.plist */; };
 		81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C45240F09D700FC98BF /* AppDelegate.swift */; };
 		81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C47240F09D700FC98BF /* SceneDelegate.swift */; };
@@ -42,9 +43,10 @@
 		502CFD559514E99DA32ADAAA /* Pods-Sessionz2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2.debug.xcconfig"; path = "Target Support Files/Pods-Sessionz2/Pods-Sessionz2.debug.xcconfig"; sourceTree = "<group>"; };
 		68AFD3E815D1B7965313D91D /* Pods-Sessionz2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2Tests.release.xcconfig"; path = "Target Support Files/Pods-Sessionz2Tests/Pods-Sessionz2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		81003CEA24168EDB00B5DE33 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRefs.swift; sourceTree = "<group>"; };
+		81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		812F09A52414356F004DEF8E /* DatabaseRefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRefs.swift; sourceTree = "<group>"; };
 		812F09A724143714004DEF8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		81BD3C42240F09D700FC98BF /* Sessionz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sessionz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD3C45240F09D700FC98BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		81003CEE24169D0400B5DE33 /* FirebaseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */,
+				81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */,
+			);
+			path = FirebaseHelpers;
+			sourceTree = "<group>";
+		};
 		81BD3C39240F09D700FC98BF = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +129,7 @@
 		81BD3C44240F09D700FC98BF /* Sessionz2 */ = {
 			isa = PBXGroup;
 			children = (
+				81003CEE24169D0400B5DE33 /* FirebaseHelpers */,
 				812F09A724143714004DEF8E /* GoogleService-Info.plist */,
 				81BD3C6A240F10EE00FC98BF /* Utils */,
 				81BD3C69240F10CD00FC98BF /* Models */,
@@ -173,7 +185,6 @@
 				81BD3C6D240F114E00FC98BF /* View+Extension.swift */,
 				81CBD0A9241005360082E25C /* UIColor+Extension.swift */,
 				81CBD0AD24102A660082E25C /* UITextField+Extension.swift */,
-				812F09A52414356F004DEF8E /* DatabaseRefs.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,12 +370,13 @@
 				811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */,
 				811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */,
 				81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */,
+				81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
-				812F09A62414356F004DEF8E /* DatabaseRefs.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
 				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
+				81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */,
 				81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

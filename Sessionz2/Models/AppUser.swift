@@ -20,7 +20,6 @@ enum ConsoleType: Int {
     case PS4
     case Xbox
     case PC
-    
 }
 
 
