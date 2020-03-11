@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
+        
+        //TODO: If user is logged in make root Container Controller, if not Login VC
         window?.rootViewController = UINavigationController(rootViewController: LoginVC())
     }
 
