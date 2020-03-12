@@ -114,6 +114,15 @@
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
+		816233EE241960ED00A7BF09 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				811298A9241298A600B3BCC1 /* SignUpVC.swift */,
+				81CBD0AB24100F1A0082E25C /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		81BD3C39240F09D700FC98BF = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +173,10 @@
 		81BD3C67240F10BD00FC98BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				81CBD0AB24100F1A0082E25C /* LoginVC.swift */,
-				811298A9241298A600B3BCC1 /* SignUpVC.swift */,
-				817B339A2417DE6D00EF0144 /* MenuController.swift */,
 				816233EA2419308B00A7BF09 /* ContainerController.swift */,
 				816233EC2419321300A7BF09 /* HomeController.swift */,
+				817B339A2417DE6D00EF0144 /* MenuController.swift */,
+				816233EE241960ED00A7BF09 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
