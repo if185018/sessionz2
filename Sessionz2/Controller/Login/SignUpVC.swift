@@ -77,7 +77,8 @@ class SignUpVC: UIViewController {
         let button = AuthButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-       // button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -108,6 +109,36 @@ class SignUpVC: UIViewController {
     @objc private func handleShowLogin() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc private func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let gamerTag = gamerTagTextField.text else {return}
+        
+       let consoleTypeIndex = consoleSegmentedControl.selectedSegmentIndex
+       let consoleType = ConsoleType(rawValue: consoleTypeIndex)!
+        FirebaseAuthService.manager.createNewUser(email: email, password: password) {result in
+            switch result {
+            case .success(let user):
+                let appUser = AppUser(uid: user.uid, gamerTag: gamerTag, email: email, consoleType: consoleType)
+                
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc func validateFields() {
+        guard emailTextField.hasText, passwordTextField.hasText, gamerTagTextField.hasText else {
+            self.signUpButton.backgroundColor = .greyPorcelain
+            self.signUpButton.isEnabled = false
+            return
+        }
+        self.signUpButton.backgroundColor = .mainBlueTint
+        self.signUpButton.isEnabled = true
+        
+    }
+    
     
     //UI Setup Methods
     

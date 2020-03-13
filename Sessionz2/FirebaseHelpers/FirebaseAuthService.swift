@@ -19,7 +19,7 @@ class FirebaseAuthService {
     }
     
     
-   public func createNewUser(email: String, password: String, completion: @escaping (Result<User,Error>) -> ()) {
+    public func createNewUser(email: String, password: String, completion: @escaping (Result<User,Error>) -> ()) {
         auth.createUser(withEmail: email, password: password) { (result, error) in
             if let createdUser = result?.user {
                 completion(.success(createdUser))
@@ -31,7 +31,7 @@ class FirebaseAuthService {
     
    public func loginUser(email: String, password: String, completion: @escaping (Result<(), Error>) -> ()) {
            auth.signIn(withEmail: email, password: password) { (result, error) in
-               if let _ = result?.user {
+            if result?.user != nil {
                    completion(.success(()))
                } else if let error = error {
                    completion(.failure(error))

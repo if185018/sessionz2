@@ -30,6 +30,13 @@ struct AppUser {
     var location: CLLocation?
     let uid: String
     
+    init(uid: String, gamerTag: String, email: String, consoleType: ConsoleType) {
+        self.uid = uid
+        self.gamerTag = gamerTag
+        self.email = email
+        self.consoleType = consoleType
+    }
+    
     init(uid: String, dictionary: [String: Any]) {
         self.uid = uid
         self.gamerTag = dictionary[gamerTagKey] as? String ?? ""
