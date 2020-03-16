@@ -31,6 +31,8 @@ class ContainerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureHomeController()
+        configureMenuController(with: self.user)
     }
     
     //MARK: Init

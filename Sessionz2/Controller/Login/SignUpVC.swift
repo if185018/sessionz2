@@ -121,7 +121,17 @@ class SignUpVC: UIViewController {
             switch result {
             case .success(let user):
                 let appUser = AppUser(uid: user.uid, gamerTag: gamerTag, email: email, consoleType: consoleType)
-                
+                FirebaseDatabaseHelper.manager.uploadCreatedUserToDatabase(uid: appUser.uid, appUser: appUser) { (result) in
+                    switch result {
+                    case .success():
+                        //TODO:change root to container controller
+                        print("sucessfully created user and signed in")
+                    case .failure(let error):
+                        //TODO: show error message
+                        print("error creating user \(error)")
+                        
+                    }
+                }
             case.failure(let error):
                 print(error)
             }

@@ -14,13 +14,13 @@ class FirebaseDatabaseHelper {
     
     static let manager = FirebaseDatabaseHelper()
     
-    func uploadCreatedUserToDatabase(uid: String, appUser: AppUser, completion: @escaping (Result<AppUser, Error>) -> Void) {
+    func uploadCreatedUserToDatabase(uid: String, appUser: AppUser, completion: @escaping (Result<Void, Error>) -> Void) {
         REF_USERS.child(uid).updateChildValues(appUser.fieldsDict) { (error, ref) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            completion(.success(appUser))
+            completion(.success(()))
             
         }
     }
