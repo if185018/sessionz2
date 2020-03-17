@@ -23,18 +23,26 @@ class SignUpVC: UIViewController {
     
     
     private let emailTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Email",
+        
+        let tf = UITextField().textField(withPlaceholder: "Email",
                                        isSecureTextEntry: false)
+        tf.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return tf
     }()
     
     private let gamerTagTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Gamer Tag",
+        
+        let tf = UITextField().textField(withPlaceholder: "Gamer Tag",
                                        isSecureTextEntry: false)
+        tf.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return tf
     }()
     
     private let passwordTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Password",
+        let tf = UITextField().textField(withPlaceholder: "Password",
                                        isSecureTextEntry: true)
+        tf.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return tf
     }()
     
     
@@ -126,6 +134,16 @@ class SignUpVC: UIViewController {
                     case .success():
                         //TODO:change root to container controller
                         print("sucessfully created user and signed in")
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as?  SceneDelegate, let window = sceneDelegate.window else {
+                            return
+                        }
+                        
+                        //Transition to Container Controller
+                        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                            window.rootViewController = ContainerController(user: appUser)
+                            
+                        }, completion: nil)
+                        
                     case .failure(let error):
                         //TODO: show error message
                         print("error creating user \(error)")

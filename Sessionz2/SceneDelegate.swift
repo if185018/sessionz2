@@ -26,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //TODO: If user is logged in make root Container Controller, if not Login VC
         window?.rootViewController = UINavigationController(rootViewController: LoginVC())
     }
+    
+  
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
