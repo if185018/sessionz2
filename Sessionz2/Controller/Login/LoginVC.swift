@@ -22,13 +22,17 @@ class LoginVC: UIViewController {
     
     
     private let emailTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Email",
+        let tf = UITextField().textField(withPlaceholder: "Email",
                                        isSecureTextEntry: false)
+        tf.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return tf
     }()
     
     private let passwordTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Password",
+        let tf = UITextField().textField(withPlaceholder: "Password",
                                        isSecureTextEntry: true)
+        tf.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        return tf 
     }()
     
     private lazy var emailContainerView: UIView = {
@@ -84,6 +88,15 @@ class LoginVC: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @objc func validateFields() {
+        guard emailTextField.hasText, passwordTextField.hasText else {
+            self.loginButton.backgroundColor = .greyPorcelain
+            self.loginButton.isEnabled = false
+            return
+        }
+        self.loginButton.backgroundColor = .mainBlueTint
+        self.loginButton.isEnabled = true
+    }
     
     
     
