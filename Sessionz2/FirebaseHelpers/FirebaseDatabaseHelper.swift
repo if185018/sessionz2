@@ -24,4 +24,16 @@ class FirebaseDatabaseHelper {
             
         }
     }
+    
+    func fetchUserData(uid: String, completion: @escaping (Result<AppUser, AppError>) -> Void) {
+        REF_USERS.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: Any] else {
+                completion(.failure(.noData))
+                return}
+            let userID = snapshot.key
+            let appUser = AppUser(uid: userID, dictionary: dictionary)
+            completion(.success(appUser))
+            
+        }
+    }
 }

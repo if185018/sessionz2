@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
         let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        //button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -96,6 +96,37 @@ class LoginVC: UIViewController {
         }
         self.loginButton.backgroundColor = .mainBlueTint
         self.loginButton.isEnabled = true
+    }
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {return}
+        FirebaseAuthService.manager.loginUser(email: email, password: password) { (result) in
+            switch result {
+            case .success(let uid):
+                FirebaseDatabaseHelper.manager.fetchUserData(uid: uid) { (newResult) in
+                    switch newResult {
+                    case .success(let appUser):
+                        //TODO:change root to container controller
+                        print("Successfully logged in user! \(appUser.gamerTag)")
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as?  SceneDelegate, let window = sceneDelegate.window else {
+                            return
+                        }
+                        
+                        //Transition to Container Controller
+                        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                            window.rootViewController = ContainerController(user: appUser)
+                            
+                        }, completion: nil)
+                        
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+              
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     

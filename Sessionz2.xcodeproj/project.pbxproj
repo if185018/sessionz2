@@ -28,6 +28,7 @@
 		81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0A9241005360082E25C /* UIColor+Extension.swift */; };
 		81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AB24100F1A0082E25C /* LoginVC.swift */; };
 		81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AD24102A660082E25C /* UITextField+Extension.swift */; };
+		81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6F0C24226F3F0046EF8C /* AppError.swift */; };
 		83410E8B814EEEE23728B7A4 /* Pods_Sessionz2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADF867F0E7FCE3969A5C0B5 /* Pods_Sessionz2.framework */; };
 		DED772B019494CF487300673 /* Pods_Sessionz2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD53F99FC453BECD0779656 /* Pods_Sessionz2Tests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		81CBD0A9241005360082E25C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		81CBD0AB24100F1A0082E25C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		81CBD0AD24102A660082E25C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		81FD6F0C24226F3F0046EF8C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		8ADF867F0E7FCE3969A5C0B5 /* Pods_Sessionz2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sessionz2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CC9CD1FAECDF94D23BB0AD /* Pods-Sessionz2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sessionz2.release.xcconfig"; path = "Target Support Files/Pods-Sessionz2/Pods-Sessionz2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				81BD3C6D240F114E00FC98BF /* View+Extension.swift */,
 				81CBD0A9241005360082E25C /* UIColor+Extension.swift */,
 				81CBD0AD24102A660082E25C /* UITextField+Extension.swift */,
+				81FD6F0C24226F3F0046EF8C /* AppError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			files = (
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */,
+				81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */,
 				811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */,
 				817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */,
 				81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */,
