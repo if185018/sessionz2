@@ -12,9 +12,19 @@ import MapKit
 
 
 class HomeController: UIViewController {
+    
+    
     //MARK: Properties
     
+     private let mapView = MKMapView()
     
+    
+    private let actionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "baseline_menu_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
+        //button.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
+        return button
+    }()
     
     
     //MARK: Lifecycle
