@@ -31,12 +31,30 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
     }
     
     
     
     //MARK: Helper Methods
     
+    
+    
+    //MARK: UI Configurations
+    
+    
+    private func configureUI() {
+        configureMapView()
+    }
+    
+    private func configureMapView() {
+        view.addSubview(mapView)
+               mapView.frame = view.frame
+               mapView.showsUserLocation = true
+               mapView.userTrackingMode = .follow
+               //TODO: Set MapView Delegate to self
+               //mapView.delegate = self
+    }
     
     
     
