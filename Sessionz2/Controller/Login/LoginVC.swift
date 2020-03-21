@@ -141,7 +141,7 @@ class LoginVC: UIViewController {
     
     
     private func configureUI() {
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .secondaryBlueTint
         configureNavigationBar()
         configureTitleLabel()
         configureTextFields()

@@ -171,7 +171,7 @@ class SignUpVC: UIViewController {
     //UI Setup Methods
     
     private func configureUI() {
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .secondaryBlueTint
         configureTitleLabel()
         configureStackView()
         configureAlreadyHaveAccountButton()
