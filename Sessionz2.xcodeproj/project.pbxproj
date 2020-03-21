@@ -15,6 +15,7 @@
 		812F09A824143714004DEF8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812F09A724143714004DEF8E /* GoogleService-Info.plist */; };
 		813F4A6B2426827F00E0FE0D /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6A2426827F00E0FE0D /* HomeControllerDelegate.swift */; };
 		813F4A6E242689C000E0FE0D /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6D242689C000E0FE0D /* LocationHandler.swift */; };
+		813F4A702426947B00E0FE0D /* PlayerActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */; };
 		816233EB2419308B00A7BF09 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816233EA2419308B00A7BF09 /* ContainerController.swift */; };
 		816233ED2419321300A7BF09 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816233EC2419321300A7BF09 /* HomeController.swift */; };
 		817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339A2417DE6D00EF0144 /* MenuController.swift */; };
@@ -58,6 +59,7 @@
 		812F09A724143714004DEF8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		813F4A6A2426827F00E0FE0D /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
 		813F4A6D242689C000E0FE0D /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionView.swift; sourceTree = "<group>"; };
 		816233EA2419308B00A7BF09 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		816233EC2419321300A7BF09 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		817B339A2417DE6D00EF0144 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				811342C524114B2F005F6DC8 /* AuthButton.swift */,
 				817B339C2417E3CF00EF0144 /* MenuHeader.swift */,
+				813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */,
 				81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */,
 				81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */,
+				813F4A702426947B00E0FE0D /* PlayerActionView.swift in Sources */,
 				813F4A6B2426827F00E0FE0D /* HomeControllerDelegate.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,

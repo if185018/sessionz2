@@ -2,7 +2,7 @@
 //  HomeController.swift
 //  Sessionz2
 //
-//  Created by C4Q on 3/11/20.
+//  Created by Iram Fattah on 3/11/20.
 //  Copyright © 2020 Iram Fattah. All rights reserved.
 //
 
@@ -41,6 +41,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        enableLocationServices()
         configureUI()
     }
     
@@ -58,6 +59,11 @@ class HomeController: UIViewController {
                    actionButtonConfig = .dismissActionView
                }
     }
+    
+    
+    
+
+    
     
     
     
@@ -82,3 +88,28 @@ class HomeController: UIViewController {
     
 }
 
+//MARK: CLLocation Manager Delegate
+
+extension HomeController: CLLocationManagerDelegate {
+    private func enableLocationServices() {
+    locationManager?.delegate = self
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            print("DEBUG: Not determined..")
+            locationManager?.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways:
+            print("DEBUG: Auth always..")
+        case .authorizedWhenInUse:
+            print("DEBUG: Auth when in use..")
+            locationManager?.startUpdatingLocation()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        @unknown default:
+            break
+        }
+    }
+    
+    
+}
