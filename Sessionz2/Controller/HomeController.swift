@@ -25,7 +25,14 @@ class HomeController: UIViewController {
     
     //MARK: Properties
     
-    private let mapView = MKMapView()
+    lazy var mapView: MKMapView = {
+        let mv = MKMapView()
+        mv.mapType = .standard
+     mv.isUserInteractionEnabled = true
+        return mv
+    }()
+    
+    
     private let locationManager = LocationHandler.shared.locationManager
     private var actionButtonConfig = ActionButtonConfiguration()
     
@@ -41,8 +48,9 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        enableLocationServices()
+        
         configureUI()
+        enableLocationServices()
     }
     
     
@@ -79,8 +87,8 @@ class HomeController: UIViewController {
                mapView.frame = view.frame
                mapView.showsUserLocation = true
                mapView.userTrackingMode = .follow
-               //TODO: Set MapView Delegate to self
-               //mapView.delegate = self
+               
+               mapView.delegate = self
     }
     
     
@@ -88,11 +96,11 @@ class HomeController: UIViewController {
     
 }
 
-//MARK: CLLocation Manager Delegate
+//MARK: Location Services
 
-extension HomeController: CLLocationManagerDelegate {
+extension HomeController {
     private func enableLocationServices() {
-    locationManager?.delegate = self
+    
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
@@ -111,5 +119,9 @@ extension HomeController: CLLocationManagerDelegate {
         }
     }
     
+    
+}
+
+extension HomeController: MKMapViewDelegate {
     
 }
