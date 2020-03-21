@@ -31,8 +31,8 @@ class ContainerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureHomeController()
-        configureMenuController(with: self.user)
+        configure()
+     
     }
     
     //MARK: Init
@@ -54,6 +54,7 @@ class ContainerController: UIViewController {
     private func configure() {
         view.backgroundColor = .backgroundColor
         configureHomeController()
+        configureMenuController(with: user)
         
     }
     
@@ -79,9 +80,12 @@ class ContainerController: UIViewController {
     
     
     private func configureMenuController(with user: AppUser) {
-         menuController = MenuController(user: user)
-        menuController.didMove(toParent: self)
-        view.insertSubview(menuController.view, at: 0)
+          menuController = MenuController(user: user)
+                addChild(menuController)
+                menuController.didMove(toParent: self)
+                view.insertSubview(menuController.view, at: 0)
+                menuController.delegate = self
+                configureBlackView()
         
     }
     
@@ -124,6 +128,17 @@ extension ContainerController: HomeControllerDelegate {
     func handleMenuToggle() {
         isExpanded.toggle()
         animateMenu(shouldExpand: isExpanded)
+    }
+    
+    
+}
+extension ContainerController: MenuControllerDelegate {
+    func didSelect(option: MenuOptions) {
+        isExpanded.toggle()
+        
+        animateMenu(shouldExpand: isExpanded) { (_) in
+            //TODO: Handle when different menu options are clicked
+        }
     }
     
     

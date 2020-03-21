@@ -32,9 +32,10 @@ class HomeController: UIViewController {
         return mv
     }()
     
-    
     private let locationManager = LocationHandler.shared.locationManager
     private var actionButtonConfig = ActionButtonConfiguration()
+    
+    weak var delegate: HomeControllerDelegate?
     
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
@@ -48,7 +49,6 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
         enableLocationServices()
     }
@@ -70,16 +70,12 @@ class HomeController: UIViewController {
     
     
     
-
-    
-    
-    
-    
     //MARK: UI Configurations
     
     
     private func configureUI() {
         configureMapView()
+        configureActionButton()
     }
     
     private func configureMapView() {
@@ -87,14 +83,37 @@ class HomeController: UIViewController {
                mapView.frame = view.frame
                mapView.showsUserLocation = true
                mapView.userTrackingMode = .follow
-               
                mapView.delegate = self
+    }
+    
+    private func configureActionButton() {
+        view.addSubview(actionButton)
+        actionButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
+                            paddingTop: 16, paddingLeft: 20, width: 30, height: 30)
     }
     
     
     
     
+    //MARK: Selectors
+    
+    
+    @objc func actionButtonPressed() {
+        switch actionButtonConfig {
+        case .showMenu:
+            print("show menu")
+           delegate?.handleMenuToggle()
+        case .dismissActionView:
+            //TODO: Dismiss action view
+           print("dismiss action")
+    }
+    
 }
+
+
+
+}
+
 
 //MARK: Location Services
 

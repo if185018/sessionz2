@@ -24,9 +24,7 @@ fileprivate let reuseIdentifier = "menuCell"
     }
 }
 
-protocol MenuControllerDelegate: class {
-    func didSelect(option: MenuOptions)
-}
+
 
 class MenuController: UITableViewController {
     
@@ -59,6 +57,7 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        configureTableView()
     }
     
     
@@ -74,4 +73,27 @@ class MenuController: UITableViewController {
     
     
     
+}
+
+
+//MARK: UITableViewDataSource/Delegate
+
+extension MenuController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MenuOptions.allCases.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+        guard let option = MenuOptions(rawValue: indexPath.row) else { return UITableViewCell() }
+        cell.textLabel?.text = option.description
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let option = MenuOptions(rawValue: indexPath.row) else { return }
+        delegate?.didSelect(option: option)
+    }
 }
