@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let reuseIdentifier = "menuCell"
 
- enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
+enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
     case history
     case settings
     case logout
@@ -35,13 +35,13 @@ class MenuController: UITableViewController {
     
     
     private lazy var menuHeader: MenuHeader = {
-           let frame = CGRect(x: 0,
-                              y: 0,
-                              width: self.view.frame.width - 80,
-                              height: 140)
-           let view = MenuHeader(user: user, frame: frame)
-           return view
-       }()
+        let frame = CGRect(x: 0,
+                           y: 0,
+                           width: self.view.frame.width - 80,
+                           height: 140)
+        let view = MenuHeader(user: user, frame: frame)
+        return view
+    }()
     
     init(user: AppUser) {
         self.user = user

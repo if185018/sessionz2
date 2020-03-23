@@ -28,7 +28,7 @@ class HomeController: UIViewController {
     lazy var mapView: MKMapView = {
         let mv = MKMapView()
         mv.mapType = .standard
-     mv.isUserInteractionEnabled = true
+        mv.isUserInteractionEnabled = true
         return mv
     }()
     
@@ -59,13 +59,13 @@ class HomeController: UIViewController {
     
     private func configureActionButton(config: ActionButtonConfiguration) {
         switch config {
-               case .showMenu:
-                   self.actionButton.setImage(#imageLiteral(resourceName: "baseline_menu_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
-                   self.actionButtonConfig = .showMenu
-               case .dismissActionView:
-                   actionButton.setImage(#imageLiteral(resourceName: "baseline_arrow_back_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
-                   actionButtonConfig = .dismissActionView
-               }
+        case .showMenu:
+            self.actionButton.setImage(#imageLiteral(resourceName: "baseline_menu_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
+            self.actionButtonConfig = .showMenu
+        case .dismissActionView:
+            actionButton.setImage(#imageLiteral(resourceName: "baseline_arrow_back_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
+            actionButtonConfig = .dismissActionView
+        }
     }
     
     
@@ -80,10 +80,10 @@ class HomeController: UIViewController {
     
     private func configureMapView() {
         view.addSubview(mapView)
-               mapView.frame = view.frame
-               mapView.showsUserLocation = true
-               mapView.userTrackingMode = .follow
-               mapView.delegate = self
+        mapView.frame = view.frame
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        mapView.delegate = self
     }
     
     private func configureActionButton() {
@@ -102,16 +102,16 @@ class HomeController: UIViewController {
         switch actionButtonConfig {
         case .showMenu:
             print("show menu")
-           delegate?.handleMenuToggle()
+            delegate?.handleMenuToggle()
         case .dismissActionView:
             //TODO: Dismiss action view
-           print("dismiss action")
+            print("dismiss action")
+        }
+        
     }
     
-}
-
-
-
+    
+    
 }
 
 
@@ -119,7 +119,6 @@ class HomeController: UIViewController {
 
 extension HomeController {
     private func enableLocationServices() {
-    
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:

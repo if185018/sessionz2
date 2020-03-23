@@ -17,7 +17,7 @@ class ContainerController: UIViewController {
     private lazy var xOrigin = self.view.frame.width - 80
     private let blackView = UIView()
     
-     private let user: AppUser
+    private let user: AppUser
     
     override var prefersStatusBarHidden: Bool {
         return isExpanded
@@ -32,19 +32,19 @@ class ContainerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-     
+        
     }
     
     //MARK: Init
     
     init(user: AppUser) {
-           self.user = user
-           super.init(nibName: nil, bundle: nil)
-       }
-       
-       required init?(coder aDecoder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     
@@ -81,12 +81,12 @@ class ContainerController: UIViewController {
     
     
     private func configureMenuController(with user: AppUser) {
-          menuController = MenuController(user: user)
-                addChild(menuController)
-                menuController.didMove(toParent: self)
-                view.insertSubview(menuController.view, at: 0)
-                menuController.delegate = self
-                configureBlackView()
+        menuController = MenuController(user: user)
+        addChild(menuController)
+        menuController.didMove(toParent: self)
+        view.insertSubview(menuController.view, at: 0)
+        menuController.delegate = self
+        configureBlackView()
         
     }
     
@@ -96,7 +96,7 @@ class ContainerController: UIViewController {
         }, completion: nil)
     }
     
-   private func animateMenu(shouldExpand: Bool, completion: ((Bool) -> Void)? = nil) {
+    private func animateMenu(shouldExpand: Bool, completion: ((Bool) -> Void)? = nil) {
         if shouldExpand {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.homeController.view.frame.origin.x = self.xOrigin
@@ -139,6 +139,29 @@ extension ContainerController: MenuControllerDelegate {
         
         animateMenu(shouldExpand: isExpanded) { (_) in
             //TODO: Handle when different menu options are clicked
+            
+            switch option {
+                
+            case .history:
+                print("History")
+            case .settings:
+                print("Settings")
+            case .logout:
+                FirebaseAuthService.manager.logOutUser { (result) in
+                    switch result {
+                    case .success(()):
+                        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as?  SceneDelegate, let window = sceneDelegate.window else {
+                            return
+                        }
+                        
+                        window.rootViewController = UINavigationController(rootViewController: LoginVC())
+                    case .failure(let error):
+                        print("Could not sign out user \(error.localizedDescription)")
+                        
+                    }
+                }
+                
+            }
         }
     }
     
