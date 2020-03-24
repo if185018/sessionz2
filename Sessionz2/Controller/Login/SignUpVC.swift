@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GeoFire
 
 class SignUpVC: UIViewController {
     
     //MARK: Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
     
     
     private lazy var titleLabel: UILabel = {
@@ -125,6 +128,9 @@ class SignUpVC: UIViewController {
         
        let consoleTypeIndex = consoleSegmentedControl.selectedSegmentIndex
        let consoleType = ConsoleType(rawValue: consoleTypeIndex)!
+        
+        
+        
         FirebaseAuthService.manager.createNewUser(email: email, password: password) {result in
             switch result {
             case .success(let user):
@@ -132,6 +138,15 @@ class SignUpVC: UIViewController {
                 FirebaseDatabaseHelper.manager.uploadCreatedUserToDatabase(uid: appUser.uid, appUser: appUser) { (result) in
                     switch result {
                     case .success():
+                        
+                        //SET USER LOCATION IN FIREBASE 
+                        let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+                        if let location = self.location {
+                             geoFire.setLocation(location, forKey: appUser.uid)
+                        }
+                        
+                       
+                        
                         //TODO:change root to container controller
                         print("sucessfully created user and signed in")
                         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as?  SceneDelegate, let window = sceneDelegate.window else {
