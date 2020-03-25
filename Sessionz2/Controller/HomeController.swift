@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MapKit
+import GeoFire
 
 
 private enum ActionButtonConfiguration {
@@ -32,7 +33,10 @@ class HomeController: UIViewController {
         return mv
     }()
     
-    private let locationManager = LocationHandler.shared.locationManager
+    
+    private var locationManager = LocationHandler.shared.locationManager 
+       
+    
     private var actionButtonConfig = ActionButtonConfiguration()
     
     weak var delegate: HomeControllerDelegate?
@@ -43,6 +47,12 @@ class HomeController: UIViewController {
         button.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+    
+    public var user: AppUser!
+    
+    
+    
     
     
     //MARK: Lifecycle
@@ -67,6 +77,7 @@ class HomeController: UIViewController {
             actionButtonConfig = .dismissActionView
         }
     }
+    
     
     
     
@@ -128,6 +139,9 @@ extension HomeController {
             break
         case .authorizedAlways:
             print("DEBUG: Auth always..")
+            locationManager?.startUpdatingLocation()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            
         case .authorizedWhenInUse:
             print("DEBUG: Auth when in use..")
             locationManager?.startUpdatingLocation()

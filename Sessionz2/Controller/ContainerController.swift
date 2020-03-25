@@ -62,6 +62,7 @@ class ContainerController: UIViewController {
         addChild(homeController)
         homeController.didMove(toParent: self)
         view.addSubview(homeController.view)
+        homeController.user = self.user
         homeController.delegate = self 
         
     }

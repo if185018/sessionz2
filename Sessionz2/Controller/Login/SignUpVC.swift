@@ -140,11 +140,11 @@ class SignUpVC: UIViewController {
                     case .success():
                         
                         //SET USER LOCATION IN FIREBASE 
-                        let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
-                        if let location = self.location {
-                             geoFire.setLocation(location, forKey: appUser.uid)
-                        }
                         
+                       let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+                       if let location = self.location {
+                            geoFire.setLocation(location, forKey: appUser.uid)
+                       }
                        
                         
                         //TODO:change root to container controller
