@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import GeoFire
 
 class LocationHandler: NSObject, CLLocationManagerDelegate {
     
@@ -30,5 +31,5 @@ class LocationHandler: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
     }
+    
 }
-

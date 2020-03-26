@@ -139,10 +139,10 @@ class SignUpVC: UIViewController {
                     switch result {
                     case .success():
                         
-                        //SET USER LOCATION IN FIREBASE 
-                        
-                       let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
                        
+
+                       let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+
                        if let location = self.location {
                             geoFire.setLocation(location, forKey: appUser.uid)
                        }

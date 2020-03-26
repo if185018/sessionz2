@@ -128,8 +128,9 @@ class HomeController: UIViewController {
 
 //MARK: Location Services
 
-extension HomeController {
+extension HomeController: CLLocationManagerDelegate {
     private func enableLocationServices() {
+        locationManager?.delegate = self
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
@@ -141,16 +142,17 @@ extension HomeController {
             print("DEBUG: Auth always..")
             locationManager?.startUpdatingLocation()
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-            
+        
         case .authorizedWhenInUse:
             print("DEBUG: Auth when in use..")
             locationManager?.startUpdatingLocation()
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            
+        
         @unknown default:
             break
         }
     }
-    
     
 }
 

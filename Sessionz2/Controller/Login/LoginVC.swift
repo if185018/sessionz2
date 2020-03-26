@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GeoFire
 
 class LoginVC: UIViewController {
     
     //MARK: Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -103,6 +106,11 @@ class LoginVC: UIViewController {
         FirebaseAuthService.manager.loginUser(email: email, password: password) { (result) in
             switch result {
             case .success(let uid):
+                let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+                
+                if let location = self.location {
+                    geoFire.setLocation(location, forKey: uid)
+                }
                 FirebaseDatabaseHelper.manager.fetchUserData(uid: uid) { (newResult) in
                     switch newResult {
                     case .success(let appUser):
