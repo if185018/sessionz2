@@ -142,6 +142,7 @@ class SignUpVC: UIViewController {
                         //SET USER LOCATION IN FIREBASE 
                         
                        let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+                       
                        if let location = self.location {
                             geoFire.setLocation(location, forKey: appUser.uid)
                        }
