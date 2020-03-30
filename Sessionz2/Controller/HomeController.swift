@@ -21,6 +21,8 @@ private enum ActionButtonConfiguration {
     }
 }
 
+private let annotationIdentifier = "PlayerAnnotation"
+
 class HomeController: UIViewController {
     
     
@@ -157,5 +159,13 @@ extension HomeController: CLLocationManagerDelegate {
 }
 
 extension HomeController: MKMapViewDelegate {
-    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? PlayerAnnotation {
+            let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            //TODO: configure custom image
+            
+            return annoView
+        }
+        return nil 
+    }
 }
