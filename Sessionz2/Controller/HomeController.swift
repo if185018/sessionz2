@@ -51,7 +51,11 @@ class HomeController: UIViewController {
     }()
     
     
-    public var user: AppUser!
+    public var user: AppUser! {
+        didSet {
+            //TODO fetch players and display on map
+        }
+    }
     
     
     
@@ -78,6 +82,10 @@ class HomeController: UIViewController {
             actionButton.setImage(#imageLiteral(resourceName: "baseline_arrow_back_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
             actionButtonConfig = .dismissActionView
         }
+    }
+    
+    private func fetchPlayers() {
+        
     }
     
     
@@ -163,6 +171,7 @@ extension HomeController: MKMapViewDelegate {
         if let annotation = annotation as? PlayerAnnotation {
             let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             //TODO: configure custom image
+            annoView.image = #imageLiteral(resourceName: <#T##String#>)
             
             return annoView
         }
