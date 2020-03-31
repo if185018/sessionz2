@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
+import GeoFire
 
 struct PlayerService {
     static let shared = PlayerService()
@@ -17,6 +19,21 @@ struct PlayerService {
             let appUser = AppUser(uid: id, dictionary: dictionary)
             completion(appUser)
         }
+    }
+    
+    
+    func fetchPlayersFromLocation(location: CLLocation, completion: @escaping(AppUser) -> Void) {
+        let geofire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
+       REF_USER_LOCATIONS.observe(.value) { (snapshot) in
+           geofire.query(at: location, withRadius: 50).observe(.keyEntered, with: { (uid, location) in
+               PlayerService.shared.fetchPlayerData(uid: uid, completion: { (user) in
+                   var driver = user
+                   driver.location = location
+                   completion(driver)
+               })
+           })
+       }
+
     }
     
 }

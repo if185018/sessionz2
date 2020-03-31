@@ -85,6 +85,9 @@ class HomeController: UIViewController {
     }
     
     private func fetchPlayers() {
+        guard let location = locationManager?.location else {
+            print("DEBUG NO LOCATION")
+            return}
         
     }
     
