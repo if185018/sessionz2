@@ -89,6 +89,27 @@ class HomeController: UIViewController {
             print("DEBUG NO LOCATION")
             return}
         
+        PlayerService.shared.fetchPlayersFromLocation(location: location) { (player) in
+            guard let coordinate = player.location?.coordinate else {print("DEBUG NO DRIVER COORDINATE");return}
+            let annotation = PlayerAnnotation(uid: player.uid, coordinate: coordinate)
+            
+            var playerIsVisible: Bool {
+                return self.mapView.annotations.contains { (annotation) -> Bool in
+                    guard let playerAnno = annotation as? PlayerAnnotation else {return false}
+                    if playerAnno.uid == player.uid {
+                        playerAnno.updateAnnotationPosition(withCoordinate: coordinate)
+                        
+                        return true 
+                    }
+                    return false
+                }
+            }
+            if !playerIsVisible {
+                self.mapView.addAnnotation(annotation)
+            }
+            
+            
+        }
     }
     
     
@@ -174,7 +195,7 @@ extension HomeController: MKMapViewDelegate {
         if let annotation = annotation as? PlayerAnnotation {
             let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             //TODO: configure custom image
-            annoView.image = #imageLiteral(resourceName: <#T##String#>)
+            annoView.image = #imageLiteral(resourceName: "GameController2")
             
             return annoView
         }
