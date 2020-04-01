@@ -53,7 +53,8 @@ class HomeController: UIViewController {
     
     public var user: AppUser! {
         didSet {
-            //TODO fetch players and display on map
+            fetchPlayers()
+            
         }
     }
     
