@@ -139,8 +139,6 @@ class SignUpVC: UIViewController {
                     switch result {
                     case .success():
                         
-                       
-
                        let geoFire = GeoFire(firebaseRef: REF_USER_LOCATIONS)
 
                        if let location = self.location {

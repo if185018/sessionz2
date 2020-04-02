@@ -115,7 +115,6 @@ class HomeController: UIViewController {
     
     
     
-    
     //MARK: UI Configurations
     
     
@@ -195,7 +194,6 @@ extension HomeController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? PlayerAnnotation {
             let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            //TODO: configure custom image
             annoView.image = #imageLiteral(resourceName: "GameController2")
             
             return annoView

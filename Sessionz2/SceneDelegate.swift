@@ -24,7 +24,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         //TODO: If user is logged in make root Container Controller, if not Login VC
-        window?.rootViewController = UINavigationController(rootViewController: LoginVC())
+        
+        if let uid = FirebaseAuthService.manager.currentUser?.uid {
+            
+            PlayerService.shared.fetchPlayerData(uid: uid) { (user) in
+                self.window?.rootViewController = ContainerController.init(user: user)
+            }
+        } else {
+             window?.rootViewController = UINavigationController(rootViewController: LoginVC())
+        }
+       
     }
     
   
