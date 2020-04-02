@@ -113,6 +113,12 @@ class HomeController: UIViewController {
         }
     }
     
+    private func zoomToCurrentUser(playerID: String) {
+        var annotations = [MKAnnotation]()
+        
+        
+    }
+    
     
     
     //MARK: UI Configurations
