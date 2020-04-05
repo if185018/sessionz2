@@ -93,13 +93,13 @@ class HomeController: UIViewController {
         PlayerService.shared.fetchPlayersFromLocation(location: location) { (player) in
             guard let coordinate = player.location?.coordinate else {print("DEBUG NO DRIVER COORDINATE");return}
             let annotation = PlayerAnnotation(uid: player.uid, coordinate: coordinate)
-            
+             self.zoomToCurrentUser(playerID: player.uid)
             var playerIsVisible: Bool {
                 return self.mapView.annotations.contains { (annotation) -> Bool in
                     guard let playerAnno = annotation as? PlayerAnnotation else {return false}
                     if playerAnno.uid == player.uid {
                         playerAnno.updateAnnotationPosition(withCoordinate: coordinate)
-                        
+                        //self.zoomToCurrentUser(playerID: player.uid)
                         return true 
                     }
                     return false
@@ -116,7 +116,16 @@ class HomeController: UIViewController {
     private func zoomToCurrentUser(playerID: String) {
         var annotations = [MKAnnotation]()
         
+        self.mapView.annotations.forEach { (annotation) in
+            if let anno = annotation as? PlayerAnnotation {
+                annotations.append(anno)
+            }
+            if let userAnno = annotation as? MKUserLocation {
+                annotations.append(userAnno)
+            }
+        }
         
+        self.mapView.zoomToFit(annotations: annotations)
     }
     
     
