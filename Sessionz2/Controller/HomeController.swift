@@ -210,9 +210,16 @@ extension HomeController: MKMapViewDelegate {
         if let annotation = annotation as? PlayerAnnotation {
             let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             annoView.image = #imageLiteral(resourceName: "GameController2")
+            annoView.canShowCallout = true
+            annoView.isEnabled = true
+            let btn = UIButton(type: .detailDisclosure)
+            annoView.rightCalloutAccessoryView = btn
             
             return annoView
         }
         return nil 
     }
+    
+    
+    
 }
