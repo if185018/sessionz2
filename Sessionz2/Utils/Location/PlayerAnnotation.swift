@@ -11,10 +11,17 @@ import MapKit
 class PlayerAnnotation: NSObject, MKAnnotation {
     dynamic var coordinate: CLLocationCoordinate2D
     
-    var uid: String
+    var uid: String {
+        return player.uid
+    }
+    var title: String? {
+        return player.gamerTag
+    }
+    var player: AppUser
     
-    init(uid: String, coordinate: CLLocationCoordinate2D) {
-        self.uid = uid
+    
+    init(player: AppUser, coordinate: CLLocationCoordinate2D) {
+        self.player = player
         self.coordinate = coordinate
     }
     

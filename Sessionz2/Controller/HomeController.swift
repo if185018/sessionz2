@@ -92,7 +92,7 @@ class HomeController: UIViewController {
         
         PlayerService.shared.fetchPlayersFromLocation(location: location) { (player) in
             guard let coordinate = player.location?.coordinate else {print("DEBUG NO DRIVER COORDINATE");return}
-            let annotation = PlayerAnnotation(uid: player.uid, coordinate: coordinate)
+            let annotation = PlayerAnnotation(player: player, coordinate: coordinate)
              self.zoomToCurrentUser(playerID: player.uid)
             var playerIsVisible: Bool {
                 return self.mapView.annotations.contains { (annotation) -> Bool in
@@ -219,6 +219,9 @@ extension HomeController: MKMapViewDelegate {
         }
         return nil 
     }
+    
+    
+    
     
     
     
