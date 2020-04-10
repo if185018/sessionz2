@@ -16,10 +16,18 @@ fileprivate let consoleTypeKey = "consoleType"
 fileprivate let uidKey = "uid"
 
 
-enum ConsoleType: Int {
-    case PS4
-    case Xbox
-    case PC
+enum ConsoleType: Int, CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .PC: return "PC"
+        case .PS4: return "PS4"
+        case.Xbox: return "Xbox"
+        }
+    }
+    
+    case PS4 = 0
+    case Xbox = 1
+    case PC = 2
 }
 
 

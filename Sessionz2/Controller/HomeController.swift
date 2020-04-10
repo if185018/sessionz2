@@ -59,9 +59,6 @@ class HomeController: UIViewController {
     }
     
     
-    
-    
-    
     //MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -154,7 +151,6 @@ class HomeController: UIViewController {
     
     
     
-    
     //MARK: Selectors
     
     
@@ -169,7 +165,6 @@ class HomeController: UIViewController {
         }
         
     }
-    
     
     
 }
@@ -220,8 +215,11 @@ extension HomeController: MKMapViewDelegate {
         return nil 
     }
     
-    
-    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let playerAnno = view.annotation as? PlayerAnnotation else {return}
+        
+        print("DEBUG: Control tapped for user \(playerAnno.player.gamerTag)")
+    }
     
     
     

@@ -17,6 +17,10 @@ class PlayerAnnotation: NSObject, MKAnnotation {
     var title: String? {
         return player.gamerTag
     }
+    
+    var subtitle: String? {
+        return player.consoleType.description
+    }
     var player: AppUser
     
     
