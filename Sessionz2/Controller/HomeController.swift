@@ -219,6 +219,8 @@ extension HomeController: MKMapViewDelegate {
         guard let playerAnno = view.annotation as? PlayerAnnotation else {return}
         
         print("DEBUG: Control tapped for user \(playerAnno.player.gamerTag)")
+        
+        //TODO configure and display player action view 
     }
     
     

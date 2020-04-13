@@ -27,6 +27,14 @@ class PlayerActionView: UIView {
         return label
     }()
     
+    private let consoleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = .white
+        label.text = "PS4"
+        return label
+    }()
+    
     
     private let messageButton: UIButton = {
         let button = UIButton(type: .system)
@@ -38,6 +46,28 @@ class PlayerActionView: UIView {
                return button
     }()
     
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = .white
+        
+        addShadow()
+        
+        let stack = UIStackView(arrangedSubviews: [gamerTagLabel, fullNameLabel])
+        stack.axis = .vertical
+        stack.spacing = 4
+        stack.distribution = .fillEqually
+        
+        //configure stack view with gamer tag and full name labels 
+        addSubview(stack)
+        stack.centerX(inView: self)
+               stack.anchor(top: topAnchor, paddingTop: 12)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     
