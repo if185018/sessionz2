@@ -27,12 +27,26 @@ class PlayerActionView: UIView {
         return label
     }()
     
+    
+    
+    
+    //should go into infoView
     private let consoleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = .white
         label.text = "PS4"
         return label
+    }()
+    
+    private lazy var userConsoleInfoView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        
+        view.addSubview(consoleLabel)
+        consoleLabel.centerX(inView: view)
+        consoleLabel.centerY(inView: view)
+        return view
     }()
     
     
@@ -45,6 +59,9 @@ class PlayerActionView: UIView {
         //TODO: add target for button pressed
                return button
     }()
+    
+    
+    
     
     
     override init(frame: CGRect) {
@@ -62,7 +79,19 @@ class PlayerActionView: UIView {
         //configure stack view with gamer tag and full name labels 
         addSubview(stack)
         stack.centerX(inView: self)
-               stack.anchor(top: topAnchor, paddingTop: 12)
+        stack.anchor(top: topAnchor, paddingTop: 12)
+        
+        
+        addSubview(userConsoleInfoView)
+        userConsoleInfoView.centerX(inView: self)
+        userConsoleInfoView.anchor(top: stack.bottomAnchor, paddingTop: 16)
+        userConsoleInfoView.setDimensions(height: 60, width: 60)
+        userConsoleInfoView.layer.cornerRadius = 60/2
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = .lightGray
+        
+        
     }
     
     required init?(coder: NSCoder) {
