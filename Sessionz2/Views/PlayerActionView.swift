@@ -90,6 +90,13 @@ class PlayerActionView: UIView {
         
         let separatorView = UIView()
         separatorView.backgroundColor = .lightGray
+        addSubview(separatorView)
+        separatorView.anchor(top: userConsoleInfoView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8, height: 0.75)
+        
+        addSubview(messageButton)
+        messageButton.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, height: 65)
+        
+        
         
         
     }
