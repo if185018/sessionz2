@@ -26,6 +26,9 @@ private let annotationIdentifier = "PlayerAnnotation"
 class HomeController: UIViewController {
     
     
+    
+    
+    
     //MARK: Properties
     
     lazy var mapView: MKMapView = {
@@ -50,6 +53,8 @@ class HomeController: UIViewController {
         return button
     }()
     
+    private let playerActionView = PlayerActionView()
+    private final let playerActionViewHeight: CGFloat = 300
     
     public var user: AppUser! {
         didSet {
@@ -108,6 +113,19 @@ class HomeController: UIViewController {
             
             
         }
+    }
+    
+    
+    private func animatePlayerActionView(shouldShow: Bool, user: AppUser) {
+        let yOrigin = shouldShow ? self.view.frame.height - self.playerActionViewHeight : self.view.frame.height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.playerActionView.frame.origin.y = yOrigin
+        }
+        
+        //TODO configure user for player action view 
+        
+        
     }
     
     private func zoomToCurrentUser(playerID: String) {
