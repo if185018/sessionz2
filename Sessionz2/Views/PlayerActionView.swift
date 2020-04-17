@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol PlayerActionViewDelegate: class {
+    
+}
 
 class PlayerActionView: UIView {
     //MARK: Properties
+    
+    
+    weak var delegate: PlayerActionViewDelegate?
     
     private lazy var gamerTagLabel: UILabel = {
         let label = UILabel()

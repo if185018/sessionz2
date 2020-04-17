@@ -150,6 +150,7 @@ class HomeController: UIViewController {
     
     private func configureUI() {
         configureMapView()
+        configurePlayerActionView()
         configureActionButton()
     }
     
@@ -165,6 +166,13 @@ class HomeController: UIViewController {
         view.addSubview(actionButton)
         actionButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
                             paddingTop: 16, paddingLeft: 20, width: 30, height: 30)
+    }
+    
+    private func configurePlayerActionView() {
+        view.addSubview(playerActionView)
+        //TODO: Configure player action view delegate
+        //playerActionView.delegate = self
+        playerActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: playerActionViewHeight)
     }
     
     
