@@ -18,10 +18,13 @@ class PlayerActionView: UIView {
     
     weak var delegate: PlayerActionViewDelegate?
     
+    var user: AppUser?
+    
     private lazy var gamerTagLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .center
+        label.text = user?.gamerTag ?? "" 
         return label
     }()
     
@@ -30,6 +33,7 @@ class PlayerActionView: UIView {
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
+    
         return label
     }()
     
@@ -37,11 +41,11 @@ class PlayerActionView: UIView {
     
     
     //should go into infoView
-    private let consoleLabel: UILabel = {
+    private lazy var consoleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = .white
-        label.text = "PS4"
+        label.text = user?.consoleType.description ?? ""
         return label
     }()
     

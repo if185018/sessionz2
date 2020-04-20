@@ -124,6 +124,7 @@ class HomeController: UIViewController {
         }
         
         //TODO configure user for player action view 
+        self.playerActionView.user = user
         
         
     }
@@ -246,7 +247,10 @@ extension HomeController: MKMapViewDelegate {
         
         print("DEBUG: Control tapped for user \(playerAnno.player.gamerTag)")
         
-        //TODO configure and display player action view 
+        //TODO configure and display player action view
+        
+        
+        animatePlayerActionView(shouldShow: true, user: playerAnno.player)
     }
     
     
