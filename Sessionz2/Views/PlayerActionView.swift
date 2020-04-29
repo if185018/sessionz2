@@ -18,13 +18,17 @@ class PlayerActionView: UIView {
     
     weak var delegate: PlayerActionViewDelegate?
     
-    var user: AppUser?
+    var user: AppUser? {
+        didSet {
+            gamerTagLabel.text = user?.gamerTag ?? ""
+            consoleLabel.text = user?.consoleType.description ?? ""
+        }
+    }
     
     private lazy var gamerTagLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .center
-        label.text = user?.gamerTag ?? "" 
         return label
     }()
     
@@ -45,7 +49,7 @@ class PlayerActionView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = .white
-        label.text = user?.consoleType.description ?? ""
+        
         return label
     }()
     
@@ -93,7 +97,7 @@ class PlayerActionView: UIView {
         addSubview(userConsoleInfoView)
         userConsoleInfoView.centerX(inView: self)
         userConsoleInfoView.anchor(top: stack.bottomAnchor, paddingTop: 16)
-        userConsoleInfoView.setDimensions(height: 60, width: 60)
+        userConsoleInfoView.setDimensions(height: 80, width: 80)
         userConsoleInfoView.layer.cornerRadius = 60/2
         
         let separatorView = UIView()

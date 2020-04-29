@@ -101,7 +101,7 @@ class HomeController: UIViewController {
                     guard let playerAnno = annotation as? PlayerAnnotation else {return false}
                     if playerAnno.uid == player.uid {
                         playerAnno.updateAnnotationPosition(withCoordinate: coordinate)
-                        //self.zoomToCurrentUser(playerID: player.uid)
+
                         return true 
                     }
                     return false
