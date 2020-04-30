@@ -116,15 +116,17 @@ class HomeController: UIViewController {
     }
     
     
-    private func animatePlayerActionView(shouldShow: Bool, user: AppUser) {
+    private func animatePlayerActionView(shouldShow: Bool, user: AppUser?) {
         let yOrigin = shouldShow ? self.view.frame.height - self.playerActionViewHeight : self.view.frame.height
         
         UIView.animate(withDuration: 0.3) {
             self.playerActionView.frame.origin.y = yOrigin
         }
         
-        //TODO configure user for player action view 
-        self.playerActionView.user = user
+        //only configure user if view is being animated from player anno
+        if let user = user {
+            self.playerActionView.user = user
+        }
         
         
     }
@@ -192,6 +194,17 @@ class HomeController: UIViewController {
         }
         
     }
+    
+    //MARK: TOUCH EVENTS
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.playerActionView.frame.origin.y == self.view.frame.height - self.playerActionViewHeight {
+            animatePlayerActionView(shouldShow: false, user: nil)
+        }
+    }
+    
+
     
     
 }

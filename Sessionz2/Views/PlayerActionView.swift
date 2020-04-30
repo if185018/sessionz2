@@ -98,7 +98,7 @@ class PlayerActionView: UIView {
         userConsoleInfoView.centerX(inView: self)
         userConsoleInfoView.anchor(top: stack.bottomAnchor, paddingTop: 16)
         userConsoleInfoView.setDimensions(height: 80, width: 80)
-        userConsoleInfoView.layer.cornerRadius = 60/2
+        userConsoleInfoView.layer.cornerRadius = 80/2
         
         let separatorView = UIView()
         separatorView.backgroundColor = .lightGray
