@@ -199,7 +199,11 @@ class HomeController: UIViewController {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //makes sure player action view is visible 
         if self.playerActionView.frame.origin.y == self.view.frame.height - self.playerActionViewHeight {
+            
+            //make sure touch is not in the player action view
+            guard touches.first?.view != playerActionView else {return}
             animatePlayerActionView(shouldShow: false, user: nil)
         }
     }
