@@ -55,7 +55,7 @@ class PlayerActionView: UIView {
     
     private lazy var userConsoleInfoView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .secondaryBlueTint
         
         view.addSubview(consoleLabel)
         consoleLabel.centerX(inView: view)
@@ -66,7 +66,7 @@ class PlayerActionView: UIView {
     
     private let messageButton: UIButton = {
         let button = UIButton(type: .system)
-               button.backgroundColor = .black
+               button.backgroundColor = .secondaryBlueTint
                button.setTitle("Message", for: .normal)
                button.setTitleColor(.white, for: .normal)
                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
