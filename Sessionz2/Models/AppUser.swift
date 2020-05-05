@@ -37,6 +37,7 @@ struct AppUser {
     var consoleType: ConsoleType!
     var location: CLLocation?
     let uid: String
+    var pulsing: Bool?
     
     init(uid: String, gamerTag: String, email: String, consoleType: ConsoleType) {
         self.uid = uid
