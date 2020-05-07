@@ -22,10 +22,26 @@ class UserProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCurrentUser()
     }
     
     
     //MARK: Firebase API
     
-    
+    private func setCurrentUser() {
+        guard let currentUserId = FirebaseAuthService.manager.currentUser?.uid else {return}
+        FirebaseDatabaseHelper.manager.fetchUserData(uid: currentUserId) { (result) in
+            switch result {
+            case .success(let user):
+                self.user = user
+                print("\(user.gamerTag)")
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+            
+        
+    }
 }
