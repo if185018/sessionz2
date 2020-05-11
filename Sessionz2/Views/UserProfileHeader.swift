@@ -10,5 +10,26 @@ import UIKit
 
 class UserProfileHeader: UITableViewCell {
 
+    //MARK: Properties
+    var user: AppUser?
+    
+    
+    
+    let profileImageView: UIImageView = {
+      let iv = UIImageView()
+      iv.contentMode = .scaleAspectFill
+      iv.clipsToBounds = true
+      iv.backgroundColor = .lightGray
+        return iv
+    }()
+    
+    let nameLabel: UILabel = {
+           let label = UILabel()
+           label.text = "Heath Ledger"
+           label.font = UIFont.boldSystemFont(ofSize: 12)
+           return label
+       }()
+    
+    
 
 }
