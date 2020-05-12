@@ -8,7 +8,8 @@
 
 import UIKit
 
-class UserProfileHeader: UITableViewCell {
+//may need to change into UITableViewCell
+class UserProfileHeader: UICollectionViewCell {
 
     //MARK: Properties
     var user: AppUser?
@@ -31,5 +32,21 @@ class UserProfileHeader: UITableViewCell {
        }()
     
     
-
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(profileImageView)
+        profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
+        profileImageView.layer.cornerRadius = 100/2
+        
+        addSubview(nameLabel)
+        nameLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 0)
+        
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
