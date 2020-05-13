@@ -24,6 +24,8 @@
 		817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339A2417DE6D00EF0144 /* MenuController.swift */; };
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
+		819EE351246C4D6500CC62B1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE350246C4D6500CC62B1 /* ChatViewController.swift */; };
+		819EE353246C523E00CC62B1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE352246C523E00CC62B1 /* Message.swift */; };
 		81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B27AE124630CCC002E4D28 /* UserProfileVC.swift */; };
 		81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C45240F09D700FC98BF /* AppDelegate.swift */; };
 		81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C47240F09D700FC98BF /* SceneDelegate.swift */; };
@@ -73,6 +75,8 @@
 		817B339A2417DE6D00EF0144 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
+		819EE350246C4D6500CC62B1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		819EE352246C523E00CC62B1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		81B27AE124630CCC002E4D28 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		81BD3C42240F09D700FC98BF /* Sessionz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sessionz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD3C45240F09D700FC98BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				816233EC2419321300A7BF09 /* HomeController.swift */,
 				817B339A2417DE6D00EF0144 /* MenuController.swift */,
 				816233EE241960ED00A7BF09 /* Login */,
+				819EE350246C4D6500CC62B1 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				81003CEA24168EDB00B5DE33 /* AppUser.swift */,
+				819EE352246C523E00CC62B1 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
 				815EF5B5242E502E00FD04D3 /* PlayerService.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
+				819EE353246C523E00CC62B1 /* Message.swift in Sources */,
 				81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
@@ -465,6 +472,7 @@
 				817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */,
 				816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */,
 				81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */,
+				819EE351246C4D6500CC62B1 /* ChatViewController.swift in Sources */,
 				81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

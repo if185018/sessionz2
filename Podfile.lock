@@ -33,13 +33,19 @@ PODS:
   - GoogleUtilities/Logger (5.8.0):
     - GoogleUtilities/Environment
   - GTMSessionFetcher/Core (1.3.0)
+  - InputBarAccessoryView (4.3.2):
+    - InputBarAccessoryView/Core (= 4.3.2)
+  - InputBarAccessoryView/Core (4.3.2)
   - leveldb-library (1.22)
+  - MessageKit (3.1.0):
+    - InputBarAccessoryView (~> 4.3.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
   - GeoFire (~> 3.0)
+  - MessageKit
 
 SPEC REPOS:
   trunk:
@@ -52,7 +58,9 @@ SPEC REPOS:
     - GeoFire
     - GoogleUtilities
     - GTMSessionFetcher
+    - InputBarAccessoryView
     - leveldb-library
+    - MessageKit
 
 SPEC CHECKSUMS:
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
@@ -64,8 +72,10 @@ SPEC CHECKSUMS:
   GeoFire: e3ae6f4be3f2466c3467ef6c1c203db3af935c59
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
+  InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
 
-PODFILE CHECKSUM: c86d9e1c84212415b8b5fc1e3b031b92d1571520
+PODFILE CHECKSUM: 113b435b3aff42033f93fd275c3f3cc12d426ad2
 
 COCOAPODS: 1.8.4

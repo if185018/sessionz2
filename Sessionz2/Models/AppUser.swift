@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MessageKit
 
 //Constants
 fileprivate let gamerTagKey = "gamerTag"
@@ -31,7 +32,15 @@ enum ConsoleType: Int, CustomStringConvertible {
 }
 
 
-struct AppUser {
+struct AppUser: SenderType {
+    var senderId: String {
+        return self.uid
+    }
+    
+    var displayName: String {
+        return self.gamerTag
+    }
+    
     let gamerTag: String
     let email: String
     var consoleType: ConsoleType!
@@ -44,6 +53,7 @@ struct AppUser {
         self.gamerTag = gamerTag
         self.email = email
         self.consoleType = consoleType
+        
     }
     
     init(uid: String, dictionary: [String: Any]) {
