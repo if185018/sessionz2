@@ -9,7 +9,8 @@
 import UIKit
 
 protocol PlayerActionViewDelegate: class {
-    
+    //should be handled by Home Controller
+    func messageButtonClicked(user: AppUser)
 }
 
 class PlayerActionView: UIView {
@@ -70,6 +71,7 @@ class PlayerActionView: UIView {
                button.setTitle("Message", for: .normal)
                button.setTitleColor(.white, for: .normal)
                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleMessageClicked), for: .touchUpInside)
         //TODO: add target for button pressed
                return button
     }()
@@ -118,8 +120,10 @@ class PlayerActionView: UIView {
     }
     
     
-    
-    
+    @objc func handleMessageClicked() {
+        guard let user = user else {return}
+        delegate?.messageButtonClicked(user: user)
+    }
     
     
     

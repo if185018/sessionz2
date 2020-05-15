@@ -16,11 +16,23 @@ class ChatViewController: MessagesViewController {
     
     private var messages = [Message]()
     
+    //USER MESSAGE IS BEING SENT TO
+    var user: AppUser
+    
     //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    init(user: AppUser) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     

@@ -273,3 +273,12 @@ extension HomeController: MKMapViewDelegate {
     
     
 }
+
+//MARK: Player Action View Delegate
+extension HomeController: PlayerActionViewDelegate {
+    func messageButtonClicked(user: AppUser) {
+        
+    }
+    
+    
+}
