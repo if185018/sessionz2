@@ -32,6 +32,7 @@ enum ConsoleType: Int, CustomStringConvertible {
 }
 
 
+//conform to sender type for messaging 
 struct AppUser: SenderType {
     var senderId: String {
         return self.uid

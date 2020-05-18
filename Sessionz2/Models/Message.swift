@@ -24,5 +24,7 @@ struct Message: MessageType {
     
     var user: AppUser
     
+    var image: UIImage? = nil
+    var downloadURL: URL? = nil
     
 }
