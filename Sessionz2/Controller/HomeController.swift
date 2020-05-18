@@ -174,7 +174,7 @@ class HomeController: UIViewController {
     private func configurePlayerActionView() {
         view.addSubview(playerActionView)
         //TODO: Configure player action view delegate
-        //playerActionView.delegate = self
+        playerActionView.delegate = self
         playerActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: playerActionViewHeight)
     }
     
@@ -277,7 +277,9 @@ extension HomeController: MKMapViewDelegate {
 //MARK: Player Action View Delegate
 extension HomeController: PlayerActionViewDelegate {
     func messageButtonClicked(user: AppUser) {
-        
+        print("message vc should be showed")
+        let chatVC = ChatViewController(user: user)
+       present(chatVC, animated: true, completion: nil)
     }
     
     
