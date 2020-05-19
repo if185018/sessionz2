@@ -10,21 +10,55 @@ import Foundation
 import MessageKit
 
 
+//MARK: CONSTANTS
+
+
+
+
+
+
 struct Message: MessageType {
+  
+    
+    var id: String?
+    var user: AppUser
     
     var sender: SenderType {
         return user
     }
     
-    var messageId: String
+    var messageId: String {
+        return id ?? UUID().uuidString
+    }
     
     var sentDate: Date
     
     var kind: MessageKind
     
-    var user: AppUser
-    
     var image: UIImage? = nil
     var downloadURL: URL? = nil
+    
+    
+    //USED IF ONLY TEXT IS SENT
+    init(user: AppUser, content: String) {
+        self.user = user
+        self.kind = .text(content)
+        self.sentDate = Date()
+        self.id = nil
+    }
+    //USED IF ONLY IMAGE IS SENT
+    init(user: AppUser, photo: MessagePhoto) {
+        self.user = user
+        self.image = photo.image
+        self.kind = .photo(photo)
+        self.sentDate = Date()
+        self.id = nil
+        
+    }
+    
+    
+    
+    
+    
     
 }
