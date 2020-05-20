@@ -12,9 +12,11 @@ import MessageKit
 
 //MARK: CONSTANTS
 
-
-
-
+fileprivate let sentDateKey = "sentDate"
+fileprivate let senderIDKey = "senderID"
+fileprivate let senderNameKey = "senderName"
+fileprivate let contentKey = "content"
+fileprivate let urlKey = "url"
 
 
 struct Message: MessageType {
