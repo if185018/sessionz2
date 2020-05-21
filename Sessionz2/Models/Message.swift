@@ -23,6 +23,7 @@ struct Message: MessageType {
   
     
     var id: String?
+    //user is the SENDER 
     var user: AppUser
     
     var sender: SenderType {

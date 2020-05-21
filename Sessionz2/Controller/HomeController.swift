@@ -279,7 +279,9 @@ extension HomeController: PlayerActionViewDelegate {
     func messageButtonClicked(user: AppUser) {
         print("message vc should be showed")
         let chatVC = ChatViewController(user: user)
-       present(chatVC, animated: true, completion: nil)
+        present(chatVC, animated: true) {
+            self.animatePlayerActionView(shouldShow: false, user: user)
+        }
     }
     
     
