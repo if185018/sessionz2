@@ -8,12 +8,19 @@
 
 import UIKit
 
+
+protocol MenuHeaderDelegate: class {
+    func didSelectHeader(user: AppUser)
+}
+
 class MenuHeader: UIView {
     
     //MARK: Properties
     private let user: AppUser
     
+    public weak var delegate: MenuHeaderDelegate?
     
+    private var tapGesture: UITapGestureRecognizer!
     private lazy var profileImageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -45,6 +52,8 @@ class MenuHeader: UIView {
     init(user: AppUser, frame: CGRect) {
         self.user = user
         super.init(frame: frame)
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(headerTapped))
+        self.addGestureRecognizer(tapGesture)
         
         backgroundColor = .secondaryBlueTint
         
@@ -72,6 +81,13 @@ class MenuHeader: UIView {
     required init?(coder aDecoder: NSCoder) {
            fatalError("init(coder:) has not been implemented")
        }
+    
+    //MARK: OBJC FUNCS
+    
+    @objc func headerTapped() {
+        print("Header Tapped")
+        delegate?.didSelectHeader(user: self.user)
+    }
     
     
     //TODO: Work On Pulsing mode switch
