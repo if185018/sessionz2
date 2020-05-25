@@ -40,6 +40,7 @@ class MenuController: UITableViewController {
                            width: self.view.frame.width - 80,
                            height: 140)
         let view = MenuHeader(user: user, frame: frame)
+        view.delegate = self 
         return view
     }()
     
@@ -96,4 +97,13 @@ extension MenuController {
         guard let option = MenuOptions(rawValue: indexPath.row) else { return }
         delegate?.didSelect(option: option)
     }
+}
+
+extension MenuController: MenuHeaderDelegate {
+    func didSelectHeader(user: AppUser) {
+        let userProfileVC = UserProfileVC(user: user)
+        present(userProfileVC, animated: true, completion: nil)
+    }
+    
+    
 }

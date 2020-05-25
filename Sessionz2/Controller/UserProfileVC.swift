@@ -16,13 +16,22 @@ class UserProfileVC: UITableViewController {
     var user: AppUser?
     
     
+    //MARK: Init
     
+    init(user: AppUser) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCurrentUser()
+        //setCurrentUser()
     }
     
     
