@@ -101,8 +101,7 @@ extension MenuController {
 
 extension MenuController: MenuHeaderDelegate {
     func didSelectHeader(user: AppUser) {
-        let userProfileVC = UserProfileVC(user: user)
-        present(userProfileVC, animated: true, completion: nil)
+       //Present Edit Profile VC 
     }
     
     

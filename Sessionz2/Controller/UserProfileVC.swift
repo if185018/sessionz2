@@ -31,7 +31,9 @@ class UserProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setCurrentUser()
+        if self.user == nil {
+        setCurrentUser()
+        }
     }
     
     

@@ -15,6 +15,7 @@ fileprivate let gamerTagKey = "gamerTag"
 fileprivate let emailKey = "email"
 fileprivate let consoleTypeKey = "consoleType"
 fileprivate let uidKey = "uid"
+fileprivate let profileImageURLKey = "ProfileImageURL"
 
 
 enum ConsoleType: Int, CustomStringConvertible {
@@ -48,6 +49,7 @@ struct AppUser: SenderType {
     var location: CLLocation?
     let uid: String
     var pulsing: Bool?
+    var profileImageURL: String?
     
     init(uid: String, gamerTag: String, email: String, consoleType: ConsoleType) {
         self.uid = uid
