@@ -118,6 +118,26 @@ class EditProfileViewController: UIViewController {
         
     }
     
+    private func configureViewComponents() {
+        view.backgroundColor = .white
+        let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 150)
+        let containerView = UIView(frame: frame)
+        containerView.backgroundColor = UIColor.groupTableViewBackground
+        view.addSubview(containerView)
+        
+        containerView.addSubview(profileImageView)
+        profileImageView.anchor(top: containerView.topAnchor, paddingTop: 16, width: 80, height: 80)
+        
+        profileImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        profileImageView.layer.cornerRadius = 80 / 2
+        
+        
+        containerView.addSubview(changePhotoButton)
+        changePhotoButton.anchor(top: profileImageView.bottomAnchor, paddingTop: 8, width: 0, height: 0)
+         changePhotoButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        
+    }
+    
     private func loadUserData() {
         guard let user = self.user else {return}
         
