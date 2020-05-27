@@ -48,7 +48,7 @@ class EditProfileViewController: UIViewController {
         return tf
     }()
     
-    let fullnameTextField: UITextField = {
+    let emailTextField: UITextField = {
         let tf = UITextField()
         tf.textAlignment = .left
         tf.borderStyle = .none
@@ -56,16 +56,16 @@ class EditProfileViewController: UIViewController {
         return tf
     }()
     
-    let fullnameLabel: UILabel = {
+    let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "Full Name"
+        label.text = "Email"
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
-    let usernameLabel: UILabel = {
+    let gamerTagLabel: UILabel = {
         let label = UILabel()
-        label.text = "Username"
+        label.text = "Gamer Tag"
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -121,7 +121,10 @@ class EditProfileViewController: UIViewController {
     private func loadUserData() {
         guard let user = self.user else {return}
         
+        profileImageView.loadImage(with: user.profileImageURL ?? "")
         
+        emailTextField.text = user.email
+        gamerTagLabel.text = user.gamerTag
     }
     
 
