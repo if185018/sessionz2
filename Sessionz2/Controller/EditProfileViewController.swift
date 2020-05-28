@@ -100,6 +100,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         configureViewComponents()
+        loadUserData()
 
         
     }
@@ -175,7 +176,7 @@ class EditProfileViewController: UIViewController {
     //MARK: Selectors
     
     @objc func handleCancel() {
-        
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func handleDone() {

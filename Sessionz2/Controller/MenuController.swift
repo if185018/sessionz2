@@ -101,7 +101,12 @@ extension MenuController {
 
 extension MenuController: MenuHeaderDelegate {
     func didSelectHeader(user: AppUser) {
-       //Present Edit Profile VC 
+       //Present Edit Profile VC
+        let editProfileVC = EditProfileViewController(user: user)
+        
+        let navController = UINavigationController(rootViewController: editProfileVC)
+        
+        present(navController, animated: true, completion: nil)
     }
     
     
