@@ -100,7 +100,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         configureViewComponents()
-        loadUserData()
+        //loadUserData()
 
         
     }
@@ -120,45 +120,44 @@ class EditProfileViewController: UIViewController {
         
     }
     
-    private func configureViewComponents() {
+    func configureViewComponents() {
+        
         view.backgroundColor = .white
+        
         let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 150)
         let containerView = UIView(frame: frame)
         containerView.backgroundColor = UIColor.groupTableViewBackground
         view.addSubview(containerView)
         
         containerView.addSubview(profileImageView)
-        profileImageView.anchor(top: containerView.topAnchor, paddingTop: 16, width: 80, height: 80)
-        
+        profileImageView.anchor(top: containerView.topAnchor, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
         profileImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         profileImageView.layer.cornerRadius = 80 / 2
         
-        
         containerView.addSubview(changePhotoButton)
-        changePhotoButton.anchor(top: profileImageView.bottomAnchor, paddingTop: 8, width: 0, height: 0)
-         changePhotoButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        changePhotoButton.anchor(top: profileImageView.bottomAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        changePhotoButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         
         containerView.addSubview(separatorView)
-               separatorView.anchor(top: nil, left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
+        separatorView.anchor(left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
         
         view.addSubview(emailLabel)
-        emailLabel.anchor(top: containerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        
+        emailLabel.anchor(top: containerView.bottomAnchor, left: view.leftAnchor,  paddingTop: 20, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(gamerTagLabel)
-        gamerTagLabel.anchor(top: gamerTagLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        gamerTagLabel.anchor(top: emailLabel.bottomAnchor, left: view.leftAnchor,  paddingTop: 20, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         view.addSubview(emailTextField)
-        emailTextField.anchor(top: containerView.bottomAnchor, left: emailLabel.rightAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: (view.frame.width / 1.6), height: 0)
+        emailTextField.anchor(top: containerView.bottomAnchor, left: emailLabel.rightAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: (view.frame.width / 1.6), height: 0)
         
         view.addSubview(gamerTagTextField)
-        gamerTagTextField.anchor(top: emailTextField.bottomAnchor, left: gamerTagLabel.rightAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: (view.frame.width / 1.6), height: 0)
+        gamerTagTextField.anchor(top: emailTextField.bottomAnchor, left: gamerTagLabel.rightAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: (view.frame.width / 1.6), height: 0)
         
         view.addSubview(fullnameSeparatorView)
-        fullnameSeparatorView.anchor(top: nil, left: emailTextField.leftAnchor, bottom: emailTextField.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -8, paddingRight: 12, width: 0, height: 0.5)
+        fullnameSeparatorView.anchor(left: emailTextField.leftAnchor, bottom: emailTextField.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -8, paddingRight: 12, width: 0, height: 0.5)
         
         view.addSubview(usernameSeparatorView)
-        usernameSeparatorView.anchor(top: nil, left: gamerTagTextField.leftAnchor, bottom: gamerTagTextField.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -8, paddingRight: 12, width: 0, height: 0.5)
+        usernameSeparatorView.anchor(left: gamerTagTextField.leftAnchor, bottom: gamerTagTextField.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: -8, paddingRight: 12, width: 0, height: 0.5)
     }
     
     private func loadUserData() {

@@ -78,12 +78,17 @@ extension UIView {
         }
         
         if let width = width {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
+            if width != 0 {
+                widthAnchor.constraint(equalToConstant: width).isActive = true
+            }
         }
         
         if let height = height {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
+            if height != 0 {
+                heightAnchor.constraint(equalToConstant: height).isActive = true
+            }
         }
+        
     }
     
     func centerX(inView view: UIView) {
