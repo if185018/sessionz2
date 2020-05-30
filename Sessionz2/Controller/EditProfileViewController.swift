@@ -179,7 +179,8 @@ class EditProfileViewController: UIViewController {
     }
     
     @objc func handleDone() {
-        
+        //handle saving values in text fields 
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
 }
