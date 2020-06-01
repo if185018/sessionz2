@@ -9,6 +9,8 @@
 import Foundation
 import FirebaseDatabase
 
+fileprivate let profileImageURLKey = "ProfileImageURL"
+
 class FirebaseDatabaseHelper {
     private init () {}
     
@@ -34,6 +36,17 @@ class FirebaseDatabaseHelper {
             let appUser = AppUser(uid: userID, dictionary: dictionary)
             completion(.success(appUser))
             
+        }
+    }
+    
+    
+    func updateProfileImageValues(uid: String, newUrlStr: String, completion: @escaping (Result<(), Error>) -> ()) {
+        REF_USERS.child(profileImageURLKey).setValue(newUrlStr) { (err, ref) in
+            if let err = err {
+                completion(.failure(err))
+            }
+            
+            completion(.success(()))
         }
     }
 }

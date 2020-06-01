@@ -183,4 +183,10 @@ class EditProfileViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
+    
+    //MARK: API
+    
+    private func updateUserNames() {
+        
+    }
 }

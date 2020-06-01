@@ -17,6 +17,7 @@
 		812F09A824143714004DEF8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812F09A724143714004DEF8E /* GoogleService-Info.plist */; };
 		813F4A6E242689C000E0FE0D /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6D242689C000E0FE0D /* LocationHandler.swift */; };
 		813F4A702426947B00E0FE0D /* PlayerActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */; };
+		81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81501BD5248562930047C426 /* FirebaseSttorageService.swift */; };
 		815D08DB242D0F820074AF23 /* PlayerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D08DA242D0F820074AF23 /* PlayerAnnotation.swift */; };
 		815EF5B5242E502E00FD04D3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815EF5B4242E502E00FD04D3 /* PlayerService.swift */; };
 		816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816031B32426DA4E0066B052 /* CustomDelegates.swift */; };
@@ -71,6 +72,7 @@
 		812F09A724143714004DEF8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		813F4A6D242689C000E0FE0D /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionView.swift; sourceTree = "<group>"; };
+		81501BD5248562930047C426 /* FirebaseSttorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSttorageService.swift; sourceTree = "<group>"; };
 		815D08DA242D0F820074AF23 /* PlayerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAnnotation.swift; sourceTree = "<group>"; };
 		815EF5B4242E502E00FD04D3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		816031B32426DA4E0066B052 /* CustomDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDelegates.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */,
 				81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */,
 				817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */,
+				81501BD5248562930047C426 /* FirebaseSttorageService.swift */,
 			);
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
+				81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */,
 				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
 				816233EB2419308B00A7BF09 /* ContainerController.swift in Sources */,
 				817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */,
