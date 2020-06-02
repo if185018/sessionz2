@@ -18,7 +18,29 @@ class FirebaseStorageService {
         //success string will be the download url for new image
         
         deleteCurrentProfileImage(for: user)
+         //TODO update this and store the image
+        let filename = NSUUID().uuidString
         
+        guard let imageData = image.jpegData(compressionQuality: 0.3) else {return}
+        
+        STORAGE_PROFILE_IMAGES_REF.child(filename).putData(imageData, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("Failed to upload image to storage with error: ", error.localizedDescription)
+                completion(.failure(error))
+            }
+            
+            STORAGE_PROFILE_IMAGES_REF.downloadURL { (url, error) in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let url = url {
+                    completion(.success(url.absoluteString))
+                }
+                
+            }
+            
+            
+            
+        }
         
         
     }
@@ -28,7 +50,9 @@ class FirebaseStorageService {
             print("NO profile image for user")
             return}
         STORAGE_REF.child(profileImageUrl).delete(completion: nil)
-        //TODO update this and store the image 
+       
+        
+        
         
     }
     

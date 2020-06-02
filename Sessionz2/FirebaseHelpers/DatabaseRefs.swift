@@ -23,4 +23,5 @@ let REF_MESSAGES = DB_REF.child("messages")
 //MARK: Storage References
 
 let STORAGE_REF = Storage.storage().reference()
+let STORAGE_PROFILE_IMAGES_REF = STORAGE_REF.child("profile_images")
 

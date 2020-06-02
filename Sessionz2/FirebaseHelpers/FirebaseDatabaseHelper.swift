@@ -21,8 +21,9 @@ class FirebaseDatabaseHelper {
             if let error = error {
                 completion(.failure(error))
                 return
+            } else {
+                completion(.success(()))
             }
-            completion(.success(()))
             
         }
     }
@@ -45,8 +46,10 @@ class FirebaseDatabaseHelper {
             if let err = err {
                 completion(.failure(err))
             }
-            
-            completion(.success(()))
+                
+            else {
+                completion(.success(()))
+            }
         }
     }
 }
