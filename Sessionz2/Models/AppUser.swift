@@ -63,7 +63,7 @@ struct AppUser: SenderType {
         self.uid = uid
         self.gamerTag = dictionary[gamerTagKey] as? String ?? ""
         self.email = dictionary[emailKey] as? String ?? ""
-        
+        self.profileImageURL = dictionary[profileImageURLKey] as? String ?? ""
         if let consoleIndex = dictionary[consoleTypeKey] as? Int {
             self.consoleType = ConsoleType(rawValue: consoleIndex)
         }

@@ -31,7 +31,7 @@ class FirebaseStorageService {
             }
             
             
-            STORAGE_PROFILE_IMAGES_REF.downloadURL { (url, error) in
+            STORAGE_PROFILE_IMAGES_REF.child(filename).downloadURL { (url, error) in
                 if let error = error {
                     completion(.failure(error))
                 } else if let url = url {
