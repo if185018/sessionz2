@@ -22,12 +22,14 @@ class FirebaseStorageService {
         let filename = NSUUID().uuidString
         
         guard let imageData = image.jpegData(compressionQuality: 0.3) else {return}
-        
-        STORAGE_PROFILE_IMAGES_REF.child(filename).putData(imageData, metadata: nil) { (metadata, error) in
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        STORAGE_PROFILE_IMAGES_REF.child(filename).putData(imageData, metadata: metadata) { (metadata, error) in
             if let error = error {
                 print("Failed to upload image to storage with error: ", error.localizedDescription)
                 completion(.failure(error))
             }
+            
             
             STORAGE_PROFILE_IMAGES_REF.downloadURL { (url, error) in
                 if let error = error {

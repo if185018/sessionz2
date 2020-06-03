@@ -31,6 +31,7 @@ class EditProfileViewController: UIViewController {
         button.setTitle("Change Profile Image", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         //TODO add target for button selection
+        button.addTarget(self, action: #selector(handleChangeProfilePhoto), for: .touchUpInside)
         return button
     }()
     
@@ -100,7 +101,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         configureViewComponents()
-        //loadUserData()
+        loadUserData()
 
         
     }
@@ -179,8 +180,11 @@ class EditProfileViewController: UIViewController {
     }
     
     @objc func handleDone() {
-        //handle saving values in text fields 
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        //handle saving values in text fields
+        if imageChanged  {
+            updateProfileImage()
+        }
+        //self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func handleChangeProfilePhoto() {
@@ -195,6 +199,30 @@ class EditProfileViewController: UIViewController {
     //MARK: API
     
     func updateProfileImage() {
+        guard imageChanged else {return}
+         guard let user = self.user else { return }
+        guard let currentUid = self.user?.uid else {return}
+        
+        FirebaseStorageService.manager.deleteCurrentProfileImage(for: user)
+        
+        guard let newImage = self.profileImageView.image else {return}
+        
+        FirebaseStorageService.manager.updateProfileImage(for: user, image: newImage) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let profileImageUrl):
+                FirebaseDatabaseHelper.manager.updateProfileImageValues(uid: currentUid, newUrlStr: profileImageUrl) { (newResult) in
+                    switch newResult {
+                    case.success(()):
+                        //TODO handle with alert
+                        print("successfully updated profile image")
+                    case.failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        }
         
     }
 }

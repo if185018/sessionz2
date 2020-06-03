@@ -42,7 +42,7 @@ class FirebaseDatabaseHelper {
     
     
     func updateProfileImageValues(uid: String, newUrlStr: String, completion: @escaping (Result<(), Error>) -> ()) {
-        REF_USERS.child(profileImageURLKey).setValue(newUrlStr) { (err, ref) in
+        REF_USERS.child(uid).child(profileImageURLKey).setValue(newUrlStr) { (err, ref) in
             if let err = err {
                 completion(.failure(err))
             }
