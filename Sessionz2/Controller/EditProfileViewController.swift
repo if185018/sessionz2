@@ -182,11 +182,49 @@ class EditProfileViewController: UIViewController {
         //handle saving values in text fields 
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func handleChangeProfilePhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
 
     
     //MARK: API
     
-    private func updateUserNames() {
+    func updateProfileImage() {
         
     }
+}
+
+
+//MARK: IMAGE PICKER DELEGATE
+
+extension EditProfileViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        
+        if let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
+            profileImageView.image = selectedImage
+            self.imageChanged = true
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+    return input.rawValue
 }
