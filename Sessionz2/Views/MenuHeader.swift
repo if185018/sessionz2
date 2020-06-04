@@ -21,13 +21,21 @@ class MenuHeader: UIView {
     public weak var delegate: MenuHeaderDelegate?
     
     private var tapGesture: UITapGestureRecognizer!
-    private lazy var profileImageContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
+    
+    private lazy var profileImageView: CustomImageView = {
+        let iv = CustomImageView()
         
-        //TODO: Add profile image view here
-        return view
+        iv.loadImage(with: self.user.profileImageURL ?? "")
+        return iv
     }()
+    
+//    private lazy var profileImageContainerView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .black
+//
+//        //TODO: Add profile image view here
+//        return view
+//    }()
     
     private lazy var gamerTagLabel: UILabel = {
         let label = UILabel()
@@ -41,7 +49,6 @@ class MenuHeader: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text = "test@gmail.com"
         label.text = user.email
         return label
     }()
@@ -57,11 +64,16 @@ class MenuHeader: UIView {
         
         backgroundColor = .secondaryBlueTint
         
-        addSubview(profileImageContainerView)
-               profileImageContainerView.anchor(top: topAnchor, left: leftAnchor,
+        addSubview(profileImageView)
+               profileImageView.anchor(top: topAnchor, left: leftAnchor,
                                        paddingTop: 4, paddingLeft: 12,
                                        width: 64, height: 64)
-               profileImageContainerView.layer.cornerRadius = 64 / 2
+               profileImageView.layer.cornerRadius = 64 / 2
+        profileImageView.layer.borderWidth = 1.2
+        profileImageView.layer.masksToBounds = false
+        profileImageView.clipsToBounds = true 
+        profileImageView.layer.borderColor = UIColor.black.cgColor
+        
         
         
         let stack = UIStackView(arrangedSubviews: [gamerTagLabel, emailLabel])
@@ -71,8 +83,8 @@ class MenuHeader: UIView {
         
         addSubview(stack)
         
-        stack.centerY(inView: profileImageContainerView,
-        leftAnchor: profileImageContainerView.rightAnchor,
+        stack.centerY(inView: profileImageView,
+        leftAnchor: profileImageView.rightAnchor,
         paddingLeft: 12)
         
     }
