@@ -24,18 +24,10 @@ class MenuHeader: UIView {
     
     private lazy var profileImageView: CustomImageView = {
         let iv = CustomImageView()
-        
         iv.loadImage(with: self.user.profileImageURL ?? "")
         return iv
     }()
     
-//    private lazy var profileImageContainerView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//
-//        //TODO: Add profile image view here
-//        return view
-//    }()
     
     private lazy var gamerTagLabel: UILabel = {
         let label = UILabel()
@@ -74,8 +66,7 @@ class MenuHeader: UIView {
         profileImageView.clipsToBounds = true 
         profileImageView.layer.borderColor = UIColor.black.cgColor
         
-        
-        
+
         let stack = UIStackView(arrangedSubviews: [gamerTagLabel, emailLabel])
         stack.distribution = .fillEqually
         stack.spacing = 4
