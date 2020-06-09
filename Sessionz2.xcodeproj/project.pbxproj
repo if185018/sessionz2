@@ -10,6 +10,7 @@
 		81003CEB24168EDB00B5DE33 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEA24168EDB00B5DE33 /* AppUser.swift */; };
 		81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */; };
 		81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */; };
+		810F583A248FEF35002723A9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F5839248FEF35002723A9 /* Message.swift */; };
 		811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811298A9241298A600B3BCC1 /* SignUpVC.swift */; };
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
 		81155C7F247C3F5800FCA768 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */; };
@@ -62,6 +63,7 @@
 		81003CEA24168EDB00B5DE33 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRefs.swift; sourceTree = "<group>"; };
 		81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		810F5839248FEF35002723A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				81003CEA24168EDB00B5DE33 /* AppUser.swift */,
+				810F5839248FEF35002723A9 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */,
 				817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */,
 				816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */,
+				810F583A248FEF35002723A9 /* Message.swift in Sources */,
 				81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */,
 				81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */,
 			);
