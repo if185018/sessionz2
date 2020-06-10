@@ -9,6 +9,12 @@
 import Foundation
 import Firebase
 
+fileprivate let messageTextKey = "messageText"
+fileprivate let fromIdKey = "FromId"
+fileprivate let toIdKey = "ToId"
+fileprivate let creationDateKey = "creationDate"
+
+
 class Message {
     var messageText: String!
     var fromId: String!
