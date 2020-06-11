@@ -12,6 +12,7 @@
 		81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */; };
 		810F583A248FEF35002723A9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F5839248FEF35002723A9 /* Message.swift */; };
 		811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811298A9241298A600B3BCC1 /* SignUpVC.swift */; };
+		8112D29124929D0800A8D900 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112D29024929D0800A8D900 /* ChatController.swift */; };
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
 		81155C7F247C3F5800FCA768 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */; };
 		81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81194ECD2465AF3500189641 /* UserProfileHeader.swift */; };
@@ -65,6 +66,7 @@
 		81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		810F5839248FEF35002723A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		8112D29024929D0800A8D900 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		81194ECD2465AF3500189641 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				817B339A2417DE6D00EF0144 /* MenuController.swift */,
 				816233EE241960ED00A7BF09 /* Login */,
 				81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */,
+				8112D29024929D0800A8D900 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			files = (
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				815D08DB242D0F820074AF23 /* PlayerAnnotation.swift in Sources */,
+				8112D29124929D0800A8D900 /* ChatController.swift in Sources */,
 				811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */,
 				81C8D40A24363A280033D036 /* MapView+Extension.swift in Sources */,
 				81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */,
