@@ -15,6 +15,18 @@ private let reuseIdentifier = "ChatCell"
 
 class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    //MARK: Properties
+    
+    //User that will recieve the message
+    var user: AppUser?
+    var messages = [Message]()
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
+    
+    
+    
+    
+    
     
     
     
