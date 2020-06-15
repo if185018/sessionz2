@@ -27,6 +27,20 @@ class MessageInputAccessoryView: UIView {
         return tv
     }()
     
+    let sendButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Send", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.addTarget(self, action: #selector(handleUploadMessage), for: .touchUpInside)
+        return button
+    }()
+    
+    let uploadImageIcon: UIImageView = {
+       let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "upload_image_icon ")
+        return iv
+    }()
+    
     
     
     
