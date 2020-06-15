@@ -20,6 +20,26 @@ class MessageInputAccessoryView: UIView {
     
     var delegate: MessageInputAccessoryViewDelegate?
     
+    let messageInputTextView: MessageInputTextView = {
+        let tv = MessageInputTextView()
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.isScrollEnabled = false
+        return tv
+    }()
     
     
+    
+    
+    
+    
+    // MARK: - Handlers
+    
+    @objc func handleUploadMessage() {
+        guard let message = messageInputTextView.text else { return }
+        delegate?.handleUploadMessage(message: message)
+    }
+    
+    @objc func handleSelectImage() {
+        delegate?.handleSelectImage()
+    }
 }
