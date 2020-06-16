@@ -10,5 +10,25 @@ import UIKit
 import Firebase
 import AVFoundation
 
+protocol ChatCellDelegate {
+    func handlePlayVideo(for cell: ChatCell)
+}
 
-
+class ChatCell: UICollectionViewCell {
+    
+    //MARK: Properties
+    
+       var bubbleWidthAnchor: NSLayoutConstraint?
+       var bubbleViewRightAnchor: NSLayoutConstraint?
+       var bubbleViewLeftAnchor: NSLayoutConstraint?
+       var delegate: ChatCellDelegate?
+       var playerLayer: AVPlayerLayer?
+       var player: AVPlayer?
+    
+    
+    
+    
+    
+    
+    
+}
