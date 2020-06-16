@@ -23,6 +23,23 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
+    lazy var containerView: MessageInputAccesoryView = {
+           let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 60)
+           let containerView = MessageInputAccesoryView(frame: frame)
+           //containerView.delegate = self
+           return containerView
+       }()
+    
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            return containerView
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
     
     
     

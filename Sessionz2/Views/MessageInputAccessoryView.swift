@@ -14,7 +14,7 @@ protocol MessageInputAccessoryViewDelegate {
     func handleSelectImage()
 }
 
-class MessageInputAccessoryView: UIView {
+class MessageInputAccesoryView: UIView {
     
     //MARK: Properties
     
@@ -26,6 +26,8 @@ class MessageInputAccessoryView: UIView {
         tv.isScrollEnabled = false
         return tv
     }()
+    
+    
     
     let sendButton: UIButton = {
         let button = UIButton(type: .system)
@@ -40,6 +42,10 @@ class MessageInputAccessoryView: UIView {
         iv.image = #imageLiteral(resourceName: "upload_image_icon ")
         return iv
     }()
+    
+    override var intrinsicContentSize: CGSize {
+           return .zero
+       }
     
     //MARK: Init
     
@@ -72,7 +78,10 @@ class MessageInputAccessoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    public func clearMessageTextView() {
+        messageInputTextView.placeholderLabel.isHidden = false
+        messageInputTextView.text = nil
+    }
     
     
     

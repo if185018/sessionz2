@@ -23,6 +23,7 @@
 		813F4A702426947B00E0FE0D /* PlayerActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */; };
 		81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81501BD5248562930047C426 /* FirebaseSttorageService.swift */; };
 		815D08DB242D0F820074AF23 /* PlayerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D08DA242D0F820074AF23 /* PlayerAnnotation.swift */; };
+		815D3A5824992FEA00172DB2 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D3A5724992FEA00172DB2 /* ChatCell.swift */; };
 		815EF5B5242E502E00FD04D3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815EF5B4242E502E00FD04D3 /* PlayerService.swift */; };
 		816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816031B32426DA4E0066B052 /* CustomDelegates.swift */; };
 		816233EB2419308B00A7BF09 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816233EA2419308B00A7BF09 /* ContainerController.swift */; };
@@ -79,6 +80,7 @@
 		813F4A6F2426947B00E0FE0D /* PlayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionView.swift; sourceTree = "<group>"; };
 		81501BD5248562930047C426 /* FirebaseSttorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSttorageService.swift; sourceTree = "<group>"; };
 		815D08DA242D0F820074AF23 /* PlayerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAnnotation.swift; sourceTree = "<group>"; };
+		815D3A5724992FEA00172DB2 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		815EF5B4242E502E00FD04D3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		816031B32426DA4E0066B052 /* CustomDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDelegates.swift; sourceTree = "<group>"; };
 		816233EA2419308B00A7BF09 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				81194ECD2465AF3500189641 /* UserProfileHeader.swift */,
 				810BEDFD24968751005D2270 /* MessageInputTextView.swift */,
 				813E05092497CFAC00D29607 /* MessageInputAccessoryView.swift */,
+				815D3A5724992FEA00172DB2 /* ChatCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				815D08DB242D0F820074AF23 /* PlayerAnnotation.swift in Sources */,
 				8112D29124929D0800A8D900 /* ChatController.swift in Sources */,
+				815D3A5824992FEA00172DB2 /* ChatCell.swift in Sources */,
 				811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */,
 				81C8D40A24363A280033D036 /* MapView+Extension.swift in Sources */,
 				81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */,
