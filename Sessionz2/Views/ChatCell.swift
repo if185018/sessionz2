@@ -27,8 +27,19 @@ class ChatCell: UICollectionViewCell {
     
     var message: Message? {
         didSet {
-            if let message = message?.messageText {
-                
+            if let messageText = message?.messageText {
+                textView.text = messageText
+            }
+             guard let chatPartnerId = message?.getChatPartnerId() else { return }
+            
+            FirebaseDatabaseHelper.manager.fetchUserData(uid: chatPartnerId) { (result) in
+                switch result {
+                case .success(let user):
+                    guard let profileImageUrl = user.profileImageURL else {return}
+                    self.profileImageView.loadImage(with: profileImageUrl)
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }
