@@ -46,8 +46,35 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     
     
+    //MARK: Setup
     
     
+    func configureNavigationBar() {
+        guard let user = self.user else {return}
+        
+        navigationItem.title = user.gamerTag
+        
+    }
+    
+    func scrollToBottom() {
+        if messages.count > 0 {
+            let indexPath = IndexPath(item: messages.count - 1, section: 0)
+            collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
+        }
+    }
+    
+    
+    
+    //MARK: Handlers
+    
+    @objc func handleInfoTapped() {
+        //TO DO: Handle user profile vc
+        print("user tapped")
+    }
+    
+    @objc func handleKeyboardDidShow() {
+        scrollToBottom()
+    }
     
     
     
