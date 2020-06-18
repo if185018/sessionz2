@@ -63,6 +63,59 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    func estimateFrameForText(_ text: String) -> CGRect {
+        let size = CGSize(width: 200, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], context: nil)
+    }
+    
+    func configureMessage(cell: ChatCell, message: Message) {
+         guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        
+        if let messageText = message.messageText {
+            cell.bubbleWidthAnchor?.constant = estimateFrameForText(messageText).width + 32
+            cell.frame.size.height = estimateFrameForText(messageText).height + 20
+            cell.messageImageView.isHidden = true
+            cell.textView.isHidden = false
+            cell.bubbleView.backgroundColor  = UIColor.rgb(red: 0, green: 137, blue: 249)
+        }
+        else if let messageImageUrl = message.imageUrl {
+            cell.bubbleWidthAnchor?.constant = 200
+            cell.messageImageView.loadImage(with: messageImageUrl)
+            cell.messageImageView.isHidden = false
+            cell.textView.isHidden = true
+            cell.bubbleView.backgroundColor = .clear
+        }
+        
+        if message.videoUrl != nil {
+            guard let videoUrlString = message.videoUrl else { return }
+            guard let videoUrl = URL(string: videoUrlString) else { return }
+            
+            player = AVPlayer(url: videoUrl)
+            cell.player = player
+            
+            playerLayer = AVPlayerLayer(player: player)
+            cell.playerLayer = playerLayer
+            
+            cell.playButton.isHidden = false
+        } else {
+            cell.playButton.isHidden = true
+        }
+        
+        if message.fromId == currentUid {
+            cell.bubbleViewRightAnchor?.isActive = true
+            cell.bubbleViewLeftAnchor?.isActive = false
+            cell.textView.textColor = .white
+            cell.profileImageView.isHidden = true
+        } else {
+            cell.bubbleViewRightAnchor?.isActive = false
+            cell.bubbleViewLeftAnchor?.isActive = true
+            cell.bubbleView.backgroundColor = UIColor.rgb(red: 240, green: 240, blue: 240)
+            cell.textView.textColor = .black
+            cell.profileImageView.isHidden = false
+        }
+    }
+    
     
     
     //MARK: Handlers
@@ -75,6 +128,8 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     @objc func handleKeyboardDidShow() {
         scrollToBottom()
     }
+    
+    
     
     
     
