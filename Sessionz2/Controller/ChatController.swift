@@ -53,6 +53,12 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         guard let user = self.user else {return}
         
         navigationItem.title = user.gamerTag
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.tintColor = .black
+        infoButton.addTarget(self, action: #selector(handleInfoTapped), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        
+        navigationItem.rightBarButtonItem = infoBarButtonItem
         
     }
     
