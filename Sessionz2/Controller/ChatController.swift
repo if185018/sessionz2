@@ -75,6 +75,13 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], context: nil)
     }
     
+    func configureKeyboardObservers() {
+        func configureKeyboardObservers() {
+            NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        }
+    }
+    
+    
     func configureMessage(cell: ChatCell, message: Message) {
          guard let currentUid = Auth.auth().currentUser?.uid else { return }
         
