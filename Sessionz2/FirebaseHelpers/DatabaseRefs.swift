@@ -18,6 +18,9 @@ let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
 let REF_USER_LOCATIONS = DB_REF.child("user-locations")
 let REF_MESSAGES = DB_REF.child("messages")
+let USER_MESSAGES_REF = DB_REF.child("user-messages")
+let USER_MESSAGE_NOTIFICATIONS_REF = DB_REF.child("user-message-notifications")
+let NOTIFICATIONS_REF = DB_REF.child("notifications")
 
 
 //MARK: Storage References

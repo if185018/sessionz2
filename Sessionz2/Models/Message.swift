@@ -9,15 +9,15 @@
 import Foundation
 import Firebase
 
-fileprivate let messageTextKey = "messageText"
-fileprivate let fromIdKey = "FromId"
-fileprivate let toIdKey = "ToId"
-fileprivate let creationDateKey = "creationDate"
-fileprivate let imageUrlKey = "imageUrl"
-fileprivate let imageHeightKey = "imageHeight"
-fileprivate let imageWidthKey = "imageWidth"
-fileprivate let videoUrlKey = "videoUrl"
-fileprivate let readKey = "read"
+let messageTextKey = "messageText"
+let fromIdKey = "FromId"
+let toIdKey = "ToId"
+let creationDateKey = "creationDate"
+let imageUrlKey = "imageUrl"
+let imageHeightKey = "imageHeight"
+let imageWidthKey = "imageWidth"
+let videoUrlKey = "videoUrl"
+let readKey = "read"
 
 
 

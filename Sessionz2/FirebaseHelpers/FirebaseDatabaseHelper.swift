@@ -53,3 +53,9 @@ class FirebaseDatabaseHelper {
         }
     }
 }
+
+
+//MARK: Message functions
+extension FirebaseDatabaseHelper {
+    
+}
