@@ -20,6 +20,12 @@ let videoUrlKey = "videoUrl"
 let readKey = "read"
 
 
+public enum MessageContent {
+    case Text
+    case Image
+    case Video 
+}
+
 
 class Message {
     var messageText: String!

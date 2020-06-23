@@ -47,7 +47,7 @@ struct AppUser: SenderType {
     let email: String
     var consoleType: ConsoleType!
     var location: CLLocation?
-    let uid: String
+    let uid: String!
     var pulsing: Bool?
     var profileImageURL: String?
     

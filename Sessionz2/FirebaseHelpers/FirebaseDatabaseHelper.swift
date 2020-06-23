@@ -58,4 +58,26 @@ class FirebaseDatabaseHelper {
 //MARK: Message functions
 extension FirebaseDatabaseHelper {
     
+    func uploadMessage(user: AppUser?, with properties: [String:AnyObject]) {
+        guard let currentUid = FirebaseAuthService.manager.currentUser?.uid else { return }
+        guard let user = user else {return}
+        
+        let creationDate = Int(NSDate().timeIntervalSince1970)
+        
+        guard let uid = user.uid else { return }
+        
+        var values: [String: AnyObject] = [toIdKey: uid as AnyObject, fromIdKey: currentUid as AnyObject, creationDateKey : creationDate as AnyObject, readKey: false as AnyObject]
+         properties.forEach({values[$0] = $1})
+        
+        let messageRef = REF_MESSAGES.childByAutoId()
+        
+        guard let messageKey = messageRef.key else {return}
+        
+        messageRef.updateChildValues(values) { (err, ref) in
+            USER_MESSAGES_REF.child(currentUid).child(uid).updateChildValues([messageKey: 1])
+            
+            USER_MESSAGES_REF.child(uid).child(currentUid).updateChildValues([messageKey: 1])
+        }
+        
+    }
 }
