@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct MessageService {
     
     private init() {}
     
-    
+   let currentUid = Auth.auth().currentUser?.uid
    static let shared = MessageService()
     
     
@@ -59,7 +60,14 @@ struct MessageService {
         USER_MESSAGE_NOTIFICATIONS_REF.child(toId).childByAutoId().updateChildValues(values)
     }
     
-    func observeMessages(userUid: String, completion: @escaping (Result<String, Error>) -> ()) {
+    func observeMessages(chatPartnerId: String?, completion: @escaping (String) -> ()) {
+        guard let currentUid = self.currentUid else {return}
+        guard let chatPartnerId = chatPartnerId else {return}
+        
+        USER_MESSAGES_REF.child(currentUid).child(chatPartnerId).observe(.childAdded) { (snapshot) in
+            let messageId = snapshot.key
+            completion(messageId)
+        }
         
     }
     
