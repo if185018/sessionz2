@@ -32,6 +32,7 @@
 		817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339A2417DE6D00EF0144 /* MenuController.swift */; };
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
+		81B2066C24A51C2000D552B3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B2066B24A51C2000D552B3 /* MessageService.swift */; };
 		81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B27AE124630CCC002E4D28 /* UserProfileVC.swift */; };
 		81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C45240F09D700FC98BF /* AppDelegate.swift */; };
 		81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C47240F09D700FC98BF /* SceneDelegate.swift */; };
@@ -89,6 +90,7 @@
 		817B339A2417DE6D00EF0144 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
+		81B2066B24A51C2000D552B3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		81B27AE124630CCC002E4D28 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		81BD3C42240F09D700FC98BF /* Sessionz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sessionz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD3C45240F09D700FC98BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				815EF5B4242E502E00FD04D3 /* PlayerService.swift */,
+				81B2066B24A51C2000D552B3 /* MessageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B2066C24A51C2000D552B3 /* MessageService.swift in Sources */,
 				81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */,
 				815D08DB242D0F820074AF23 /* PlayerAnnotation.swift in Sources */,
 				8112D29124929D0800A8D900 /* ChatController.swift in Sources */,
