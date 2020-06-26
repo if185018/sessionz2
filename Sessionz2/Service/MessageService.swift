@@ -71,4 +71,17 @@ struct MessageService {
         
     }
     
+    
+    func fetchMessage(with messageId: String, completion: @escaping (Message) -> ()) {
+        REF_MESSAGES.child(messageId).observe(.value) { (snapshot) in
+            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else { return }
+            let message = Message(dictionary: dictionary)
+            completion(message)
+        }
+    }
+    
+    func setMessageToRead(forMessageId: String, fromId: String) {
+        
+    }
+    
 }
