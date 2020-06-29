@@ -80,8 +80,10 @@ struct MessageService {
         }
     }
     
-    func setMessageToRead(forMessageId: String, fromId: String) {
-        
+    func setMessageToRead(for messageId: String, fromId: String) {
+        if fromId != Auth.auth().currentUser?.uid {
+            REF_MESSAGES.child(messageId).child(readKey).setValue(true)
+               }
     }
     
 }

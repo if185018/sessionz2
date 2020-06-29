@@ -58,3 +58,58 @@ class FirebaseStorageService {
     
     
 }
+
+//MARK: Message uploads
+extension FirebaseStorageService {
+    func uploadMessageImageToStorage(image: UIImage, completion: @escaping (Result<String, Error>) -> ()) {
+        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+        let filename = NSUUID().uuidString
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        let ref = STORAGE_MESSAGE_IMAGES_REF.child(filename)
+        
+        ref.putData(uploadData, metadata: metadata) { (metadata, error) in
+            if let error = error {
+                 print("DEBUG: Unable to upload image to Firebase Storage")
+                completion(.failure(error))
+                return
+            }
+            ref.downloadURL { (url, error) in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let url = url {
+                    completion(.success(url.absoluteString))
+                }
+            }
+        }
+        
+    }
+    
+    
+    func uploadVideoToStorage(with url: URL, completion: @escaping (Result<String, Error>) -> ()) {
+        let filename = NSUUID().uuidString
+        
+        // UPDATE: - Created constant for ref to work with Firebase 5
+        let ref = STORAGE_MESSAGE_VIDEO_REF.child(filename)
+        
+        ref.putFile(from: url, metadata: nil) { (mettadata, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+                
+            }
+            
+            ref.downloadURL { (url, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                if let url = url {
+                    completion(.success(url.absoluteString))
+                }
+            }
+        }
+    }
+    
+    
+}
