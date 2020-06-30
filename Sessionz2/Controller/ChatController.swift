@@ -42,6 +42,22 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     
+    //MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.backgroundColor = .white
+        collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 16, right: 0)
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.register(ChatCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView?.keyboardDismissMode = .interactive
+        configureNavigationBar()
+        configureKeyboardObservers()
+        observeMessages()
+        
+    }
+    
     
     
     
@@ -129,6 +145,23 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    //MARK: API
+    
+    func observeMessages() {
+        MessageService.shared.observeMessages(chatPartnerId: self.user?.uid) { (messageId) in
+            MessageService.shared.fetchMessage(with: messageId) { (message) in
+                self.messages.append(message)
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+                    self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
+                    
+                }
+                MessageService.shared.setMessageToRead(for: messageId, fromId: message.fromId)
+            }
+        }
+    }
     
     
     //MARK: Handlers
