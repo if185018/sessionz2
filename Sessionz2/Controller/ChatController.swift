@@ -163,6 +163,16 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    func sendMessage(imageUrl: String, image: UIImage) {
+        let properties = [imageUrlKey: imageUrl, imageWidthKey: image.size.width as Any, imageHeightKey: image.size.height as Any] as [String: AnyObject]
+        guard let toUserId = self.user?.uid else {return}
+        guard let fromUserId = Auth.auth().currentUser?.uid else {return}
+        MessageService.shared.uploadMessage(user: self.user, with: properties, text: nil)
+       
+        
+        MessageService.shared.uploadMessageNotification(type: .Image, text: nil, toId: toUserId, fromId: fromUserId)
+    
+    }
     
     //MARK: Handlers
     
