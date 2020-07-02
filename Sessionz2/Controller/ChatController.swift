@@ -145,6 +145,22 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    
+    func thumbnailImage(for fileUrl: URL) -> UIImage? {
+        let asset = AVAsset(url: fileUrl)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        
+        do {
+            let time = CMTimeMake(value: 1, timescale: 60)
+            let thumbnailCGImage = try imageGenerator.copyCGImage(at: time, actualTime: nil)
+            return UIImage(cgImage: thumbnailCGImage)
+        }
+        catch {
+             print("DEBUG: Exception error: ", error)
+        }
+        return nil
+    }
+    
     //MARK: API
     
     func observeMessages() {
@@ -188,9 +204,8 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     
     
-    
-    
-    
-    
 }
 
+extension ChatController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+}
