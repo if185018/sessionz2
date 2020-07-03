@@ -60,8 +60,6 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     
     
-    
-    
     //MARK: Setup
     
     
@@ -190,6 +188,9 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     }
     
+    
+    
+    
     //MARK: Handlers
     
     @objc func handleInfoTapped() {
@@ -202,10 +203,53 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     
+
+}
+
+extension ChatController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let videoUrl = info[.mediaURL] as? URL {
+            FirebaseStorageService.manager.uploadVideoToStorage(with: videoUrl) { (result) in
+                switch result {
+                case .success(let url):
+                    print(url)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } else if let selectedImage = info[.editedImage] as? UIImage {
+            FirebaseStorageService.manager.uploadMessageImageToStorage(image: selectedImage) { (result) in
+                switch result {
+                case .success(let imageUrl):
+                    self.sendMessage(imageUrl: imageUrl, image: selectedImage)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
     
     
 }
 
-extension ChatController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ChatController: MessageInputAccessoryViewDelegate {
+    func handleUploadMessage(message: String) {
+        let properties = [messageTextKey: message] as [String : AnyObject]
+        
+        MessageService.shared.uploadMessage(user: self.user, with: properties, text: message)
+         self.containerView.clearMessageTextView()
+    }
+    
+    func handleSelectImage() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.mediaTypes = [kUTTypeImage as String, kUTTypeMovie as String]
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
     
 }
