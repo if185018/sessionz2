@@ -253,3 +253,19 @@ extension ChatController: MessageInputAccessoryViewDelegate {
     
     
 }
+
+
+extension ChatController: ChatCellDelegate {
+    func handlePlayVideo(for cell: ChatCell) {
+        guard let player = self.player else { return }
+               guard let playerLayer = self.playerLayer else { return }
+               playerLayer.frame = cell.bubbleView.bounds
+               cell.bubbleView.layer.addSublayer(playerLayer)
+               
+               cell.activityIndicatorView.startAnimating()
+               player.play()
+               cell.playButton.isHidden = true 
+    }
+    
+    
+}
