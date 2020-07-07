@@ -26,7 +26,7 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     lazy var containerView: MessageInputAccesoryView = {
            let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 60)
            let containerView = MessageInputAccesoryView(frame: frame)
-           //containerView.delegate = self
+           containerView.delegate = self
            return containerView
        }()
     
@@ -158,6 +158,38 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
         return nil
     }
+    
+    
+    //MARK: UI CollectionView
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var height: CGFloat = 80
+        
+        let message = messages[indexPath.item]
+        
+        
+        if let messageText = message.messageText {
+            height = estimateFrameForText(messageText).height + 20
+        } else if let imageWidth = message.imageWidth?.floatValue, let imageHeight = message.imageHeight?.floatValue {
+            height = CGFloat(imageHeight / imageWidth * 200)
+        }
+        
+        return CGSize(width: view.frame.width, height: height)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           return messages.count
+       }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChatCell
+        cell.message = messages[indexPath.item]
+        cell.delegate = self
+        configureMessage(cell: cell, message: messages[indexPath.item])
+        return cell
+    }
+    
     
     //MARK: API
     

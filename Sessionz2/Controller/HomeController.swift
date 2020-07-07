@@ -277,7 +277,11 @@ extension HomeController: MKMapViewDelegate {
 //MARK: Player Action View Delegate
 extension HomeController: PlayerActionViewDelegate {
     func messageButtonClicked(user: AppUser) {
-        //TODO NEW MESSAGE CONTROLLER 
+        //TODO NEW MESSAGE CONTROLLER
+        let chatController = ChatController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatController.user = user
+        let navController = UINavigationController(rootViewController: chatController)
+        present(navController, animated: true, completion: nil)
         print("message vc should be showed")
        
     }
