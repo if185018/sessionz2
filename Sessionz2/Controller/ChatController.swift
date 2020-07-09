@@ -66,12 +66,18 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func configureNavigationBar() {
         guard let user = self.user else {return}
         
+        let xButton = UIButton(type: .close)
+        xButton.tintColor = .black
+        let xButtonBarButtonItem = UIBarButtonItem(customView: xButton)
+        
         navigationItem.title = user.gamerTag
         let infoButton = UIButton(type: .infoLight)
         infoButton.tintColor = .black
         infoButton.addTarget(self, action: #selector(handleInfoTapped), for: .touchUpInside)
-        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
         
+        xButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        navigationItem.leftBarButtonItem = xButtonBarButtonItem
         navigationItem.rightBarButtonItem = infoBarButtonItem
         
     }
@@ -234,6 +240,9 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         scrollToBottom()
     }
     
+    @objc func handleDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
 }
