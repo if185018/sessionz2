@@ -281,6 +281,7 @@ extension HomeController: PlayerActionViewDelegate {
         let chatController = ChatController(collectionViewLayout: UICollectionViewFlowLayout())
         chatController.user = user
         let navController = UINavigationController(rootViewController: chatController)
+        navController.modalPresentationStyle = .overCurrentContext
         present(navController, animated: true, completion: nil)
         print("message vc should be showed")
        
