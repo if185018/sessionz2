@@ -243,6 +243,7 @@
 		81BD3C67240F10BD00FC98BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81FBD2BB24B8E14200E56D27 /* MessagesController.swift */,
 				81B27AE124630CCC002E4D28 /* UserProfileVC.swift */,
 				816233EA2419308B00A7BF09 /* ContainerController.swift */,
 				816233EC2419321300A7BF09 /* HomeController.swift */,
@@ -250,7 +251,6 @@
 				8112D29024929D0800A8D900 /* ChatController.swift */,
 				817B339A2417DE6D00EF0144 /* MenuController.swift */,
 				816233EE241960ED00A7BF09 /* Login */,
-				81FBD2BB24B8E14200E56D27 /* MessagesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

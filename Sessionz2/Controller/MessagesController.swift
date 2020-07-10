@@ -24,4 +24,24 @@ class MessagesController: UITableViewController {
     
     
     
+    
+    
+    //MARK: API
+    
+    func fetchMessage(withMessageId messageId: String) {
+        REF_MESSAGES.child(messageId).observeSingleEvent(of:.value) { (snapshot) in
+            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else {return}
+            let message = Message(dictionary: dictionary)
+            let chatPartnerId = message.getChatPartnerId()
+            self.messagesDictionary[chatPartnerId] = message
+            self.messages = Array(self.messagesDictionary.values)
+            self.messages.sort(by: { (message1, message2) -> Bool in
+                return message1.creationDate > message2.creationDate
+            })
+            
+            self.tableView?.reloadData()
+        }
+    }
+    
+    
 }
