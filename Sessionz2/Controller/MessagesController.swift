@@ -25,6 +25,13 @@ class MessagesController: UITableViewController {
     
     
     
+    //MARK: Setup
+    
+    func configureNavigationBar() {
+        navigationItem.title = "Messages"
+        
+    }
+    
     
     //MARK: API
     
@@ -42,6 +49,26 @@ class MessagesController: UITableViewController {
             self.tableView?.reloadData()
         }
     }
+    
+    func fetchMessages() {
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        
+        self.messages.removeAll()
+        self.messagesDictionary.removeAll()
+        self.tableView.reloadData()
+        
+        USER_MESSAGES_REF.child(currentUid).observe(.childAdded) { (snapshot) in
+            let uid = snapshot.key
+            
+            USER_MESSAGES_REF.child(currentUid).child(uid).observe(.childAdded) { (snapshot) in
+                let messageId = snapshot.key
+                self.fetchMessage(withMessageId: messageId)
+            }
+        }
+        
+    }
+    
+    
     
     
 }
