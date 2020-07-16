@@ -104,6 +104,4 @@ class MessageCell: UITableViewCell {
     }
     
     
-    
-    
 }

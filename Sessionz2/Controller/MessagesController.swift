@@ -23,6 +23,51 @@ class MessagesController: UITableViewController {
     
     
     
+    //MARK: Lifeycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBar()
+        tableView.register(MessageCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.tableFooterView = UIView(frame: .zero)
+        fetchMessages()
+    }
+    
+    
+    
+    //MARK: UITableView DataSource/Delegate
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+           return true
+       }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 75
+       }
+       
+       override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return messages.count
+       }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MessageCell
+           cell.delegate = self
+           cell.message = messages[indexPath.row]
+           return cell
+       }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let message = messages[indexPath.row]
+        let chatPartnerId = message.getChatPartnerId()
+        
+        USER_MESSAGES_REF.child(uid).child(chatPartnerId).removeValue { (error, ref) in
+            self.messages.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+    }
+    
     
     
     //MARK: Setup
@@ -30,6 +75,14 @@ class MessagesController: UITableViewController {
     func configureNavigationBar() {
         navigationItem.title = "Messages"
         
+    }
+    
+    func showChatController(for user: AppUser) {
+        let chatController = ChatController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatController.user = user
+        let navController = UINavigationController(rootViewController: chatController)
+        navController.modalPresentationStyle = .overCurrentContext
+               present(navController, animated: true, completion: nil)
     }
     
     
@@ -69,6 +122,18 @@ class MessagesController: UITableViewController {
     }
     
     
+    
+    
+}
+
+extension MessagesController: MessageCellDelegate {
+    func configureUserData(for cell: MessageCell) {
+        guard let chatPartnerId = cell.message?.getChatPartnerId() else {return}
+        PlayerService.shared.fetchPlayerData(uid: chatPartnerId) { (user) in
+            cell.profileImageView.loadImage(with: user.profileImageURL ?? "")
+            cell.usernameLabel.text = user.gamerTag
+        }
+    }
     
     
 }
