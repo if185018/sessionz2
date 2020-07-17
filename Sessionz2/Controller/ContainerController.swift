@@ -145,7 +145,9 @@ extension ContainerController: MenuControllerDelegate {
                 
             case .messages:
                 print("Messages")
-                
+                let messagesController = MessagesController()
+                let navController = UINavigationController(rootViewController: messagesController)
+                self.present(navController, animated: true, completion: nil)
             case .settings:
                 print("Settings")
             case .logout:
