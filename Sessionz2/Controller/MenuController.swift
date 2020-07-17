@@ -11,13 +11,13 @@ import UIKit
 fileprivate let reuseIdentifier = "menuCell"
 
 enum MenuOptions: Int, CaseIterable, CustomStringConvertible {
-    case history
+    case messages
     case settings
     case logout
     
     var description: String {
         switch self {
-        case .history : return "History"
+        case .messages : return "Messages"
         case .settings: return "Settings"
         case .logout: return "Log Out"
         }

@@ -143,8 +143,9 @@ extension ContainerController: MenuControllerDelegate {
             
             switch option {
                 
-            case .history:
-                print("History")
+            case .messages:
+                print("Messages")
+                
             case .settings:
                 print("Settings")
             case .logout:
