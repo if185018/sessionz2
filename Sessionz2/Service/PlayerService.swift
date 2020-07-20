@@ -21,6 +21,15 @@ struct PlayerService {
         }
     }
     
+    func fetchSingleUser(uid: String, completion: @escaping(AppUser) -> Void) {
+        REF_USERS.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: Any] else {return}
+            let id = snapshot.key
+            let appUser = AppUser(uid: id, dictionary: dictionary)
+            completion(appUser)
+        }
+    }
+    
     
     func fetchPlayersFromLocation(location: CLLocation, completion: @escaping(AppUser) -> Void) {
         let geofire = GeoFire(firebaseRef: REF_USER_LOCATIONS)

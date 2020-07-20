@@ -68,6 +68,16 @@ class MessagesController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = messages[indexPath.row]
+        let chatPartnerId = message.getChatPartnerId()
+        let cell = tableView.cellForRow(at: indexPath) as! MessageCell
+        PlayerService.shared.fetchSingleUser(uid: chatPartnerId) { (user) in
+            self.showChatController(for: user)
+            cell.messageTextLabel.font = UIFont.systemFont(ofSize: 12)
+        }
+    }
+    
     
     
     //MARK: Setup
