@@ -11,7 +11,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'GeoFire', '~> 3.0'
-pod 'MessageKit'
+pod 'Firebase/Messaging'
 
   target 'Sessionz2Tests' do
     inherit! :search_paths

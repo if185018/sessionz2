@@ -33,6 +33,7 @@
 		817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339A2417DE6D00EF0144 /* MenuController.swift */; };
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
+		81A45A3924C8E26A00B6A30E /* MessageNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */; };
 		81B2066C24A51C2000D552B3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B2066B24A51C2000D552B3 /* MessageService.swift */; };
 		81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B27AE124630CCC002E4D28 /* UserProfileVC.swift */; };
 		81BD3C46240F09D700FC98BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD3C45240F09D700FC98BF /* AppDelegate.swift */; };
@@ -71,6 +72,7 @@
 		81003CEA24168EDB00B5DE33 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRefs.swift; sourceTree = "<group>"; };
 		81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		8105163824C78F510015AFA1 /* Sessionz2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sessionz2.entitlements; sourceTree = "<group>"; };
 		810BEDFD24968751005D2270 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		810F5839248FEF35002723A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		817B339A2417DE6D00EF0144 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
+		81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationView.swift; sourceTree = "<group>"; };
 		81B2066B24A51C2000D552B3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		81B27AE124630CCC002E4D28 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		81BD3C42240F09D700FC98BF /* Sessionz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sessionz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +221,7 @@
 		81BD3C44240F09D700FC98BF /* Sessionz2 */ = {
 			isa = PBXGroup;
 			children = (
+				8105163824C78F510015AFA1 /* Sessionz2.entitlements */,
 				815EF5B3242E501500FD04D3 /* Service */,
 				813F4A692426825700E0FE0D /* Protocols */,
 				81003CEE24169D0400B5DE33 /* FirebaseHelpers */,
@@ -271,6 +275,7 @@
 				815D3A5724992FEA00172DB2 /* ChatCell.swift */,
 				81FEDDD124BCE040005DA2B4 /* MessageCell.swift */,
 				812F902B24C74280009245E5 /* NewMessageCell.swift */,
+				81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				81FEDDD224BCE040005DA2B4 /* MessageCell.swift in Sources */,
 				815EF5B5242E502E00FD04D3 /* PlayerService.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
+				81A45A3924C8E26A00B6A30E /* MessageNotificationView.swift in Sources */,
 				81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
@@ -666,6 +672,7 @@
 			baseConfigurationReference = 502CFD559514E99DA32ADAAA /* Pods-Sessionz2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sessionz2/Sessionz2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9HW99M5PX;
 				INFOPLIST_FILE = Sessionz2/Info.plist;
@@ -685,6 +692,7 @@
 			baseConfigurationReference = 91CC9CD1FAECDF94D23BB0AD /* Pods-Sessionz2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sessionz2/Sessionz2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9HW99M5PX;
 				INFOPLIST_FILE = Sessionz2/Info.plist;

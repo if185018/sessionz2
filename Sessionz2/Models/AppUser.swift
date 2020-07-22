@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreLocation
-import MessageKit
+
 
 //Constants
 fileprivate let gamerTagKey = "gamerTag"
@@ -33,11 +33,9 @@ enum ConsoleType: Int, CustomStringConvertible {
 }
 
 
-//conform to sender type for messaging 
-struct AppUser: SenderType {
-    var senderId: String {
-        return self.uid
-    }
+
+struct AppUser {
+    
     
     var displayName: String {
         return self.gamerTag
@@ -74,7 +72,8 @@ struct AppUser: SenderType {
         return [gamerTagKey: self.gamerTag,
                 emailKey: self.email,
                 consoleTypeKey: self.consoleType.rawValue,
-                uidKey: self.uid]
+                uidKey: self.uid ?? "",
+                profileImageURLKey: self.profileImageURL ?? ""]
     }
     
 }

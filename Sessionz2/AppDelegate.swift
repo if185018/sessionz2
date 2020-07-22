@@ -8,16 +8,42 @@
 
 import UIKit
 import Firebase
+import UserNotifications
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate  {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        attemptToRegisterForNotifications(application: application)
         return true
+    }
+    
+    func attemptToRegisterForNotifications(application: UIApplication) {
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (authorized, error) in
+            if authorized {
+                print("Successfully requested notifications")
+                
+            }
+        }
+        application.registerForRemoteNotifications()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("DEBUG Registered for notifications with device token", deviceToken)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Registered with fcm token \(fcmToken)")
     }
 
     // MARK: UISceneSession Lifecycle

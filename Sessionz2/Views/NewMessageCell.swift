@@ -15,13 +15,13 @@ class NewMessageCell: UITableViewCell {
     var user: AppUser? {
         
         didSet {
-            guard let profileImageUrl = user?.profileImageUrl else { return }
-            guard let username = user?.username else { return }
-            guard let fullname = user?.name else { return }
+            guard let profileImageUrl = user?.profileImageURL else { return }
+            guard let gamerTag = user?.gamerTag else { return }
+            guard let email = user?.email else { return }
             
             profileImageView.loadImage(with: profileImageUrl)
-            textLabel?.text = username
-            detailTextLabel?.text = fullname
+            textLabel?.text = gamerTag
+            detailTextLabel?.text = email
         }
     }
     
