@@ -5,7 +5,9 @@
 
 
 
-
+.firebaserc
+firebase.json
+functions/
 Pods/
 
 ## User settings
