@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-
+let fcmTokenKey = "fcmToken"
 let messageTextKey = "messageText"
 let fromIdKey = "FromId"
 let toIdKey = "ToId"

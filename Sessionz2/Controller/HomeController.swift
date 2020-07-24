@@ -70,11 +70,14 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         configureUI()
         enableLocationServices()
+        FirebaseDatabaseHelper.manager.setUserFCMToken()
     }
     
     
     
     //MARK: Helper Methods
+    
+    
     
     private func configureActionButton(config: ActionButtonConfiguration) {
         switch config {

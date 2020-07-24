@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseDatabase
 
 fileprivate let profileImageURLKey = "ProfileImageURL"
@@ -51,6 +52,15 @@ class FirebaseDatabaseHelper {
                 completion(.success(()))
             }
         }
+    }
+    
+    func setUserFCMToken() {
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        guard let fcmToken = Messaging.messaging().fcmToken else {return}
+        
+        let values = [fcmTokenKey: fcmToken]
+        
+        REF_USERS.child(currentUid).updateChildValues(values)
     }
 }
 

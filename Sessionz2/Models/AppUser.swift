@@ -11,6 +11,7 @@ import CoreLocation
 
 
 //Constants
+
 fileprivate let gamerTagKey = "gamerTag"
 fileprivate let emailKey = "email"
 fileprivate let consoleTypeKey = "consoleType"
@@ -40,7 +41,7 @@ struct AppUser {
     var displayName: String {
         return self.gamerTag
     }
-    
+    let fcmToken: String
     let gamerTag: String
     let email: String
     var consoleType: ConsoleType!
@@ -49,11 +50,12 @@ struct AppUser {
     var pulsing: Bool?
     var profileImageURL: String?
     
-    init(uid: String, gamerTag: String, email: String, consoleType: ConsoleType) {
+    init(uid: String, gamerTag: String, email: String, consoleType: ConsoleType, fcmToken: String) {
         self.uid = uid
         self.gamerTag = gamerTag
         self.email = email
         self.consoleType = consoleType
+        self.fcmToken = fcmToken
         
     }
     
@@ -61,6 +63,7 @@ struct AppUser {
         self.uid = uid
         self.gamerTag = dictionary[gamerTagKey] as? String ?? ""
         self.email = dictionary[emailKey] as? String ?? ""
+        self.fcmToken = dictionary[fcmTokenKey] as? String ?? ""
         self.profileImageURL = dictionary[profileImageURLKey] as? String ?? ""
         if let consoleIndex = dictionary[consoleTypeKey] as? Int {
             self.consoleType = ConsoleType(rawValue: consoleIndex)
@@ -73,7 +76,8 @@ struct AppUser {
                 emailKey: self.email,
                 consoleTypeKey: self.consoleType.rawValue,
                 uidKey: self.uid ?? "",
-                profileImageURLKey: self.profileImageURL ?? ""]
+                profileImageURLKey: self.profileImageURL ?? "",
+                fcmTokenKey: self.fcmToken]
     }
     
 }
