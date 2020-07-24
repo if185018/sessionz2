@@ -8,6 +8,7 @@
 
 import UIKit
 import GeoFire
+import FirebaseMessaging
 
 class SignUpVC: UIViewController {
     
@@ -129,12 +130,14 @@ class SignUpVC: UIViewController {
        let consoleTypeIndex = consoleSegmentedControl.selectedSegmentIndex
        let consoleType = ConsoleType(rawValue: consoleTypeIndex)!
         
+        guard let fcmToken = Messaging.messaging().fcmToken else {return}
         
         
         FirebaseAuthService.manager.createNewUser(email: email, password: password) {result in
             switch result {
             case .success(let user):
-                let appUser = AppUser(uid: user.uid, gamerTag: gamerTag, email: email, consoleType: consoleType)
+                
+                let appUser = AppUser(uid: user.uid, gamerTag: gamerTag, email: email, consoleType: consoleType, fcmToken: fcmToken)
                 FirebaseDatabaseHelper.manager.uploadCreatedUserToDatabase(uid: appUser.uid, appUser: appUser) { (result) in
                     switch result {
                     case .success():
