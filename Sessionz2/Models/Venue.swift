@@ -7,8 +7,28 @@
 //
 
 import Foundation
+import MapKit
 
-struct Venue {
-    var name: String
+let venueNameKey = "venueName"
+let latKey = "lat"
+let longKey = "long"
+
+
+class Venue: NSObject, MKAnnotation {
+    var venueName: String?
+    let lat: Double?
+    let long: Double?
     
+    var coordinate: CLLocationCoordinate2D {
+         return CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
+    }
+    
+    init(dict: [String: Any]) {
+        guard let venueName = dict[venueNameKey] as? String,
+        let lat = dict[latKey] as? Double,
+        let long = dict[longKey] as? Double else {return}
+        self.venueName = venueName
+        self.lat = lat
+        self.long = long
+    }
 }
