@@ -39,6 +39,8 @@ class HomeController: UIViewController {
     }()
     
     
+    
+    
     private var locationManager = LocationHandler.shared.locationManager 
        
     
@@ -51,6 +53,14 @@ class HomeController: UIViewController {
         button.setImage(#imageLiteral(resourceName: "baseline_menu_black_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
         return button
+    }()
+    
+    private let messageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(messageButtonPressed), for: .touchUpInside)
+        return button
+        
     }()
     
     private let playerActionView = PlayerActionView()
@@ -89,6 +99,8 @@ class HomeController: UIViewController {
             actionButtonConfig = .dismissActionView
         }
     }
+    
+    
     
     private func fetchPlayers() {
         guard let location = locationManager?.location else {
@@ -157,6 +169,7 @@ class HomeController: UIViewController {
     private func configureUI() {
         configureMapView()
         configurePlayerActionView()
+        configureMessageButton()
         configureActionButton()
     }
     
@@ -172,6 +185,10 @@ class HomeController: UIViewController {
         view.addSubview(actionButton)
         actionButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
                             paddingTop: 16, paddingLeft: 20, width: 30, height: 30)
+    }
+    private func configureMessageButton() {
+        view.addSubview(messageButton)
+        messageButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingRight: 20, width: 30, height: 30)
     }
     
     private func configurePlayerActionView() {
@@ -196,6 +213,12 @@ class HomeController: UIViewController {
             print("dismiss action")
         }
         
+    }
+    
+    @objc func messageButtonPressed() {
+        let newMessageController = NewMessageController()
+        newMessageController.modalPresentationStyle = .fullScreen
+        present(newMessageController, animated: true, completion: nil)
     }
     
     //MARK: TOUCH EVENTS

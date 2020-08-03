@@ -19,6 +19,10 @@ class Venue: NSObject, MKAnnotation {
     let lat: Double
     let long: Double
     
+    var title: String? {
+        return self.venueName
+    }
+    
     var coordinate: CLLocationCoordinate2D {
          return CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
     }
