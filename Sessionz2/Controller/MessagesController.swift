@@ -85,6 +85,9 @@ class MessagesController: UITableViewController {
     func configureNavigationBar() {
         navigationItem.title = "Messages"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleNewMessage))
+        
+        
     }
     
     func showChatController(for user: AppUser) {
@@ -95,6 +98,15 @@ class MessagesController: UITableViewController {
                present(navController, animated: true, completion: nil)
     }
     
+    
+    //MARK: Handlers
+    
+    @objc func handleNewMessage() {
+        let newMessageController = NewMessageController()
+        newMessageController.messagesController = self
+        let navigationController = UINavigationController(rootViewController: newMessageController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
     
     //MARK: API
     

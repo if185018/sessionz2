@@ -169,7 +169,7 @@ class HomeController: UIViewController {
     private func configureUI() {
         configureMapView()
         configurePlayerActionView()
-        configureMessageButton()
+        //configureMessageButton()
         configureActionButton()
     }
     
