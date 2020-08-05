@@ -35,6 +35,7 @@
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
 		8182705624D229A200788FBE /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182705524D229A200788FBE /* Venue.swift */; };
+		819DD7E224DB287D0051FBCA /* Venues.json in Resources */ = {isa = PBXBuildFile; fileRef = 819DD7E124DB287D0051FBCA /* Venues.json */; };
 		81A45A3924C8E26A00B6A30E /* MessageNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */; };
 		81B2066C24A51C2000D552B3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B2066B24A51C2000D552B3 /* MessageService.swift */; };
 		81B27AE224630CCC002E4D28 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B27AE124630CCC002E4D28 /* UserProfileVC.swift */; };
@@ -100,6 +101,7 @@
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
 		8182705524D229A200788FBE /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		819DD7E124DB287D0051FBCA /* Venues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Venues.json; sourceTree = "<group>"; };
 		81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationView.swift; sourceTree = "<group>"; };
 		81B2066B24A51C2000D552B3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		81B27AE124630CCC002E4D28 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				81003CEA24168EDB00B5DE33 /* AppUser.swift */,
 				810F5839248FEF35002723A9 /* Message.swift */,
 				8182705524D229A200788FBE /* Venue.swift */,
+				819DD7E124DB287D0051FBCA /* Venues.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BD3C52240F09DB00FC98BF /* LaunchScreen.storyboard in Resources */,
+				819DD7E224DB287D0051FBCA /* Venues.json in Resources */,
 				81BD3C4F240F09DB00FC98BF /* Assets.xcassets in Resources */,
 				812F09A824143714004DEF8E /* GoogleService-Info.plist in Resources */,
 			);

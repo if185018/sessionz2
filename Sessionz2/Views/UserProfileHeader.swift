@@ -9,7 +9,7 @@
 import UIKit
 
 //may need to change into UITableViewCell
-class UserProfileHeader: UICollectionViewCell {
+class UserProfileHeader: UITableViewCell {
 
     //MARK: Properties
     var user: AppUser?
@@ -33,8 +33,8 @@ class UserProfileHeader: UICollectionViewCell {
     
     
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(profileImageView)
         profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
         profileImageView.layer.cornerRadius = 100/2
