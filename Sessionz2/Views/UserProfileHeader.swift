@@ -15,7 +15,6 @@ class UserProfileHeader: UITableViewCell {
     var user: AppUser?
     
     
-    
     let profileImageView: UIImageView = {
       let iv = UIImageView()
       iv.contentMode = .scaleAspectFill
@@ -24,13 +23,43 @@ class UserProfileHeader: UITableViewCell {
         return iv
     }()
     
-    let nameLabel: UILabel = {
+    let gamerTagLabel: UILabel = {
            let label = UILabel()
            label.text = "Heath Ledger"
            label.font = UIFont.boldSystemFont(ofSize: 12)
            return label
        }()
     
+    let primaryConsoleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        let attributedText = NSMutableAttributedString(string: "PS4", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        attributedText.append(NSAttributedString(string: "main console", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
+        return label
+    }()
+    
+    let matchesWonLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        
+        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        attributedText.append(NSAttributedString(string: "matches won", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
+        return label
+    }()
+    
+    let totalMatchesLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        attributedText.append(NSAttributedString(string: "total matches", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        label.attributedText = attributedText
+        return label
+    }()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,8 +68,8 @@ class UserProfileHeader: UITableViewCell {
         profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
         profileImageView.layer.cornerRadius = 100/2
         
-        addSubview(nameLabel)
-        nameLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 0)
+        addSubview(gamerTagLabel)
+        gamerTagLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 0)
         
         
     }
