@@ -75,7 +75,27 @@ class UserProfileHeader: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
+        //Profile Image Constraints
         fatalError("init(coder:) has not been implemented")
+        addSubview(profileImageView)
+        profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
+        profileImageView.layer.cornerRadius = 80 / 2
+        
+        
+        
+    }
+    
+    
+    //MARK: Private Methods
+    
+    func configureUserInfo() {
+        let stackView = UIStackView(arrangedSubviews: [primaryConsoleLabel, matchesWonLabel, totalMatchesLabel])
+        
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        
+        addSubview(stackView)
+        stackView.anchor(top: self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: 0, height: 50)
     }
     
 }
