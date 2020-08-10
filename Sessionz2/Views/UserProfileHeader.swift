@@ -77,11 +77,6 @@ class UserProfileHeader: UITableViewCell {
     required init?(coder: NSCoder) {
         //Profile Image Constraints
         fatalError("init(coder:) has not been implemented")
-        addSubview(profileImageView)
-        profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
-        profileImageView.layer.cornerRadius = 80 / 2
-        
-        
         
     }
     
@@ -96,6 +91,23 @@ class UserProfileHeader: UITableViewCell {
         
         addSubview(stackView)
         stackView.anchor(top: self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: 0, height: 50)
+    }
+    
+    func configureSepearatorViews() {
+        let topDividerView = UIView()
+        topDividerView.backgroundColor = .lightGray
+        
+        let bottomDividerView = UIView()
+        bottomDividerView.backgroundColor = .lightGray
+        
+        
+        addSubview(topDividerView)
+        addSubview(bottomDividerView)
+        
+        topDividerView.anchor(top: nil, left: leftAnchor, bottom: self.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, width: 0, height: 0.5)
+        
+         bottomDividerView.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
+        
     }
     
 }
