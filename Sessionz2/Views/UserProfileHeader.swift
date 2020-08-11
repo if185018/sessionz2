@@ -12,11 +12,17 @@ import UIKit
 class UserProfileHeader: UITableViewCell {
 
     //MARK: Properties
-    var user: AppUser?
+    var user: AppUser? {
+        didSet {
+            guard let profileImageUrl = user?.profileImageURL else { return }
+            
+            profileImageView.loadImage(with: profileImageUrl)
+        }
+    }
     
     
-    let profileImageView: UIImageView = {
-      let iv = UIImageView()
+    let profileImageView: CustomImageView = {
+      let iv = CustomImageView()
       iv.contentMode = .scaleAspectFill
       iv.clipsToBounds = true
       iv.backgroundColor = .lightGray
@@ -71,7 +77,7 @@ class UserProfileHeader: UITableViewCell {
         addSubview(gamerTagLabel)
         gamerTagLabel.anchor(top: profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 0)
         
-        
+        configureSepearatorViews()
     }
     
     required init?(coder: NSCoder) {
