@@ -233,6 +233,10 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     @objc func handleInfoTapped() {
         //TO DO: Handle user profile vc
+        
+        guard let user = self.user else {return}
+        let userProfileVC = UserProfileVC(user: user)
+        self.navigationController?.pushViewController(userProfileVC, animated: true)
         print("user tapped")
     }
     

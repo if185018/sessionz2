@@ -8,12 +8,25 @@
 
 import UIKit
 
-//may need to change into UITableViewCell
-class UserProfileHeader: UITableViewCell {
 
+
+//may need to change into UITableViewCell
+
+
+protocol UserProfileHeaderDelegate {
+    func setUserStats(for header: UserProfileHeader)
+}
+
+
+class UserProfileHeader: UITableViewHeaderFooterView {
+
+    
+    var delegate: UserProfileHeaderDelegate?
+    
     //MARK: Properties
     var user: AppUser? {
         didSet {
+            setUserStats(for: user)
             guard let profileImageUrl = user?.profileImageURL else { return }
             
             profileImageView.loadImage(with: profileImageUrl)
@@ -31,7 +44,7 @@ class UserProfileHeader: UITableViewCell {
     
     let gamerTagLabel: UILabel = {
            let label = UILabel()
-           label.text = "Heath Ledger"
+           label.text = "Jon Moxley"
            label.font = UIFont.boldSystemFont(ofSize: 12)
            return label
        }()
@@ -68,9 +81,11 @@ class UserProfileHeader: UITableViewCell {
     }()
     
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        
         addSubview(profileImageView)
+        
         profileImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
         profileImageView.layer.cornerRadius = 100/2
         
@@ -114,6 +129,11 @@ class UserProfileHeader: UITableViewCell {
         
          bottomDividerView.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
         
+    }
+    
+    
+    func setUserStats(for user: AppUser?) {
+        delegate?.setUserStats(for: self)
     }
     
 }
