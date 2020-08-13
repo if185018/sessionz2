@@ -50,6 +50,7 @@
 		81CBD0AA241005360082E25C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0A9241005360082E25C /* UIColor+Extension.swift */; };
 		81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AB24100F1A0082E25C /* LoginVC.swift */; };
 		81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AD24102A660082E25C /* UITextField+Extension.swift */; };
+		81D96A9A24E5AC3900FB148D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D96A9924E5AC3900FB148D /* UITableView+Extension.swift */; };
 		81FBD2BC24B8E14200E56D27 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBD2BB24B8E14200E56D27 /* MessagesController.swift */; };
 		81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6F0C24226F3F0046EF8C /* AppError.swift */; };
 		81FEDDD224BCE040005DA2B4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEDDD124BCE040005DA2B4 /* MessageCell.swift */; };
@@ -120,6 +121,7 @@
 		81CBD0A9241005360082E25C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		81CBD0AB24100F1A0082E25C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		81CBD0AD24102A660082E25C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		81D96A9924E5AC3900FB148D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		81FBD2BB24B8E14200E56D27 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		81FD6F0C24226F3F0046EF8C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		81FEDDD124BCE040005DA2B4 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				81FD6F0C24226F3F0046EF8C /* AppError.swift */,
 				81C8D40924363A280033D036 /* MapView+Extension.swift */,
 				81631830247D7D2300F480AD /* CustomImageView.swift */,
+				81D96A9924E5AC3900FB148D /* UITableView+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				815EF5B5242E502E00FD04D3 /* PlayerService.swift in Sources */,
 				81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */,
 				81A45A3924C8E26A00B6A30E /* MessageNotificationView.swift in Sources */,
+				81D96A9A24E5AC3900FB148D /* UITableView+Extension.swift in Sources */,
 				81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */,
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,

@@ -108,7 +108,7 @@ class UserProfileHeader: UITableViewHeaderFooterView {
         addSubview(challengeProfileButton)
         challengeProfileButton.anchor(top: self.primaryConsoleLabel.bottomAnchor, left: primaryConsoleLabel.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 0, paddingRight: 12, width: 0, height: 30)
         
-        //configureSepearatorViews()
+        
     }
     
     required init?(coder: NSCoder) {
