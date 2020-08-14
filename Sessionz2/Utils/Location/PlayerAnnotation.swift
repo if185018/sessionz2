@@ -27,6 +27,7 @@ class PlayerAnnotation: NSObject, MKAnnotation {
     init(player: AppUser, coordinate: CLLocationCoordinate2D) {
         self.player = player
         self.coordinate = coordinate
+        
     }
     
     func updateAnnotationPosition(withCoordinate coordinate: CLLocationCoordinate2D) {

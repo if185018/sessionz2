@@ -274,6 +274,7 @@ extension HomeController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? PlayerAnnotation {
             let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annoView.displayPriority = .required
             annoView.image = #imageLiteral(resourceName: "GameController2")
             annoView.canShowCallout = true
             annoView.isEnabled = true

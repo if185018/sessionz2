@@ -18,7 +18,7 @@ protocol UserProfileHeaderDelegate {
 }
 
 
-class UserProfileHeader: UITableViewHeaderFooterView {
+class UserProfileHeader: UICollectionViewCell {
 
     
     var delegate: UserProfileHeaderDelegate?
@@ -91,8 +91,8 @@ class UserProfileHeader: UITableViewHeaderFooterView {
         return button
     }()
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         addSubview(profileImageView)
         
@@ -124,10 +124,10 @@ class UserProfileHeader: UITableViewHeaderFooterView {
         let stackView = UIStackView(arrangedSubviews: [primaryConsoleLabel, matchesWonLabel, totalMatchesLabel])
         
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         
         addSubview(stackView)
-        stackView.anchor(top: self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: 0, height: 50)
+        stackView.anchor(top: self.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 4, paddingBottom: 0, paddingRight: 12, width: 0, height: 50)
     }
     
     func configureSepearatorViews() {

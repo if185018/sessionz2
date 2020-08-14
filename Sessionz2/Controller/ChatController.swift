@@ -235,7 +235,8 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         //TO DO: Handle user profile vc
         
         guard let user = self.user else {return}
-        let userProfileVC = UserProfileVC(user: user)
+        let userProfileVC = UserProfileVC(collectionViewLayout: UICollectionViewFlowLayout())
+        userProfileVC.user = user
         self.navigationController?.pushViewController(userProfileVC, animated: true)
         print("user tapped")
     }
