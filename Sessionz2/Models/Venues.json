@@ -1,1 +1,21 @@
-
+{
+    "results": [
+    
+    {
+        "name": "Next Level",
+        "streetAddress": "4013 8th Ave Brooklyn, NY",
+        "latitude": 40.6569,
+        "longitude": -74.0022,
+    },
+    
+    {
+        "name": "XenoZero",
+        "streetAddress": "21 Ludlow St, New York, NY",
+        "latitude": 40.715390,
+        "longitude": -73.991020
+    }
+    
+    
+    
+    ]
+}
