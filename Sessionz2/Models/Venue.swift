@@ -9,36 +9,43 @@
 import Foundation
 import MapKit
 
-let venueNameKey = "venueName"
-let latKey = "lat"
-let longKey = "long"
+let venueNameKey = "name"
+let latKey = "latitude"
+let longKey = "longitude"
+let streetAddressKey = "streetAddress"
 
 
-class Venue: NSObject, MKAnnotation {
-    var venueName: String
-    let lat: Double
-    let long: Double
+
+class Venue: NSObject, MKAnnotation, Codable {
+    var name: String
+    let latitude: Double
+    let longitude: Double
+    let streetAddress: String
     
     var title: String? {
-        return self.venueName
+        return self.name
     }
     
     var coordinate: CLLocationCoordinate2D {
-         return CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
+         return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
     
     init?(dict: [String: Any]) {
         guard let venueName = dict[venueNameKey] as? String,
         let lat = dict[latKey] as? Double,
-        let long = dict[longKey] as? Double else {return nil}
-        self.venueName = venueName
-        self.lat = lat
-        self.long = long
+        let long = dict[longKey] as? Double,
+        let streetAddress = dict[streetAddressKey] as? String
+            else {return nil}
+        self.name = venueName
+        self.latitude = lat
+        self.longitude = long
+        self.streetAddress = streetAddress
     }
     
-    init(venueName: String, lat: Double, long: Double) {
-        self.venueName = venueName
-        self.lat = lat
-        self.long = long
+    init(name: String, lat: Double, long: Double, streetAddress: String) {
+        self.name = name
+        self.latitude = lat
+        self.longitude = long
+        self.streetAddress = streetAddress
     }
 }
