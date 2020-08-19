@@ -15,6 +15,10 @@ let longKey = "longitude"
 let streetAddressKey = "streetAddress"
 
 
+class Results: Codable {
+    let results: [Venue]
+}
+
 
 class Venue: NSObject, MKAnnotation, Codable {
     var name: String

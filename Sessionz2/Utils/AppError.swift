@@ -11,5 +11,5 @@ enum AppError: Error {
     case noData
     case noUser
     case other(error: Error)
-    
+    case bundlePathError
 }
