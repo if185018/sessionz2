@@ -73,6 +73,11 @@ class HomeController: UIViewController {
         }
     }
     
+    public var venues = [Venue]()
+    
+    
+    
+    
     
     //MARK: Lifecycle
     
@@ -80,6 +85,7 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         configureUI()
         enableLocationServices()
+        loadVenues()
         FirebaseDatabaseHelper.manager.setUserFCMToken()
     }
     
@@ -127,6 +133,14 @@ class HomeController: UIViewController {
             }
             
             
+        }
+    }
+    
+    private func loadVenues() {
+        self.venues = JSONService.parsePodcastJSONFile()
+        
+        for venue in venues {
+            mapView.addAnnotation(venue)
         }
     }
     
@@ -216,9 +230,7 @@ class HomeController: UIViewController {
     }
     
     @objc func messageButtonPressed() {
-        let newMessageController = NewMessageController()
-        newMessageController.modalPresentationStyle = .fullScreen
-        present(newMessageController, animated: true, completion: nil)
+        
     }
     
     //MARK: TOUCH EVENTS
