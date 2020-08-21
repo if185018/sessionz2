@@ -170,6 +170,10 @@ class HomeController: UIViewController {
             if let userAnno = annotation as? MKUserLocation {
                 annotations.append(userAnno)
             }
+            
+            if let venueAnno = annotation as? Venue {
+                annotations.append(venueAnno)
+            }
         }
         
         self.mapView.zoomToFit(annotations: annotations)
@@ -294,6 +298,12 @@ extension HomeController: MKMapViewDelegate {
             annoView.rightCalloutAccessoryView = btn
             
             return annoView
+        } else if let venueAnnotation = annotation as? Venue {
+            let venueAnnoView = MKAnnotationView(annotation: venueAnnotation, reuseIdentifier: "venueAnnotation")
+            venueAnnoView.image = #imageLiteral(resourceName: "icons8-arcade-cabinet-48")
+            venueAnnoView.canShowCallout = true
+            venueAnnoView.isEnabled = true
+            return venueAnnoView
         }
         return nil 
     }
