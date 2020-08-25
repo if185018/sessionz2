@@ -25,6 +25,22 @@ class VenueActionView: UIView {
         }
     }
     
+    private lazy var venueNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private lazy var addressLabel: UILabel = {
+        let label = UILabel()
+               label.textColor = .lightGray
+               label.font = UIFont.systemFont(ofSize: 16)
+               label.textAlignment = .center
+           
+               return label
+    }()
+    
     
     
     
