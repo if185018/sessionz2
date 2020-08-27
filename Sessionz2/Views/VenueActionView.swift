@@ -60,5 +60,8 @@ class VenueActionView: UIView {
     
     
     
-    
+    @objc func handleLocationButtonClicked() {
+        guard let venue = venue else {return}
+        delegate?.locationButtonClicked(venue: venue)
+    }
 }
