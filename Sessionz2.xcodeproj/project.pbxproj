@@ -38,6 +38,7 @@
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
 		8182705624D229A200788FBE /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8182705524D229A200788FBE /* Venue.swift */; };
+		819B213024FA085500F50AA6 /* HoursOfOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B212F24FA085500F50AA6 /* HoursOfOperation.swift */; };
 		819DD7E224DB287D0051FBCA /* Venues.json in Resources */ = {isa = PBXBuildFile; fileRef = 819DD7E124DB287D0051FBCA /* Venues.json */; };
 		81A45A3924C8E26A00B6A30E /* MessageNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */; };
 		81B2066C24A51C2000D552B3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B2066B24A51C2000D552B3 /* MessageService.swift */; };
@@ -109,6 +110,7 @@
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
 		8182705524D229A200788FBE /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		819B212F24FA085500F50AA6 /* HoursOfOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursOfOperation.swift; sourceTree = "<group>"; };
 		819DD7E124DB287D0051FBCA /* Venues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Venues.json; sourceTree = "<group>"; };
 		81A45A3824C8E26A00B6A30E /* MessageNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationView.swift; sourceTree = "<group>"; };
 		81B2066B24A51C2000D552B3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				810F5839248FEF35002723A9 /* Message.swift */,
 				8182705524D229A200788FBE /* Venue.swift */,
 				819DD7E124DB287D0051FBCA /* Venues.json */,
+				819B212F24FA085500F50AA6 /* HoursOfOperation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */,
 				813F4A6E242689C000E0FE0D /* LocationHandler.swift in Sources */,
 				816233ED2419321300A7BF09 /* HomeController.swift in Sources */,
+				819B213024FA085500F50AA6 /* HoursOfOperation.swift in Sources */,
 				81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */,
 				817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */,
 				816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */,
