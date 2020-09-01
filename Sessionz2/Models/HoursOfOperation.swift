@@ -8,16 +8,38 @@
 
 import Foundation
 
-struct HoursOfOperation {
-    func figureItOut() {
-        let calendar = Calendar.current
-        let date = Date()
-        let dateInterval = calendar.dateInterval(of: .hour, for: date)
-        
-        let dateComponents = DateComponents(hour: 8)
-        
-    }
+enum DaysOfWeek: String {
+    case Sunday
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
     
+    
+}
+
+struct HoursOfOperation {
+    
+    let day: DaysOfWeek
+    let openTime: Int
+    let closeTime: Int
+    let weekday: Int
+    
+   
+    
+    func generateDisplayText() -> String {
+        let calendar = Calendar.current
+        let schedule = DateInterval(start: calendar.date(from: DateComponents(hour: openTime, weekday: weekday))!, end: calendar.date(from: DateComponents(hour: closeTime, weekday: weekday))!)
+        
+        let formatter = DateIntervalFormatter()
+        formatter.dateStyle = .none
+        
+        let output = formatter.string(from: schedule)
+        
+        return "\(self.day.rawValue): \(output!)"
+    }
     
     
     
