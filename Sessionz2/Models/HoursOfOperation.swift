@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DaysOfWeek: String {
+enum DaysOfWeek: String,Codable {
     case Sunday
     case Monday
     case Tuesday
@@ -20,11 +20,11 @@ enum DaysOfWeek: String {
     
 }
 
-struct HoursOfOperation {
+struct HoursOfOperation: Codable {
     
     let day: DaysOfWeek
-    let openTime: Int
-    let closeTime: Int
+    let openTime: Int?
+    let closeTime: Int?
     let weekday: Int
     
    

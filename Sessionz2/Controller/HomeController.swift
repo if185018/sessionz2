@@ -140,6 +140,7 @@ class HomeController: UIViewController {
         self.venues = JSONService.parsePodcastJSONFile()
         
         for venue in venues {
+            
             mapView.addAnnotation(venue)
         }
     }
@@ -187,7 +188,6 @@ class HomeController: UIViewController {
     private func configureUI() {
         configureMapView()
         configurePlayerActionView()
-        //configureMessageButton()
         configureActionButton()
     }
     
