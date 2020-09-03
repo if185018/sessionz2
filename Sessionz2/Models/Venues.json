@@ -23,10 +23,26 @@
             
             
             
+        },
+        
+        {
+            
+            "day": "Tuesday",
+            "openTime": 15,
+            "closeTime": 21,
+            "weekday": 3
+            
+        },
+        
+        {
+            "day": "Wednesday",
+            "openTime": 15,
+            "closeTime": 21,
+            "weekday": 4
         }
         
         ]
-            
+        
         
         
     },
