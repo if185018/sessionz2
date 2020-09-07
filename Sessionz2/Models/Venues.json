@@ -21,8 +21,6 @@
             "closeTime": 21,
             "weekday": 2
             
-            
-            
         },
         
         {
@@ -39,6 +37,29 @@
             "openTime": 15,
             "closeTime": 21,
             "weekday": 4
+        },
+        
+        {
+            "day": "Thursday",
+            "openTime": 15,
+            "closeTime": 19,
+            "weekday": 5
+        },
+        
+        {
+            "day": "Friday",
+            "openTime": 13,
+            "closeTime": 21,
+            "weekday": 6
+            
+        },
+        
+        
+        {
+            "day": "Saturday",
+            "openTime": 13,
+            "closeTime": 21,
+            "weekday": 21
         }
         
         ]
@@ -54,7 +75,57 @@
         "longitude": -73.991020,
         "hoursOfOperation": [
             {
+                "day": "Sunday",
+                "openTime": null,
+                "closeTime": null,
+                "weekday": 1
+            },
+            
+            {
+                "day": "Monday",
+                "openTime": 13,
+                "closeTime": 21,
+                "weekday": 2
                 
+            },
+            
+            {
+                
+                "day": "Tuesday",
+                "openTime": 15,
+                "closeTime": 21,
+                "weekday": 3
+                
+            },
+            
+            {
+                "day": "Wednesday",
+                "openTime": 15,
+                "closeTime": 21,
+                "weekday": 4
+            },
+            
+            {
+                "day": "Thursday",
+                "openTime": 15,
+                "closeTime": 19,
+                "weekday": 5
+            },
+            
+            {
+                "day": "Friday",
+                "openTime": 13,
+                "closeTime": 21,
+                "weekday": 6
+                
+            },
+            
+            
+            {
+                "day": "Saturday",
+                "openTime": 13,
+                "closeTime": 21,
+                "weekday": 21
             }
         
         ]

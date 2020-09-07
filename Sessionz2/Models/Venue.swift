@@ -26,7 +26,7 @@ class Venue: NSObject, MKAnnotation, Codable {
     let longitude: Double
     let streetAddress: String
     
-    var hoursOfOperation: HoursOfOperation?
+    var hoursOfOperation: [HoursOfOperation]?
     
     var title: String? {
         return self.name
