@@ -34,11 +34,16 @@ class VenueActionView: UIView {
     
     private lazy var addressLabel: UILabel = {
         let label = UILabel()
-               label.textColor = .lightGray
-               label.font = UIFont.systemFont(ofSize: 16)
-               label.textAlignment = .center
-           
-               return label
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    private lazy var hoursOfOperationView: HoursOfOperationView = {
+        let view = HoursOfOperationView()
+        return view
     }()
     
     
