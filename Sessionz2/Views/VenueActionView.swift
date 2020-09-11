@@ -47,10 +47,21 @@ class VenueActionView: UIView {
     }()
     
     
+    private let messageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .secondaryBlueTint
+        button.setTitle("Location", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleLocationButtonClicked), for: .touchUpInside)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
          self.backgroundColor = .white
+        
+        
         
         addShadow()
         
