@@ -60,10 +60,24 @@ class VenueActionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
          self.backgroundColor = .white
+        self.hoursOfOperationView.hoursOfOperation = self.venue?.hoursOfOperation
         
         
+         addShadow()
+        let stack = UIStackView(arrangedSubviews: [venueNameLabel, addressLabel])
+        stack.axis = .vertical
+        stack.spacing = 4
+        stack.distribution = .fillEqually
         
-        addShadow()
+        //configure stack view with gamer tag and full name labels
+        addSubview(stack)
+        stack.centerX(inView: self)
+        stack.anchor(top: topAnchor, paddingTop: 12)
+        
+        addSubview(hoursOfOperationView)
+        
+        
+       
         
         
         
