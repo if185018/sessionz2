@@ -21,7 +21,7 @@ class VenueActionView: UIView {
     
     var venue: Venue? {
         didSet {
-            
+            self.hoursOfOperationView.hoursOfOperation = self.venue?.hoursOfOperation
         }
     }
     
@@ -47,7 +47,7 @@ class VenueActionView: UIView {
     }()
     
     
-    private let messageButton: UIButton = {
+    private let locationButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .secondaryBlueTint
         button.setTitle("Location", for: .normal)
@@ -60,7 +60,7 @@ class VenueActionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
          self.backgroundColor = .white
-        self.hoursOfOperationView.hoursOfOperation = self.venue?.hoursOfOperation
+        
         
         
          addShadow()
@@ -75,9 +75,12 @@ class VenueActionView: UIView {
         stack.anchor(top: topAnchor, paddingTop: 12)
         
         addSubview(hoursOfOperationView)
+        hoursOfOperationView.centerX(inView: self)
+        hoursOfOperationView.anchor(top: stack.bottomAnchor, paddingTop: 16)
+        hoursOfOperationView.setDimensions(height: 150, width: 150)
         
-        
-       
+        addSubview(locationButton)
+        locationButton.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, height: 45)
         
         
         
