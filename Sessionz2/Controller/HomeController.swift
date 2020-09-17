@@ -73,6 +73,10 @@ class HomeController: UIViewController {
         }
     }
     
+    private let venueActionView = VenueActionView()
+    private final let venueActionViewHeight: CGFloat = 300
+    
+    
     public var venues = [Venue]()
     
     
@@ -188,6 +192,7 @@ class HomeController: UIViewController {
     private func configureUI() {
         configureMapView()
         configurePlayerActionView()
+        configureVenueActionView()
         configureActionButton()
     }
     
@@ -216,6 +221,10 @@ class HomeController: UIViewController {
         playerActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: playerActionViewHeight)
     }
     
+    private func configureVenueActionView() {
+        view.addSubview(venueActionView)
+        venueActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: venueActionViewHeight)
+    }
     
     
     //MARK: Selectors
