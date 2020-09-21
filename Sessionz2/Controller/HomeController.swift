@@ -165,6 +165,8 @@ class HomeController: UIViewController {
         
     }
     
+    
+    
     private func zoomToCurrentUser(playerID: String) {
         var annotations = [MKAnnotation]()
         
@@ -312,20 +314,25 @@ extension HomeController: MKMapViewDelegate {
             venueAnnoView.image = #imageLiteral(resourceName: "icons8-arcade-cabinet-48")
             venueAnnoView.canShowCallout = true
             venueAnnoView.isEnabled = true
+            let btn = UIButton(type: .detailDisclosure)
+            venueAnnoView.rightCalloutAccessoryView = btn
             return venueAnnoView
         }
         return nil 
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let playerAnno = view.annotation as? PlayerAnnotation else {return}
+        if let playerAnno = view.annotation as? PlayerAnnotation {
+            
+            print("DEBUG: Control tapped for user \(playerAnno.player.gamerTag)")
+            
+            
+            
+            animatePlayerActionView(shouldShow: true, user: playerAnno.player)
+            
+        }
+        //TODO handle venue anno
         
-        print("DEBUG: Control tapped for user \(playerAnno.player.gamerTag)")
-        
-        //TODO configure and display player action view
-        
-        
-        animatePlayerActionView(shouldShow: true, user: playerAnno.player)
     }
     
     

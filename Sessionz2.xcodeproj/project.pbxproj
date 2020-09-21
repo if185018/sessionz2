@@ -56,6 +56,7 @@
 		81CBD0AE24102A660082E25C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBD0AD24102A660082E25C /* UITextField+Extension.swift */; };
 		81D96A9A24E5AC3900FB148D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D96A9924E5AC3900FB148D /* UITableView+Extension.swift */; };
 		81DF9A6C24F3889B000DB61E /* VenueActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DF9A6B24F3889B000DB61E /* VenueActionView.swift */; };
+		81EF86302518718C0071A257 /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF862F2518718C0071A257 /* VenueAnnotation.swift */; };
 		81FBD2BC24B8E14200E56D27 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FBD2BB24B8E14200E56D27 /* MessagesController.swift */; };
 		81FD6F0D24226F3F0046EF8C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6F0C24226F3F0046EF8C /* AppError.swift */; };
 		81FEDDD224BCE040005DA2B4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEDDD124BCE040005DA2B4 /* MessageCell.swift */; };
@@ -132,6 +133,7 @@
 		81CBD0AD24102A660082E25C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		81D96A9924E5AC3900FB148D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		81DF9A6B24F3889B000DB61E /* VenueActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueActionView.swift; sourceTree = "<group>"; };
+		81EF862F2518718C0071A257 /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
 		81FBD2BB24B8E14200E56D27 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		81FD6F0C24226F3F0046EF8C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		81FEDDD124BCE040005DA2B4 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				813F4A6D242689C000E0FE0D /* LocationHandler.swift */,
 				815D08DA242D0F820074AF23 /* PlayerAnnotation.swift */,
+				81EF862F2518718C0071A257 /* VenueAnnotation.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
 				813E050A2497CFAC00D29607 /* MessageInputAccessoryView.swift in Sources */,
+				81EF86302518718C0071A257 /* VenueAnnotation.swift in Sources */,
 				81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */,
 				8182705624D229A200788FBE /* Venue.swift in Sources */,
 				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
