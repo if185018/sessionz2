@@ -22,7 +22,7 @@ private enum ActionButtonConfiguration {
 }
 
 private let annotationIdentifier = "PlayerAnnotation"
-
+private let venueAnnoIdentifier = "venueAnnotation"
 class HomeController: UIViewController {
     
     
@@ -162,6 +162,19 @@ class HomeController: UIViewController {
             self.playerActionView.user = user
         }
         
+        
+    }
+    
+    private func animateVenueActionView(shouldShow: Bool, venue: Venue?) {
+        let yOrigin = shouldShow ? self.view.frame.height - self.venueActionViewHeight : self.view.frame.height
+        
+        UIView.animate(withDuration: 0.3) {
+                   self.venueActionView.frame.origin.y = yOrigin
+            
+            if let venue = venue {
+                self.venueActionView.venue = venue
+            }
+    }
         
     }
     
@@ -310,7 +323,7 @@ extension HomeController: MKMapViewDelegate {
             
             return annoView
         } else if let venueAnnotation = annotation as? Venue {
-            let venueAnnoView = MKAnnotationView(annotation: venueAnnotation, reuseIdentifier: "venueAnnotation")
+            let venueAnnoView = MKAnnotationView(annotation: venueAnnotation, reuseIdentifier: venueAnnoIdentifier)
             venueAnnoView.image = #imageLiteral(resourceName: "icons8-arcade-cabinet-48")
             venueAnnoView.canShowCallout = true
             venueAnnoView.isEnabled = true
@@ -330,8 +343,10 @@ extension HomeController: MKMapViewDelegate {
             
             animatePlayerActionView(shouldShow: true, user: playerAnno.player)
             
+        } else if let venueAnno = view.annotation as? Venue {
+            animateVenueActionView(shouldShow: true, venue: venueAnno)
         }
-        //TODO handle venue anno
+       
         
     }
     
