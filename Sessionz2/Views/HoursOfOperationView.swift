@@ -10,7 +10,11 @@ import UIKit
 
 class HoursOfOperationView: UIView {
 
-    var hoursOfOperation: [HoursOfOperation]?
+    var hoursOfOperation: [HoursOfOperation]? {
+        didSet {
+            setupLabelsWithHours()
+        }
+    }
     
     
     
@@ -67,7 +71,7 @@ class HoursOfOperationView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLabelsWithHours()
+        
         
        
         
@@ -87,7 +91,7 @@ class HoursOfOperationView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 5
-        
+        addSubview(stackView)
         stackView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 4, paddingLeft: 4, paddingBottom: 4, paddingRight: 4)
         
         for num in 0..<hoursOfOperation.count {
