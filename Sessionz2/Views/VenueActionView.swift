@@ -25,14 +25,14 @@ class VenueActionView: UIView {
         }
     }
     
-    private lazy var venueNameLabel: UILabel = {
+    private var venueNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .center
         return label
     }()
     
-    private lazy var addressLabel: UILabel = {
+    private var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 16)
@@ -41,8 +41,9 @@ class VenueActionView: UIView {
         return label
     }()
     
-    private lazy var hoursOfOperationView: HoursOfOperationView = {
+    private var hoursOfOperationView: HoursOfOperationView = {
         let view = HoursOfOperationView()
+        
         return view
     }()
     
@@ -61,8 +62,6 @@ class VenueActionView: UIView {
         super.init(frame: frame)
          self.backgroundColor = .white
         
-        
-        
          addShadow()
         let stack = UIStackView(arrangedSubviews: [venueNameLabel, addressLabel])
         stack.axis = .vertical
@@ -75,6 +74,7 @@ class VenueActionView: UIView {
         stack.anchor(top: topAnchor, paddingTop: 12)
         
         addSubview(hoursOfOperationView)
+        
         hoursOfOperationView.centerX(inView: self)
         hoursOfOperationView.anchor(top: stack.bottomAnchor, paddingTop: 16)
         hoursOfOperationView.setDimensions(height: 150, width: 150)
@@ -88,6 +88,15 @@ class VenueActionView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configureLabelInfo() {
+        guard let venue = self.venue else {
+            print("NO Venue in View")
+            return}
+        self.venueNameLabel.text = venue.name
+        self.hoursOfOperationView.hoursOfOperation = venue.hoursOfOperation
+        self.addressLabel.text = venue.streetAddress
     }
     
     
