@@ -166,14 +166,16 @@ class HomeController: UIViewController {
     }
     
     private func animateVenueActionView(shouldShow: Bool, venue: Venue?) {
+        if let venue = venue {
+            self.venueActionView.venue = venue
+        }
         let yOrigin = shouldShow ? self.view.frame.height - self.venueActionViewHeight : self.view.frame.height
         
         UIView.animate(withDuration: 0.3) {
+            self.venueActionView.configureLabelInfo()
                    self.venueActionView.frame.origin.y = yOrigin
             
-            if let venue = venue {
-                self.venueActionView.venue = venue
-            }
+            
     }
         
     }
