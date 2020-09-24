@@ -74,7 +74,7 @@ class HomeController: UIViewController {
     }
     
     private let venueActionView = VenueActionView()
-    private final let venueActionViewHeight: CGFloat = 300
+    private final let venueActionViewHeight: CGFloat = 360
     
     
     public var venues = [Venue]()
@@ -273,6 +273,9 @@ class HomeController: UIViewController {
             //make sure touch is not in the player action view
             guard touches.first?.view != playerActionView else {return}
             animatePlayerActionView(shouldShow: false, user: nil)
+        } else if self.venueActionView.frame.origin.y == self.view.frame.height - self.venueActionViewHeight {
+            guard touches.first?.view != venueActionView else {return}
+            animateVenueActionView(shouldShow: false, venue: nil)
         }
     }
     

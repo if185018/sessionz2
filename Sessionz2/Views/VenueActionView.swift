@@ -77,7 +77,7 @@ class VenueActionView: UIView {
         
         hoursOfOperationView.centerX(inView: self)
         hoursOfOperationView.anchor(top: stack.bottomAnchor, paddingTop: 16)
-        hoursOfOperationView.setDimensions(height: 150, width: 150)
+        hoursOfOperationView.setDimensions(height: 180, width: 180)
         
         addSubview(locationButton)
         locationButton.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, height: 45)
