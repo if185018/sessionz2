@@ -34,6 +34,7 @@ struct HoursOfOperation: Codable {
         let schedule = DateInterval(start: calendar.date(from: DateComponents(hour: openTime, weekday: weekday))!, end: calendar.date(from: DateComponents(hour: closeTime, weekday: weekday))!)
         
         let formatter = DateIntervalFormatter()
+        formatter.timeStyle = .short
         formatter.dateStyle = .none
         
         let output = formatter.string(from: schedule)

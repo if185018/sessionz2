@@ -17,7 +17,6 @@ class HoursOfOperationView: UIView {
     }
     
     
-    
     private lazy var sundayLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 12)

@@ -240,6 +240,7 @@ class HomeController: UIViewController {
     
     private func configureVenueActionView() {
         view.addSubview(venueActionView)
+        venueActionView.delegate = self 
         venueActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: venueActionViewHeight)
     }
     
@@ -370,6 +371,14 @@ extension HomeController: PlayerActionViewDelegate {
         present(navController, animated: true, completion: nil)
         print("message vc should be showed")
        
+    }
+    
+    
+}
+
+extension HomeController: VenueActionViewDelegate {
+    func locationButtonClicked(venue: Venue) {
+        print("Venue is \(venue.name)")
     }
     
     
