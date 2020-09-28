@@ -275,6 +275,7 @@ class HomeController: UIViewController {
             guard touches.first?.view != playerActionView else {return}
             animatePlayerActionView(shouldShow: false, user: nil)
         } else if self.venueActionView.frame.origin.y == self.view.frame.height - self.venueActionViewHeight {
+            //make sure touch is not in venue action view
             guard touches.first?.view != venueActionView else {return}
             animateVenueActionView(shouldShow: false, venue: nil)
         }

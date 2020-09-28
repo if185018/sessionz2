@@ -34,6 +34,7 @@
 		816233EB2419308B00A7BF09 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816233EA2419308B00A7BF09 /* ContainerController.swift */; };
 		816233ED2419321300A7BF09 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816233EC2419321300A7BF09 /* HomeController.swift */; };
 		81631831247D7D2300F480AD /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81631830247D7D2300F480AD /* CustomImageView.swift */; };
+		8166A0E42521B84100280206 /* LocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166A0E32521B84100280206 /* LocationMapVC.swift */; };
 		817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339A2417DE6D00EF0144 /* MenuController.swift */; };
 		817B339D2417E3CF00EF0144 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B339C2417E3CF00EF0144 /* MenuHeader.swift */; };
 		817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */; };
@@ -106,6 +107,7 @@
 		816233EA2419308B00A7BF09 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		816233EC2419321300A7BF09 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		81631830247D7D2300F480AD /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		8166A0E32521B84100280206 /* LocationMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapVC.swift; sourceTree = "<group>"; };
 		817B339A2417DE6D00EF0144 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		817B339C2417E3CF00EF0144 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		817C472A241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseHelper.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				8112D29024929D0800A8D900 /* ChatController.swift */,
 				817B339A2417DE6D00EF0144 /* MenuController.swift */,
 				816233EE241960ED00A7BF09 /* Login */,
+				8166A0E32521B84100280206 /* LocationMapVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				81CBD0AC24100F1A0082E25C /* LoginVC.swift in Sources */,
 				81BD3C6E240F114E00FC98BF /* View+Extension.swift in Sources */,
 				813E050A2497CFAC00D29607 /* MessageInputAccessoryView.swift in Sources */,
+				8166A0E42521B84100280206 /* LocationMapVC.swift in Sources */,
 				81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */,
 				8182705624D229A200788FBE /* Venue.swift in Sources */,
 				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
