@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Contacts
 
 let venueNameKey = "name"
 let latKey = "latitude"
@@ -25,6 +26,18 @@ class Venue: NSObject, MKAnnotation, Codable {
     let latitude: Double
     let longitude: Double
     let streetAddress: String
+    
+    var mapItem: MKMapItem? {
+        let addressDict = [CNPostalAddressStreetKey: self.streetAddress]
+        let placemark = MKPlacemark(coordinate: self.coordinate, addressDictionary: addressDict)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = self.name
+        return mapItem
+    }
+    
+    
+        
+    
     
     var hoursOfOperation: [HoursOfOperation]?
     
