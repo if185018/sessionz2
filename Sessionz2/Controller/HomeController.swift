@@ -380,6 +380,10 @@ extension HomeController: PlayerActionViewDelegate {
 extension HomeController: VenueActionViewDelegate {
     func locationButtonClicked(venue: Venue) {
         print("Venue is \(venue.name)")
+        
+        
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        venue.mapItem?.openInMaps(launchOptions: launchOptions)
     }
     
     
