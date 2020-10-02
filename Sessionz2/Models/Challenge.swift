@@ -8,8 +8,10 @@
 
 import Foundation
 
+
 class Challenge {
     var fromId: String!
     var toId: String!
     var creationDate: Date!
+    
 }
