@@ -7,11 +7,31 @@
 //
 
 import Foundation
-
+let acceptedKey = "accepted"
 
 class Challenge {
     var fromId: String!
     var toId: String!
     var creationDate: Date!
+    var accepted: Bool!
     
+    
+    
+    init(dictionary: [String: Any]) {
+        if let fromId = dictionary[fromIdKey] as? String {
+            self.fromId = fromId
+        }
+        
+        if let toId = dictionary[toIdKey] as? String {
+            self.toId = toId
+        }
+        if let creationDate = dictionary[creationDateKey] as? Double {
+            self.creationDate = Date(timeIntervalSince1970: creationDate)
+        }
+        if let accepted = dictionary[acceptedKey] as? Bool {
+            self.accepted = accepted
+        }
+        
+        
+    }
 }
