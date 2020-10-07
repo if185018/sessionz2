@@ -23,6 +23,8 @@ let USER_MESSAGE_NOTIFICATIONS_REF = DB_REF.child("user-message-notifications")
 let NOTIFICATIONS_REF = DB_REF.child("notifications")
 let REF_CHALLENGES = DB_REF.child("challenges")
 let USER_CHALLENGES_REF = DB_REF.child("user-challenges")
+let REF_MATCH_RESULTS = DB_REF.child("match-results")
+let USER_MATCH_RESULTS = DB_REF.child("user-match-results")
 
 
 //MARK: Storage References
