@@ -19,6 +19,7 @@
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
 		81155C7F247C3F5800FCA768 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */; };
 		81194ECE2465AF3500189641 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81194ECD2465AF3500189641 /* UserProfileHeader.swift */; };
+		812AA8B5252F50C0001883FC /* ChallengePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812AA8B4252F50C0001883FC /* ChallengePlayerView.swift */; };
 		812F09A824143714004DEF8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812F09A724143714004DEF8E /* GoogleService-Info.plist */; };
 		812F902C24C74280009245E5 /* NewMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F902B24C74280009245E5 /* NewMessageCell.swift */; };
 		813BADD324ED988500594F2F /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BADD224ED988500594F2F /* JSONService.swift */; };
@@ -94,6 +95,7 @@
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		81155C7E247C3F5800FCA768 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		81194ECD2465AF3500189641 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		812AA8B4252F50C0001883FC /* ChallengePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePlayerView.swift; sourceTree = "<group>"; };
 		812F09A724143714004DEF8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		812F902B24C74280009245E5 /* NewMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageCell.swift; sourceTree = "<group>"; };
 		813BADD224ED988500594F2F /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				81DF9A6B24F3889B000DB61E /* VenueActionView.swift */,
 				81479CB824F8A9450038CDEE /* HoursOfOperationView.swift */,
 				81479CBA24F8ABA90038CDEE /* DayHoursLabel.swift */,
+				812AA8B4252F50C0001883FC /* ChallengePlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				817C472B241BDA6D00A76EFC /* FirebaseDatabaseHelper.swift in Sources */,
 				813F4A6E242689C000E0FE0D /* LocationHandler.swift in Sources */,
 				816233ED2419321300A7BF09 /* HomeController.swift in Sources */,
+				812AA8B5252F50C0001883FC /* ChallengePlayerView.swift in Sources */,
 				819B213024FA085500F50AA6 /* HoursOfOperation.swift in Sources */,
 				81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */,
 				817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */,
