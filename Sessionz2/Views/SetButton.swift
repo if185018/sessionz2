@@ -22,4 +22,8 @@ class SetButton: UIButton {
             backgroundColor = isHighlighted ? .red : .green 
         }
     }
+    
+    var matchSet: MatchSet!
+        
+    
 }
