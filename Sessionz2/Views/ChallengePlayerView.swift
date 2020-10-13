@@ -23,6 +23,12 @@ class ChallengePlayerView: UIView {
            return label
        }()
     
+    public var firstToTwoButton: UIButton = {
+        let button = SetButton()
+        button.matchSet = .firstToTwo
+        return button
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
