@@ -28,7 +28,24 @@ class ChallengePlayerView: UIView {
         button.matchSet = .firstToTwo
         return button
     }()
+     
+    public var firstToThreeButton: UIButton = {
+        let button = SetButton()
+        button.matchSet = .firstToThree
+        return button
+    }()
     
+    public var firstToFiveButton: UIButton = {
+        let button = SetButton()
+        button.matchSet = .firstToFive
+        return button
+    }()
+    
+    public var firstToTenButton: UIButton = {
+        let button = SetButton()
+        button.matchSet = .firstToTen
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
