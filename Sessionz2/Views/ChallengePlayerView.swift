@@ -23,36 +23,41 @@ class ChallengePlayerView: UIView {
            return label
        }()
     
-    public var firstToTwoButton: UIButton = {
+    public var firstToTwoButton: SetButton = {
         let button = SetButton()
         button.matchSet = .firstToTwo
         return button
     }()
      
-    public var firstToThreeButton: UIButton = {
+    public var firstToThreeButton: SetButton = {
         let button = SetButton()
         button.matchSet = .firstToThree
         return button
     }()
     
-    public var firstToFiveButton: UIButton = {
+    public var firstToFiveButton: SetButton = {
         let button = SetButton()
         button.matchSet = .firstToFive
         return button
     }()
     
-    public var firstToTenButton: UIButton = {
+    public var firstToTenButton: SetButton = {
         let button = SetButton()
         button.matchSet = .firstToTen
         return button
     }()
     
+    var buttons = [SetButton]()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 }
