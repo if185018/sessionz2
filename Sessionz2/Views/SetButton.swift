@@ -11,6 +11,12 @@ import UIKit
 class SetButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
+        setTitleColor(.black, for: .normal)
+        heightAnchor.constraint(equalToConstant: 35).isActive = true
+        widthAnchor.constraint(equalToConstant: 35).isActive = true
+        
+        self.layer.cornerRadius = 35/2
     }
     
     required init?(coder: NSCoder) {
