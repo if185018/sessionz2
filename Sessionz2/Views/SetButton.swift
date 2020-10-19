@@ -29,7 +29,24 @@ class SetButton: UIButton {
         }
     }
     
-    var matchSet: MatchSet!
+    
+    
+    var matchSet: MatchSet! {
+        didSet {
+            switch matchSet {
+            case .firstToTwo :
+                self.setTitle("2/3", for: .normal)
+            case .firstToThree :
+                self.setTitle("3/5", for: .normal)
+            case .firstToFive :
+                self.setTitle("5/9", for: .normal)
+            case .firstToTen:
+                self.setTitle("10/19", for: .normal)
+            case .none:
+                return
+            }
+        }
+    }
         
     
 }
