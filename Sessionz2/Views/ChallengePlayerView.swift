@@ -25,24 +25,28 @@ class ChallengePlayerView: UIView {
     
     public var firstToTwoButton: SetButton = {
         let button = SetButton()
+        button.tag = 0
         button.matchSet = .firstToTwo
         return button
     }()
      
     public var firstToThreeButton: SetButton = {
         let button = SetButton()
+        button.tag = 1
         button.matchSet = .firstToThree
         return button
     }()
     
     public var firstToFiveButton: SetButton = {
         let button = SetButton()
+        button.tag = 2
         button.matchSet = .firstToFive
         return button
     }()
     
     public var firstToTenButton: SetButton = {
         let button = SetButton()
+        button.tag = 3
         button.matchSet = .firstToTen
         return button
     }()
@@ -57,6 +61,7 @@ class ChallengePlayerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     
     
