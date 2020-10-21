@@ -62,6 +62,21 @@ class ChallengePlayerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupButtonsAndLabel() {
+        addSubview(gamerTagLabel)
+        gamerTagLabel.anchor(top:topAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 12, paddingRight: 12, height: 24)
+        
+        let stack = UIStackView(arrangedSubviews: buttons)
+        stack.distribution = .fillEqually
+        stack.spacing = 6
+        stack.axis = .horizontal
+        
+        addSubview(stack)
+        stack.centerX(inView: self)
+        stack.anchor(top: gamerTagLabel.bottomAnchor, paddingTop: 9)
+        
+    }
+    
     
     
     
