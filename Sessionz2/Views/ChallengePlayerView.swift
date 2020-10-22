@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MatchSetSelectionDelegate: class {
+    func didSelectMatchSet (set:MatchSet)
+}
+
 class ChallengePlayerView: UIView {
     
     var user: AppUser? {
@@ -15,6 +19,8 @@ class ChallengePlayerView: UIView {
             //TODO: Handle setup
         }
     }
+    
+    public weak var delegate: MatchSetSelectionDelegate?
     
     private lazy var gamerTagLabel: UILabel = {
            let label = UILabel()
@@ -56,6 +62,7 @@ class ChallengePlayerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
+        setupButtonsAndLabel()
     }
     
     required init?(coder: NSCoder) {
