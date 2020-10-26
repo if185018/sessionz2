@@ -62,12 +62,23 @@ class ChallengePlayerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
+        
         setupButtonsAndLabel()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+    private func activateButtons() {
+        for button in buttons {
+            button.addTarget(self, action: #selector(handleMatchSetButtonSelected(sender:)), for: .touchUpInside)
+        }
+    }
+    
     
     private func setupButtonsAndLabel() {
         addSubview(gamerTagLabel)
@@ -84,8 +95,10 @@ class ChallengePlayerView: UIView {
         
     }
     
-    @objc func handleMatchSetButtonSelected(tag: Int) {
-        
+    @objc func handleMatchSetButtonSelected(sender: SetButton) {
+        guard let matchSet = sender.matchSet
+            else {return}
+        delegate?.didSelectMatchSet(set: matchSet)
     }
     
     
