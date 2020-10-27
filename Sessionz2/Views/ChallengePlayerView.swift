@@ -62,8 +62,8 @@ class ChallengePlayerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
-        
         setupButtonsAndLabel()
+        activateButtons()
     }
     
     
@@ -98,6 +98,10 @@ class ChallengePlayerView: UIView {
     @objc func handleMatchSetButtonSelected(sender: SetButton) {
         guard let matchSet = sender.matchSet
             else {return}
+        buttons.forEach { (button) in
+            button.isHighlighted = false
+        }
+        buttons[sender.tag].isHighlighted = true
         delegate?.didSelectMatchSet(set: matchSet)
     }
     
