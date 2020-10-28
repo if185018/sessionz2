@@ -20,6 +20,11 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     var user: AppUser?
     
     
+    private let challengePlayerView = ChallengePlayerView()
+    private let challengePlayerViewHeight: CGFloat = 300 
+    
+    
+    
     //MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -30,6 +35,18 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         
         if self.user == nil {
         setCurrentUser()
+        }
+    }
+    
+    
+    private func animateChalengePlayerView(shouldShow: Bool, player: AppUser?) {
+        if let player = player {
+            self.challengePlayerView.user = player
+        }
+        let yOrigin = shouldShow ? self.view.frame.height - self.challengePlayerViewHeight : self.view.frame.height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.challengePlayerView.frame.origin.y = yOrigin
         }
     }
     
@@ -111,6 +128,10 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 }
 
 extension UserProfileVC: UserProfileHeaderDelegate {
+    func challengeButtonPressed() {
+        
+    }
+    
     func setUserStats(for header: UserProfileHeader) {
         //TODO
     print("Header stats to be displayed")

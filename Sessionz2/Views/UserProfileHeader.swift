@@ -15,6 +15,8 @@ import UIKit
 
 protocol UserProfileHeaderDelegate {
     func setUserStats(for header: UserProfileHeader)
+    
+    func challengeButtonPressed() 
 }
 
 
