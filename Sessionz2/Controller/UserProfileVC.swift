@@ -36,6 +36,14 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         if self.user == nil {
         setCurrentUser()
         }
+        configureChallengePlayerView()
+    }
+    
+    private func configureChallengePlayerView() {
+        view.addSubview(challengePlayerView)
+        //challengePlayerView.delegate = self
+        challengePlayerView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: challengePlayerViewHeight)
+
     }
     
     
@@ -143,7 +151,7 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 
 extension UserProfileVC: UserProfileHeaderDelegate {
     func challengeButtonPressed() {
-        
+        animateChalengePlayerView(shouldShow: true, player: self.user)
     }
     
     func setUserStats(for header: UserProfileHeader) {
