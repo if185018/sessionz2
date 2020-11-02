@@ -90,6 +90,7 @@ class UserProfileHeader: UICollectionViewCell {
         button.layer.borderWidth = 0.5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(challengeButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -147,6 +148,10 @@ class UserProfileHeader: UICollectionViewCell {
         
          bottomDividerView.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
         
+    }
+    
+    @objc func challengeButtonPressed() {
+        self.delegate?.challengeButtonPressed()
     }
     
     
