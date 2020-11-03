@@ -61,6 +61,7 @@ class ChallengePlayerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .secondaryBlueTint
         buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
         setupButtonsAndLabel()
         activateButtons()
