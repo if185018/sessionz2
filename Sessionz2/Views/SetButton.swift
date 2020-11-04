@@ -23,12 +23,12 @@ class SetButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var isHighlighted: Bool {
+    override var isSelected: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .red : .green 
+            backgroundColor = isSelected ? .red : .lightGray
         }
     }
-    
+
     
     
     var matchSet: MatchSet! {

@@ -100,9 +100,9 @@ class ChallengePlayerView: UIView {
         guard let matchSet = sender.matchSet
             else {return}
         buttons.forEach { (button) in
-            button.isHighlighted = false
+            button.isSelected = false
         }
-        buttons[sender.tag].isHighlighted = true
+        buttons[sender.tag].isSelected = true
         delegate?.didSelectMatchSet(set: matchSet)
     }
     
