@@ -13,10 +13,10 @@ class SetButton: UIButton {
         super.init(frame: frame)
         backgroundColor = .lightGray 
         setTitleColor(.black, for: .normal)
-        heightAnchor.constraint(equalToConstant: 35).isActive = true
-        widthAnchor.constraint(equalToConstant: 35).isActive = true
+        heightAnchor.constraint(equalToConstant: 45).isActive = true
+        widthAnchor.constraint(equalToConstant: 45).isActive = true
         
-        self.layer.cornerRadius = 35/2
+        self.layer.cornerRadius = 45/2
     }
     
     required init?(coder: NSCoder) {

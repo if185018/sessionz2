@@ -87,7 +87,7 @@ class ChallengePlayerView: UIView {
         
         let stack = UIStackView(arrangedSubviews: buttons)
         stack.distribution = .fillEqually
-        stack.spacing = 6
+        stack.spacing = 10
         stack.axis = .horizontal
         
         addSubview(stack)
