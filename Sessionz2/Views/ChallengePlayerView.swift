@@ -17,6 +17,7 @@ class ChallengePlayerView: UIView {
     var user: AppUser? {
         didSet {
             //TODO: Handle setup
+            self.gamerTagLabel.text = user?.gamerTag ?? ""
         }
     }
     
@@ -57,11 +58,23 @@ class ChallengePlayerView: UIView {
         return button
     }()
     
+    private lazy var confirmButton: UIButton = {
+         let button = UIButton(type: .system)
+               button.backgroundColor = .secondaryBlueTint
+               button.setTitle("Confirm", for: .normal)
+               button.setTitleColor(.white, for: .normal)
+               button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        return button
+    }()
+    
+    
     var buttons = [SetButton]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .secondaryBlueTint
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 2.5
+        backgroundColor = .white
         buttons = [firstToTwoButton, firstToThreeButton, firstToFiveButton, firstToTenButton]
         setupButtonsAndLabel()
         activateButtons()
@@ -93,6 +106,9 @@ class ChallengePlayerView: UIView {
         addSubview(stack)
         stack.centerX(inView: self)
         stack.anchor(top: gamerTagLabel.bottomAnchor, paddingTop: 9)
+        
+        addSubview(confirmButton)
+        confirmButton.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, height: 45)
         
     }
     
