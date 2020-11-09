@@ -30,6 +30,7 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white 
+        self.view.isUserInteractionEnabled = true
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
@@ -41,7 +42,7 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     private func configureChallengePlayerView() {
         view.addSubview(challengePlayerView)
-        //challengePlayerView.delegate = self
+        challengePlayerView.delegate = self
         challengePlayerView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: challengePlayerViewHeight)
 
     }
@@ -157,6 +158,14 @@ extension UserProfileVC: UserProfileHeaderDelegate {
     func setUserStats(for header: UserProfileHeader) {
         //TODO
     print("Header stats to be displayed")
+    }
+    
+    
+}
+
+extension UserProfileVC: MatchSetSelectionDelegate {
+    func didSelectMatchSet(set: MatchSet) {
+        
     }
     
     
