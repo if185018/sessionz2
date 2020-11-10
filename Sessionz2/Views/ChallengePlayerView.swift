@@ -10,6 +10,8 @@ import UIKit
 
 protocol MatchSetSelectionDelegate: class {
     func didSelectMatchSet (set:MatchSet)
+    
+    func didPressDismissButton()
 }
 
 class ChallengePlayerView: UIView {
@@ -65,6 +67,13 @@ class ChallengePlayerView: UIView {
                button.setTitleColor(.white, for: .normal)
                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
+    }()
+    
+    private lazy var dismissButton : UIButton = {
+        let xButton = UIButton(type: .close)
+        xButton.tintColor = .black
+        xButton.addTarget(self, action: #selector(handleDismissButtonPressed), for: .touchUpInside)
+        return xButton
     }()
     
     
@@ -123,6 +132,9 @@ class ChallengePlayerView: UIView {
     }
     
     
+    @objc func handleDismissButtonPressed() {
+        delegate?.didPressDismissButton()
+    }
     
     
     
