@@ -112,6 +112,9 @@ class ChallengePlayerView: UIView {
         stack.spacing = 10
         stack.axis = .horizontal
         
+        addSubview(dismissButton)
+        dismissButton.anchor(top: self.topAnchor, right: self.rightAnchor, paddingTop: 4, paddingRight: 4, width: 24, height: 24)
+        
         addSubview(stack)
         stack.centerX(inView: self)
         stack.anchor(top: gamerTagLabel.bottomAnchor, paddingTop: 9)

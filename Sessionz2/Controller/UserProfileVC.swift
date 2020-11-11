@@ -164,6 +164,10 @@ extension UserProfileVC: UserProfileHeaderDelegate {
 }
 
 extension UserProfileVC: MatchSetSelectionDelegate {
+    func didPressDismissButton() {
+        animateChalengePlayerView(shouldShow: false, player: nil)
+    }
+    
     func didSelectMatchSet(set: MatchSet) {
         
     }
