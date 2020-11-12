@@ -48,19 +48,6 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
     
     
-    //MARK: TOUCHES
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if self.challengePlayerView.frame.origin.y == self.view.frame.height - self.challengePlayerViewHeight {
-            guard touches.first?.view != challengePlayerView else {return}
-            animateChalengePlayerView(shouldShow: false, player: nil)
-            
-        } else if self.challengePlayerView.frame.origin.y == self.view.frame.height - self.challengePlayerViewHeight {
-            guard touches.first?.view != challengePlayerView else {return}
-            animateChalengePlayerView(shouldShow: false, player: nil)
-        }
-    }
-    
     
     private func animateChalengePlayerView(shouldShow: Bool, player: AppUser?) {
         if let player = player {
@@ -169,7 +156,7 @@ extension UserProfileVC: MatchSetSelectionDelegate {
     }
     
     func didSelectMatchSet(set: MatchSet) {
-        
+        print("current selected set is \(set)")
     }
     
     
