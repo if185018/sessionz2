@@ -8,13 +8,14 @@
 
 import Foundation
 let acceptedKey = "accepted"
+let matchSetKey = "matchSet"
 
 class Challenge {
     var fromId: String!
     var toId: String!
     var creationDate: Date!
     var accepted: Bool!
-    
+    var matchSet: Int!
     
     
     init(dictionary: [String: Any]) {
@@ -30,6 +31,9 @@ class Challenge {
         }
         if let accepted = dictionary[acceptedKey] as? Bool {
             self.accepted = accepted
+        }
+        if let matchSet = dictionary[matchSetKey] as? Int {
+            self.matchSet = matchSet
         }
         
         
