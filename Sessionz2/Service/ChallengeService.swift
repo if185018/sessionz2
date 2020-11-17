@@ -23,5 +23,15 @@ struct ChallengeService {
         guard let uid = user.uid else { return }
         
         let challengeRef = REF_CHALLENGES.childByAutoId()
+        
+        guard let challengeKey = challengeRef.key else {return}
+        
+        challengeRef.updateChildValues(properties) { (error, ref) in
+            USER_CHALLENGES_REF.child(currentUid).child(uid).updateChildValues([challengeKey: 1])
+            
+            
+            USER_CHALLENGES_REF.child(uid).child(currentUid).updateChildValues([challengeKey: 1])
+            
+        }
     }
 }
