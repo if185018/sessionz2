@@ -34,4 +34,18 @@ struct ChallengeService {
             
         }
     }
+    
+    
+    func observeChallanges(partnerId: String?, completion: @escaping(String) -> ()) {
+         guard let currentUid = self.currentUid else {return}
+        guard let partnerId = partnerId else {return}
+        USER_CHALLENGES_REF.child(currentUid).child(partnerId).observe(.childAdded) { (snapshot) in
+            let challengeId = snapshot.key
+            completion(challengeId)
+        }
+    }
+    
+    
+    
+    
 }
