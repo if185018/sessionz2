@@ -12,6 +12,8 @@ protocol MatchSetSelectionDelegate: class {
     func didSelectMatchSet (set:MatchSet)
     
     func didPressDismissButton()
+    
+    func didPressConfirmButton()
 }
 
 class ChallengePlayerView: UIView {
@@ -139,6 +141,10 @@ class ChallengePlayerView: UIView {
         delegate?.didPressDismissButton()
     }
     
+    
+    @objc func handleConfirmButtonPressed() {
+        delegate?.didPressConfirmButton()
+    }
     
     
 }

@@ -157,7 +157,10 @@ extension UserProfileVC: MatchSetSelectionDelegate {
     
     func didSelectMatchSet(set: MatchSet) {
         print("current selected set is \(set)")
+        
     }
-    
+    func didPressConfirmButton() {
+        //TODO handle confirm and upload challenge to database
+    }
     
 }

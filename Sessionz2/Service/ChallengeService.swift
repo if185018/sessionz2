@@ -18,7 +18,7 @@ struct ChallengeService {
     func uploadNewChallange(user: AppUser?, with properties: [String: AnyObject]) {
        guard let currentUid = FirebaseAuthService.manager.currentUser?.uid else { return }
         guard let user = user else {return}
-        let creationDate = Int(NSDate().timeIntervalSince1970)
+        
         
         guard let uid = user.uid else { return }
         
