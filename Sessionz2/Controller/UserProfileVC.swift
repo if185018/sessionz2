@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import JGProgressHUD
 
 private let reuseIdentifier = "Cell"
 private let headerIdentifier = "UserProfileHeader"
@@ -23,7 +24,8 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     private let challengePlayerView = ChallengePlayerView()
     private let challengePlayerViewHeight: CGFloat = 300 
     
-    
+     let hud = JGProgressHUD(style: .dark)
+    public var currentMatchSet: MatchSet?
     
     //MARK: Lifecycle
     
@@ -45,6 +47,19 @@ class UserProfileVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         challengePlayerView.delegate = self
         challengePlayerView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: challengePlayerViewHeight)
 
+    }
+    
+    private func showHUDNotification(text: String, isError: Bool) {
+        if isError {
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+        } else {
+            self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+            
+        }
+        
+        self.hud.textLabel.text = text
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
     }
     
     
@@ -157,10 +172,13 @@ extension UserProfileVC: MatchSetSelectionDelegate {
     
     func didSelectMatchSet(set: MatchSet) {
         print("current selected set is \(set)")
+        self.currentMatchSet = set
         
     }
     func didPressConfirmButton() {
         //TODO handle confirm and upload challenge to database
+        
+        
     }
     
 }

@@ -12,6 +12,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'GeoFire', '~> 3.0'
 pod 'Firebase/Messaging'
+pod 'JGProgressHUD'
 
   target 'Sessionz2Tests' do
     inherit! :search_paths
