@@ -64,9 +64,9 @@ class ChallengePlayerView: UIView {
     
     private lazy var confirmButton: UIButton = {
          let button = UIButton(type: .system)
-               button.backgroundColor = .secondaryBlueTint
-               button.setTitle("Confirm", for: .normal)
-               button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(red: 218/255, green: 234/255, blue: 252/255, alpha: 0.7)
+               button.setTitleColor(.black, for: .normal)
+               button.isEnabled = false
                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
@@ -126,18 +126,34 @@ class ChallengePlayerView: UIView {
         
     }
     
+    public func adjustConfirmButton(shouldEnable: Bool) {
+        if shouldEnable {
+            confirmButton.backgroundColor = .secondaryBlueTint
+            confirmButton.setTitleColor(.white, for: .normal)
+            confirmButton.isEnabled = true
+        } else {
+            confirmButton.backgroundColor = UIColor(red: 218/255, green: 234/255, blue: 252/255, alpha: 0.7)
+            confirmButton.setTitleColor(.black, for: .normal)
+            confirmButton.isEnabled = false
+            
+        }
+    }
+    
     @objc func handleMatchSetButtonSelected(sender: SetButton) {
         guard let matchSet = sender.matchSet
             else {return}
+        
         buttons.forEach { (button) in
             button.isSelected = false
         }
+        adjustConfirmButton(shouldEnable: true)
         buttons[sender.tag].isSelected = true
         delegate?.didSelectMatchSet(set: matchSet)
     }
     
     
     @objc func handleDismissButtonPressed() {
+        adjustConfirmButton(shouldEnable: false)
         delegate?.didPressDismissButton()
     }
     
