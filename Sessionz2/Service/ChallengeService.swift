@@ -18,15 +18,19 @@ struct ChallengeService {
     func uploadNewChallange(user: AppUser?, with properties: [String: AnyObject]) {
        guard let currentUid = FirebaseAuthService.manager.currentUser?.uid else { return }
         guard let user = user else {return}
-        
+        let creationDate = Int(NSDate().timeIntervalSince1970)
+               
         
         guard let uid = user.uid else { return }
         
+        
+        var values: [String:AnyObject] = [toIdKey: uid as AnyObject, fromIdKey: currentUid as AnyObject, creationDateKey: creationDate as AnyObject, acceptedKey: false as AnyObject]
+        properties.forEach({values[$0] = $1})
         let challengeRef = REF_CHALLENGES.childByAutoId()
         
         guard let challengeKey = challengeRef.key else {return}
         
-        challengeRef.updateChildValues(properties) { (error, ref) in
+        challengeRef.updateChildValues(values) { (error, ref) in
             USER_CHALLENGES_REF.child(currentUid).child(uid).updateChildValues([challengeKey: 1])
             
             
