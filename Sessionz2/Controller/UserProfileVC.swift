@@ -178,6 +178,11 @@ extension UserProfileVC: MatchSetSelectionDelegate {
     func didPressConfirmButton() {
         //TODO handle confirm and upload challenge to database
         
+        guard let selectedMatchSet = self.currentMatchSet else {return}
+        let rawValue = selectedMatchSet.rawValue
+        let properties = [matchSetKey: rawValue as Any]
+        ChallengeService.shared.uploadNewChallange(user: self.user, with: properties as [String : AnyObject])
+        
         
     }
     
