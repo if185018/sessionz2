@@ -15,7 +15,7 @@ struct ChallengeService {
     let currentUid = Auth.auth().currentUser?.uid
     static let shared = ChallengeService()
     
-    func uploadNewChallange(user: AppUser?, with properties: [String: AnyObject]) {
+    func uploadNewChallange(user: AppUser?, with properties: [String: AnyObject], completion: @escaping (Result<(), Error>) -> ()) {
        guard let currentUid = FirebaseAuthService.manager.currentUser?.uid else { return }
         guard let user = user else {return}
         let creationDate = Int(NSDate().timeIntervalSince1970)
@@ -31,10 +31,16 @@ struct ChallengeService {
         guard let challengeKey = challengeRef.key else {return}
         
         challengeRef.updateChildValues(values) { (error, ref) in
-            USER_CHALLENGES_REF.child(currentUid).child(uid).updateChildValues([challengeKey: 1])
+            if let error = error {
+                completion(.failure(error))
+            } else { USER_CHALLENGES_REF.child(currentUid).child(uid).updateChildValues([challengeKey: 1])
             
             
             USER_CHALLENGES_REF.child(uid).child(currentUid).updateChildValues([challengeKey: 1])
+                completion(.success(()))
+            
+            }
+            
             
         }
     }

@@ -181,7 +181,15 @@ extension UserProfileVC: MatchSetSelectionDelegate {
         guard let selectedMatchSet = self.currentMatchSet else {return}
         let rawValue = selectedMatchSet.rawValue
         let properties = [matchSetKey: rawValue as Any]
-        ChallengeService.shared.uploadNewChallange(user: self.user, with: properties as [String : AnyObject])
+        
+        ChallengeService.shared.uploadNewChallange(user: self.user, with: properties as [String : AnyObject]) { (result) in
+            switch result {
+            case .success(()):
+                print("success")
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         
     }
