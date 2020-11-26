@@ -180,13 +180,15 @@ extension UserProfileVC: MatchSetSelectionDelegate {
         
         guard let selectedMatchSet = self.currentMatchSet else {return}
         let rawValue = selectedMatchSet.rawValue
-        let properties = [matchSetKey: rawValue as Any]
+        let properties = [matchSetKey: rawValue as Any] as [String:AnyObject]
         
         ChallengeService.shared.uploadNewChallange(user: self.user, with: properties as [String : AnyObject]) { (result) in
             switch result {
             case .success(()):
                 print("success")
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
             case .failure(let error):
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
                 print(error)
             }
         }

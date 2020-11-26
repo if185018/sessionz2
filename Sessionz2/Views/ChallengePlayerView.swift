@@ -67,7 +67,9 @@ class ChallengePlayerView: UIView {
         button.backgroundColor = UIColor(red: 218/255, green: 234/255, blue: 252/255, alpha: 0.7)
                button.setTitleColor(.black, for: .normal)
                button.isEnabled = false
+        button.setTitle("Confirm", for: .normal)
                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleConfirmButtonPressed), for: .touchUpInside)
         return button
     }()
     
