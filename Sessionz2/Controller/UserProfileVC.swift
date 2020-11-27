@@ -186,9 +186,9 @@ extension UserProfileVC: MatchSetSelectionDelegate {
             switch result {
             case .success(()):
                 print("success")
-                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.showHUDNotification(text: "You have challenged \(self.user!.gamerTag)", isError: false)
             case .failure(let error):
-                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.showHUDNotification(text: "Error challenging", isError: true)
                 print(error)
             }
         }
