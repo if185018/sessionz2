@@ -187,6 +187,7 @@ extension UserProfileVC: MatchSetSelectionDelegate {
             case .success(()):
                 print("success")
                 self.showHUDNotification(text: "You have challenged \(self.user!.gamerTag)", isError: false)
+                self.animateChalengePlayerView(shouldShow: false, player: self.user)
             case .failure(let error):
                 self.showHUDNotification(text: "Error challenging", isError: true)
                 print(error)
