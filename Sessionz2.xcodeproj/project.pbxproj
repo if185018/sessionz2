@@ -14,6 +14,8 @@
 		810BEDFE24968751005D2270 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BEDFD24968751005D2270 /* MessageInputTextView.swift */; };
 		810F583A248FEF35002723A9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F5839248FEF35002723A9 /* Message.swift */; };
 		810F6BDD24CF57EE002B55B1 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F6BDC24CF57EE002B55B1 /* NewMessageController.swift */; };
+		81110879257E712300358683 /* ChallengeSortingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81110878257E712300358683 /* ChallengeSortingVC.swift */; };
+		8111087B257E720E00358683 /* ChallengeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111087A257E720E00358683 /* ChallengeSort.swift */; };
 		811298AA241298A600B3BCC1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811298A9241298A600B3BCC1 /* SignUpVC.swift */; };
 		8112D29124929D0800A8D900 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8112D29024929D0800A8D900 /* ChatController.swift */; };
 		811342C624114B2F005F6DC8 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811342C524114B2F005F6DC8 /* AuthButton.swift */; };
@@ -93,6 +95,8 @@
 		810BEDFD24968751005D2270 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		810F5839248FEF35002723A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		810F6BDC24CF57EE002B55B1 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		81110878257E712300358683 /* ChallengeSortingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSortingVC.swift; sourceTree = "<group>"; };
+		8111087A257E720E00358683 /* ChallengeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSort.swift; sourceTree = "<group>"; };
 		811298A9241298A600B3BCC1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		8112D29024929D0800A8D900 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		811342C524114B2F005F6DC8 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 				816233EE241960ED00A7BF09 /* Login */,
 				8166A0E32521B84100280206 /* LocationMapVC.swift */,
 				81262EE1257AB25200F2CA3D /* ChallengesViewController.swift */,
+				81110878257E712300358683 /* ChallengeSortingVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				819B212F24FA085500F50AA6 /* HoursOfOperation.swift */,
 				810335E325263536000E942D /* Challenge.swift */,
 				81672B1F25278C2A00ADC637 /* MatchResult.swift */,
+				8111087A257E720E00358683 /* ChallengeSort.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				81155C7F247C3F5800FCA768 /* EditProfileViewController.swift in Sources */,
 				81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */,
 				813BADD324ED988500594F2F /* JSONService.swift in Sources */,
+				81110879257E712300358683 /* ChallengeSortingVC.swift in Sources */,
 				810F6BDD24CF57EE002B55B1 /* NewMessageController.swift in Sources */,
 				813F4A702426947B00E0FE0D /* PlayerActionView.swift in Sources */,
 				81BD3C48240F09D700FC98BF /* SceneDelegate.swift in Sources */,
@@ -578,6 +585,7 @@
 				819B213024FA085500F50AA6 /* HoursOfOperation.swift in Sources */,
 				81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */,
 				817B339B2417DE6D00EF0144 /* MenuController.swift in Sources */,
+				8111087B257E720E00358683 /* ChallengeSort.swift in Sources */,
 				816031B42426DA4E0066B052 /* CustomDelegates.swift in Sources */,
 				81479CB924F8A9450038CDEE /* HoursOfOperationView.swift in Sources */,
 				810F583A248FEF35002723A9 /* Message.swift in Sources */,
