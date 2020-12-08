@@ -17,6 +17,10 @@ class ChallengeSortingVC: UIViewController {
     }
     
 
-   
+    lazy var tableView : UITableView = {
+        let tv = UITableView()
+        tv.separatorStyle = .none
+        return tv
+    }()
 
 }

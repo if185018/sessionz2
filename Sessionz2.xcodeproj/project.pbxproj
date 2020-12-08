@@ -11,6 +11,7 @@
 		81003CED24169B6500B5DE33 /* DatabaseRefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEC24169B6500B5DE33 /* DatabaseRefs.swift */; };
 		81003CF02416A11B00B5DE33 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */; };
 		810335E425263536000E942D /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810335E325263536000E942D /* Challenge.swift */; };
+		810AEA4C257FE28700CEF74E /* ChallengeSortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AEA4B257FE28700CEF74E /* ChallengeSortCell.swift */; };
 		810BEDFE24968751005D2270 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BEDFD24968751005D2270 /* MessageInputTextView.swift */; };
 		810F583A248FEF35002723A9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F5839248FEF35002723A9 /* Message.swift */; };
 		810F6BDD24CF57EE002B55B1 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F6BDC24CF57EE002B55B1 /* NewMessageController.swift */; };
@@ -92,6 +93,7 @@
 		81003CEF2416A11B00B5DE33 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		810335E325263536000E942D /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		8105163824C78F510015AFA1 /* Sessionz2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sessionz2.entitlements; sourceTree = "<group>"; };
+		810AEA4B257FE28700CEF74E /* ChallengeSortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSortCell.swift; sourceTree = "<group>"; };
 		810BEDFD24968751005D2270 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		810F5839248FEF35002723A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		810F6BDC24CF57EE002B55B1 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				81479CBA24F8ABA90038CDEE /* DayHoursLabel.swift */,
 				812AA8B4252F50C0001883FC /* ChallengePlayerView.swift */,
 				81E9C8E12530ACE40052AC99 /* SetButton.swift */,
+				810AEA4B257FE28700CEF74E /* ChallengeSortCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				8166A0E42521B84100280206 /* LocationMapVC.swift in Sources */,
 				81501BD6248562930047C426 /* FirebaseSttorageService.swift in Sources */,
 				8182705624D229A200788FBE /* Venue.swift in Sources */,
+				810AEA4C257FE28700CEF74E /* ChallengeSortCell.swift in Sources */,
 				81672B2025278C2A00ADC637 /* MatchResult.swift in Sources */,
 				81BD3C6C240F110E00FC98BF /* ViewController+Extension.swift in Sources */,
 				81479CBB24F8ABA90038CDEE /* DayHoursLabel.swift in Sources */,
