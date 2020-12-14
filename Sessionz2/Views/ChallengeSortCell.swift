@@ -10,15 +10,15 @@ import UIKit
 
 class ChallengeSortCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Test"
+        return label
+    }()
+    
+    lazy var icon: UIImageView = {
+        let iv = UIImageView()
+        return iv 
+    }()
 
 }
