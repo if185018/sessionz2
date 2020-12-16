@@ -28,6 +28,10 @@ class ChallengeSortCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //Todo: include constraints for cell objects
+
+        addSubview(icon)
+        icon.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 3, paddingLeft: 3, paddingBottom: 3, width: 20)
+        addSubview(nameLabel)
         
     }
     
