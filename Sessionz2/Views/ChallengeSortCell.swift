@@ -32,7 +32,7 @@ class ChallengeSortCell: UITableViewCell {
         addSubview(icon)
         icon.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 3, paddingLeft: 3, paddingBottom: 3, width: 20)
         addSubview(nameLabel)
-        
+        nameLabel.anchor(top: topAnchor, left: icon.rightAnchor, bottom: bottomAnchor, paddingTop: 3, paddingLeft: 3, paddingBottom: 3, width: 120)
     }
     
     required init?(coder: NSCoder) {
