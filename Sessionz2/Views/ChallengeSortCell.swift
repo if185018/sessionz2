@@ -10,6 +10,14 @@ import UIKit
 
 class ChallengeSortCell: UITableViewCell {
 
+    var challengeSort: ChallengeSort? {
+        didSet {
+            guard let challengeSort = challengeSort else {return}
+            nameLabel.text = challengeSort.type.rawValue
+            //TODO: set icon image 
+        }
+    }
+    
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
@@ -27,7 +35,6 @@ class ChallengeSortCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        //Todo: include constraints for cell objects
 
         addSubview(icon)
         icon.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 3, paddingLeft: 3, paddingBottom: 3, width: 20)

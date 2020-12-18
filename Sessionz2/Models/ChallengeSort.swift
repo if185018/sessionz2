@@ -8,7 +8,15 @@
 
 
 import UIKit
+
+enum ChallengeStatus: String {
+    case all
+    case outgoing
+    case recieved
+    case completed
+}
+
 struct ChallengeSort {
-    let title: String
     let icon: UIImage
+    let type: ChallengeStatus
 }
