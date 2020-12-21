@@ -10,7 +10,10 @@ import UIKit
 
 class ChallengeSortingVC: UIViewController {
     
-    let challengeSorts = [ChallengeSort(title: "All Challenges", icon: #imageLiteral(resourceName: "play")), ChallengeSort(title: "Sent", icon: #imageLiteral(resourceName: "play")), ChallengeSort(title: "Recieved", icon: #imageLiteral(resourceName: "play")), ChallengeSort(title: "Completed", icon: #imageLiteral(resourceName: "play"))]
+    let challengeSorts = [ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .all),
+                          ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .completed),
+                          ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .outgoing),
+                          ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .recieved)]
     
     
     override func viewDidLoad() {
