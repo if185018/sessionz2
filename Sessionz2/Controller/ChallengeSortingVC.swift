@@ -8,7 +8,13 @@
 
 import UIKit
 
+
+private let reuseIdentifier = "ChallengeSortCell"
+
 class ChallengeSortingVC: UIViewController {
+    
+    
+    
     
     let challengeSorts = [ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .all),
                           ChallengeSort(icon: #imageLiteral(resourceName: "play"), type: .completed),
@@ -18,6 +24,8 @@ class ChallengeSortingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(ChallengeSortCell.self, forCellReuseIdentifier: reuseIdentifier)
+         tableView.tableFooterView = UIView(frame: .zero)
         
     }
     
@@ -36,7 +44,9 @@ extension ChallengeSortingVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ChallengeSortCell
+        cell.challengeSort = challengeSorts[indexPath.row]
+        return cell
     }
     
     
