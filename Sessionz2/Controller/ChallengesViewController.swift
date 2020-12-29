@@ -9,6 +9,14 @@
 import UIKit
 
 class ChallengesViewController: UIViewController {
+    
+    
+    private lazy var matchesCollectionView: UICollectionView = {
+        let cv = UICollectionView()
+        return cv
+    }()
+    
+    let challengeSortingVC = ChallengeSortingVC()
 
     override func viewDidLoad() {
         super.viewDidLoad()
