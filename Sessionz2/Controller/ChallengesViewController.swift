@@ -12,7 +12,10 @@ class ChallengesViewController: UIViewController {
     
     
     private lazy var matchesCollectionView: UICollectionView = {
-        let cv = UICollectionView()
+       let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
         return cv
     }()
     
@@ -20,6 +23,8 @@ class ChallengesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         
     }
