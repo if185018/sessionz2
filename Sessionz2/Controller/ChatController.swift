@@ -86,6 +86,7 @@ class ChatController: UICollectionViewController, UICollectionViewDelegateFlowLa
         if messages.count > 0 {
             let indexPath = IndexPath(item: messages.count - 1, section: 0)
             collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
+            
         }
     }
     
