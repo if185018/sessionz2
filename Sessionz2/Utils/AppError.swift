@@ -9,6 +9,9 @@
 import Foundation
 enum AppError: Error {
     case noData
+    case badURL
+    case noDataReceived
+    case notAnImage
     case noUser
     case other(error: Error)
     case bundlePathError
